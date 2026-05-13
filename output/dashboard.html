@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Filler Post Studio — @AggTrade_XYZ</title>
+<style>
+  :root {
+    --bg: #0f1419;
+    --panel: #16202a;
+    --panel-2: #1c2732;
+    --border: #2a3744;
+    --text: #e7ecef;
+    --muted: #8899a6;
+    --accent: #1d9bf0;
+    --good: #00ba7c;
+    --ok: #ffad1f;
+    --bad: #f4212e;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
+  header { padding: 22px 28px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  header h1 { margin: 0; font-size: 22px; font-weight: 700; }
+  header .meta { color: var(--muted); font-size: 13px; }
+  .container { max-width: 980px; margin: 0 auto; padding: 24px 28px; }
+  .toolbar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 20px; padding: 14px; background: var(--panel); border-radius: 10px; border: 1px solid var(--border); }
+  .toolbar label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .toolbar select, .toolbar input { background: var(--panel-2); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; font: inherit; }
+  .toolbar .chip { background: var(--panel-2); padding: 4px 10px; border-radius: 999px; color: var(--muted); font-size: 12px; }
+  .tier-header { margin: 28px 0 12px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+  .tier-header::before { content: ""; flex: 1; height: 1px; background: var(--border); }
+  .tier-header::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin-bottom: 14px; transition: border-color 0.15s; }
+  .card:hover { border-color: var(--accent); }
+  .card.hero { border-left: 3px solid var(--accent); }
+  .card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .card-head .left { display: flex; gap: 8px; align-items: center; }
+  .rank { color: var(--muted); font-size: 12px; font-weight: 600; }
+  .pill { font-size: 11px; padding: 2px 8px; border-radius: 999px; background: var(--panel-2); color: var(--text); border: 1px solid var(--border); text-transform: lowercase; }
+  .pill.format { color: var(--accent); border-color: var(--accent); }
+  .post-text { font-size: 15px; line-height: 1.55; margin: 8px 0 12px; white-space: pre-wrap; word-wrap: break-word; }
+  .image-brief { font-size: 12px; color: var(--muted); border-left: 2px solid var(--border); padding-left: 10px; margin: 0 0 12px; font-style: italic; }
+  .scores { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .score { font-size: 11px; padding: 3px 8px; border-radius: 4px; background: var(--panel-2); border: 1px solid var(--border); }
+  .score-good { color: var(--good); border-color: var(--good); }
+  .score-ok { color: var(--ok); border-color: var(--ok); }
+  .score-bad { color: var(--bad); border-color: var(--bad); }
+  .reasoning { font-size: 13px; color: var(--muted); margin: 8px 0; }
+  .card-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 8px; }
+  button { background: var(--accent); color: white; border: none; padding: 6px 12px; border-radius: 6px; font: inherit; font-size: 12px; cursor: pointer; }
+  button:hover { opacity: 0.9; }
+  button.ghost { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+  button.ghost:hover { color: var(--text); border-color: var(--text); }
+  details.evidence { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  details.evidence summary { cursor: pointer; padding: 6px 0; }
+  details.evidence ul { margin: 6px 0; padding-left: 18px; }
+  details.evidence a { color: var(--accent); }
+  .empty { padding: 40px; text-align: center; color: var(--muted); background: var(--panel); border-radius: 10px; }
+  .intel { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+  @media (max-width: 720px) { .intel { grid-template-columns: 1fr; } }
+  .intel-panel { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+  .intel-panel h3 { margin: 0 0 8px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .intel-panel li { margin: 4px 0; font-size: 13px; }
+  .intel-panel .num { color: var(--accent); font-weight: 600; }
+  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--good); color: white; padding: 10px 18px; border-radius: 8px; opacity: 0; transition: opacity 0.2s; pointer-events: none; }
+  .toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Filler Post Studio</h1>
+    <div class="meta">
+      Target: <strong>@AggTrade_XYZ</strong>  ·
+      Competitors: @SushiSwap, @Morpho  ·
+      Generated 5/12/2026, 12:45:12 PM
+    </div>
+  </div>
+  <div class="meta">27 candidates</div>
+</header>
+
+<div class="container">
+
+  <div class="intel">
+    <div class="intel-panel">
+      <h3>Top Hooks Mined</h3>
+      <ul><li><span class="num">2×</span> collaboration-spotlight — Highlighting partnerships or collaborations with specific entities to bolster credibility.</li><li><span class="num">3×</span> early-adopter-benefits — Highlighting special perks or multipliers for early users to incentivize engagement.</li><li><span class="num">2×</span> competitive-comparisons — Emphasizing distinctive features that set the service apart from competitors.</li><li><span class="num">1×</span> three-things-list — Presenting a list of three related developments or achievements to emphasize progress and engagement.</li><li><span class="num">1×</span> question-first — Starting with a provocative or engaging question to draw readers&#39; curiosity towards the response or insight shared.</li></ul>
+    </div>
+    <div class="intel-panel">
+      <h3>Hot Topics</h3>
+      <ul><li><span class="num">2×</span> educational-content (avg eng 162)</li><li><span class="num">2×</span> decentralized-finance (avg eng 156)</li></ul>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <label for="filter-format">Format</label>
+    <select id="filter-format">
+      <option value="">all</option>
+      <option value="hook">hook</option><option value="hot-take">hot-take</option><option value="micro-framework">micro-framework</option><option value="observation">observation</option><option value="one-liner">one-liner</option><option value="question">question</option>
+    </select>
+    <label for="filter-theme">Theme</label>
+    <select id="filter-theme">
+      <option value="">all</option>
+      <option value="community-building">community-building</option><option value="decentralized-finance">decentralized-finance</option><option value="trading-education">trading-education</option><option value="trading-experience">trading-experience</option><option value="trading-features">trading-features</option><option value="trading-goals">trading-goals</option><option value="trading-options">trading-options</option><option value="trading-potential">trading-potential</option><option value="trading-strategy">trading-strategy</option><option value="trading-tools">trading-tools</option><option value="trading-trends">trading-trends</option><option value="user-experience">user-experience</option><option value="yield-strategy">yield-strategy</option>
+    </select>
+    <label for="sort">Sort</label>
+    <select id="sort">
+      <option value="composite">composite</option>
+      <option value="quality">quality</option>
+      <option value="brandFit">brand fit</option>
+      <option value="expectedEngagement">expected engagement</option>
+    </select>
+    <label><input type="checkbox" id="hide-backup"> hide backup</label>
+    <span class="chip" id="count-chip">27 shown</span>
+  </div>
+
+  <div id="cards"></div>
+
+</div>
+
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+const DATA = {"candidates":[{"id":"cand_mp2ar877_14","tier":"hero","rank":1,"text":"Why stick to one tool when you can have them all? ⚒️ AggTrade combines swaps, lending, borrowing, and perps — all in one place!","format":"one-liner","theme":"trading-tools","scores":{"quality":0.9,"brandFit":0.919496855345912,"expectedEngagement":0.7,"plagiarismRisk":0,"effort":0.2967857142857143,"composite":0.8601956424079066},"reasoning":"This presents AggTrade’s versatility effectively while maintaining an engaging and informative tone.","sourcePatternIds":["hook:competitive-comparisons"],"sourceEvidence":[{"tweetId":"2053928427435037041","handle":"SushiSwap","excerpt":"Sushi Perps v2 is live now. Powered by @HyperliquidX Faster. Cleaner. Built around how you actually ","url":"https://x.com/SushiSwap/status/2053928427435037041","metric":"168 likes, 21 RTs"},{"tweetId":"2040827517125251141","handle":"SushiSwap","excerpt":"Farming is always better on Sushi. Perps are live. Start farming. https://t.co/yWRyUr8b7Z","url":"https://x.com/SushiSwap/status/2040827517125251141","metric":"59 likes, 4 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_4","tier":"hero","rank":2,"text":"Introducing seamless swaps on AggTrade! 💨 Bid adieu to high fees and long waits. Experience trading like never before!","format":"observation","theme":"user-experience","scores":{"quality":0.9,"brandFit":0.83937106918239,"expectedEngagement":0.8,"plagiarismRisk":0,"effort":0.35250000000000004,"composite":0.8545927672955975},"reasoning":"The delivery is lively and encourages users to take action, embodying AggTrade's innovative spirit.","sourcePatternIds":["format:announcement-update"],"sourceEvidence":[{"tweetId":"2053928427435037041","handle":"SushiSwap","excerpt":"Sushi Perps v2 is live now. Powered by @HyperliquidX Faster. Cleaner. Built around how you actually ","url":"https://x.com/SushiSwap/status/2053928427435037041","metric":"168 likes, 21 RTs"},{"tweetId":"2041239610290778158","handle":"SushiSwap","excerpt":"hyperliquid traders discovering sushi perps point season https://t.co/ULiiep29XA","url":"https://x.com/SushiSwap/status/2041239610290778158","metric":"127 likes, 10 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_13","tier":"hero","rank":3,"text":"The world of DeFi keeps evolving, but with AggTrade, you’ll always be ahead! 🏁 What’s your DeFi prediction for the next big trend?","format":"question","theme":"decentralized-finance","scores":{"quality":0.8,"brandFit":0.929559748427673,"expectedEngagement":0.8,"plagiarismRisk":0,"effort":0.30392857142857144,"composite":0.8519970799640612},"reasoning":"This invites the audience to participate in a forward-looking discussion, aligning with the innovative tone.","sourcePatternIds":["hook:question-first"],"sourceEvidence":[{"tweetId":"2051273330934665455","handle":"Morpho","excerpt":"RT @OpenCover: 🏆 A month after launch, 15+ Covered Vaults are live across @Ethereum, @Optimism, @Ba","url":"https://x.com/Morpho/status/2051273330934665455","metric":"28 likes, 7 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_10","tier":"hero","rank":4,"text":"Web3 innovation is like a game of chess — anticipating moves is key! ♟️ Are you ready to strategize your next trade with AggTrade?","format":"question","theme":"trading-strategy","scores":{"quality":0.8,"brandFit":0.8670440251572328,"expectedEngagement":0.7,"plagiarismRisk":0,"effort":0.30214285714285716,"composite":0.8165467205750225},"reasoning":"This uses a clever analogy to engage users in thinking about strategy, consistent with the playful tone.","sourcePatternIds":["hook:question-first"],"sourceEvidence":[{"tweetId":"2051273330934665455","handle":"Morpho","excerpt":"RT @OpenCover: 🏆 A month after launch, 15+ Covered Vaults are live across @Ethereum, @Optimism, @Ba","url":"https://x.com/Morpho/status/2051273330934665455","metric":"28 likes, 7 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_23","tier":"hero","rank":5,"text":"What’s cooler than your average DeFi swap? 🌟 How about perps? Dive into the game-changing features on AggTrade!","format":"hot-take","theme":"trading-trends","scores":{"quality":0.9,"brandFit":0.7617610062893082,"expectedEngagement":0.7,"plagiarismRisk":0,"effort":0.34,"composite":0.816440251572327},"reasoning":"This emphasizes excitement about new features while promoting user exploration of AggTrade.","sourcePatternIds":["hook:early-adopter-benefits"],"sourceEvidence":[{"tweetId":"2039789742233936354","handle":"SushiSwap","excerpt":"Sushi Perps are LIVE Powered by @HyperliquidX Early traders get boosted Sushi point multipliers http","url":"https://x.com/SushiSwap/status/2039789742233936354","metric":"905 likes, 140 RTs"},{"tweetId":"2042327721376690438","handle":"SushiSwap","excerpt":"Trade perps, earn points. Only on Sushi Early traders still qualify for a multiplier. https://t.co/b","url":"https://x.com/SushiSwap/status/2042327721376690438","metric":"62 likes, 9 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_16","tier":"hero","rank":6,"text":"Ever wonder how perps can boost your trading strategy? 📈 Discover the magic of AggTrade where innovation meets simplicity.","format":"hook","theme":"trading-strategy","scores":{"quality":0.8,"brandFit":0.849433962264151,"expectedEngagement":0.7,"plagiarismRisk":0,"effort":0.28964285714285715,"composite":0.8133942048517521},"reasoning":"The post promotes exploration and curiosity around trading strategies while keeping the engaging tone.","sourcePatternIds":["topic:decentralized-finance"],"sourceEvidence":[{"tweetId":"2053755636400242730","handle":"Morpho","excerpt":"RT @MerlinEgalite: The ability to create earn &amp; borrow products will become so commoditized that","url":"https://x.com/Morpho/status/2053755636400242730","metric":"177 likes, 11 RTs"},{"tweetId":"2051684319781929409","handle":"Morpho","excerpt":"RT @MerlinEgalite: Wrote a piece on what I think is one of the most underrated security issues in De","url":"https://x.com/Morpho/status/2051684319781929409","metric":"70 likes, 10 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_21","tier":"hero","rank":7,"text":"In the world of DeFi, simplicity is the ultimate sophistication! 🖌️ Discover how AggTrade streamlines trading like a pro.","format":"observation","theme":"trading-experience","scores":{"quality":0.8,"brandFit":0.8469182389937108,"expectedEngagement":0.7,"plagiarismRisk":0,"effort":0.28785714285714287,"composite":0.8129438454627134},"reasoning":"This statement highlights user-centric design while showcasing AggTrade’s innovative focus.","sourcePatternIds":["angle:user-centric-improvements"],"sourceEvidence":[{"tweetId":"2053928427435037041","handle":"SushiSwap","excerpt":"Sushi Perps v2 is live now. Powered by @HyperliquidX Faster. Cleaner. Built around how you actually ","url":"https://x.com/SushiSwap/status/2053928427435037041","metric":"168 likes, 21 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_19","tier":"backup","rank":8,"text":"Perps are changing the game! 🔄 Ready to embrace this evolution with AggTrade? The journey starts now!","format":"hot-take","theme":"trading-trends","scores":{"quality":0.8,"brandFit":0.8566037735849057,"expectedEngagement":0.7,"plagiarismRisk":0,"effort":0.3221428571428572,"composite":0.8119366576819407},"reasoning":"The enthusiastic call to action aligns with the voice’s innovative spirit and encourages user engagement.","sourcePatternIds":["hook:early-adopter-benefits"],"sourceEvidence":[{"tweetId":"2039789742233936354","handle":"SushiSwap","excerpt":"Sushi Perps are LIVE Powered by @HyperliquidX Early traders get boosted Sushi point multipliers http","url":"https://x.com/SushiSwap/status/2039789742233936354","metric":"905 likes, 140 RTs"},{"tweetId":"2042327721376690438","handle":"SushiSwap","excerpt":"Trade perps, earn points. Only on Sushi Early traders still qualify for a multiplier. https://t.co/b","url":"https://x.com/SushiSwap/status/2042327721376690438","metric":"62 likes, 9 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_9","tier":"backup","rank":9,"text":"Ready to take your swaps to the next level? 🔝 Dive into the world of AggTrade and experience unparalleled efficiency!","format":"observation","theme":"user-experience","scores":{"quality":0.8,"brandFit":0.7768553459119497,"expectedEngagement":0.7,"plagiarismRisk":0,"effort":0.2807142857142857,"composite":0.7961424079065589},"reasoning":"This observation promotes AggTrade's improvements focused on user efficiency while maintaining an upbeat tone.","sourcePatternIds":["angle:user-centric-improvements"],"sourceEvidence":[{"tweetId":"2053928427435037041","handle":"SushiSwap","excerpt":"Sushi Perps v2 is live now. Powered by @HyperliquidX Faster. Cleaner. Built around how you actually ","url":"https://x.com/SushiSwap/status/2053928427435037041","metric":"168 likes, 21 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_29","tier":"backup","rank":10,"text":"In the DeFi universe, staying informed is half the battle. 🔍 Ready to equip yourself with AggTrade’s top-tier tools?","format":"observation","theme":"trading-education","scores":{"quality":0.8,"brandFit":0.8343396226415095,"expectedEngagement":0.6,"plagiarismRisk":0,"effort":0.2789285714285714,"composite":0.7906920485175202},"reasoning":"This emphasizes the continuous learning aspect of DeFi while promoting AggTrade’s features in an engaging way.","sourcePatternIds":["topic:educational-content"],"sourceEvidence":[{"tweetId":"2041740411773899250","handle":"SushiSwap","excerpt":"RT @alexmccurryo: Building Sushi in Public — Episode 5 out now on YouTube https://t.co/qwVGupfhh6","url":"https://x.com/SushiSwap/status/2041740411773899250","metric":"103 likes, 25 RTs"},{"tweetId":"2049945698880074039","handle":"SushiSwap","excerpt":"RT @alexmccurryo: Building Sushi in Public — Episode 7 out now on YouTube https://t.co/PUOA9FQpOT","url":"https://x.com/SushiSwap/status/2049945698880074039","metric":"97 likes, 16 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_11","tier":"backup","rank":11,"text":"Perps are not just a feature; they are your ticket to the future of DeFi on AggTrade! 🎟️ Have you explored them yet?","format":"micro-framework","theme":"trading-features","scores":{"quality":0.7,"brandFit":0.8943396226415095,"expectedEngagement":0.6,"plagiarismRisk":0,"effort":0.2789285714285714,"composite":0.7756920485175202},"reasoning":"This encourages exploration of perps while leveraging a catchy metaphor to captivate the audience.","sourcePatternIds":["hook:question-first"],"sourceEvidence":[{"tweetId":"2051273330934665455","handle":"Morpho","excerpt":"RT @OpenCover: 🏆 A month after launch, 15+ Covered Vaults are live across @Ethereum, @Optimism, @Ba","url":"https://x.com/Morpho/status/2051273330934665455","metric":"28 likes, 7 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_15","tier":"backup","rank":12,"text":"Trading should feel like a game, not a chore! 🎮 With AggTrade, you trade perps and swaps effortlessly. Who’s ready to join the fun?","format":"hot-take","theme":"trading-experience","scores":{"quality":0.7,"brandFit":0.9320754716981132,"expectedEngagement":0.6,"plagiarismRisk":0,"effort":0.3757142857142857,"composite":0.7754474393530997},"reasoning":"This invokes a sense of enjoyment and excitement around trading, ideal for inspiring engagement.","sourcePatternIds":["hook:early-adopter-benefits"],"sourceEvidence":[{"tweetId":"2039789742233936354","handle":"SushiSwap","excerpt":"Sushi Perps are LIVE Powered by @HyperliquidX Early traders get boosted Sushi point multipliers http","url":"https://x.com/SushiSwap/status/2039789742233936354","metric":"905 likes, 140 RTs"},{"tweetId":"2042327721376690438","handle":"SushiSwap","excerpt":"Trade perps, earn points. Only on Sushi Early traders still qualify for a multiplier. https://t.co/b","url":"https://x.com/SushiSwap/status/2042327721376690438","metric":"62 likes, 9 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_26","tier":"backup","rank":13,"text":"Is your trading experience feeling outdated? 🕰️ Upgrade to AggTrade where innovation and ease collide!","format":"hot-take","theme":"trading-experience","scores":{"quality":0.7,"brandFit":0.799119496855346,"expectedEngagement":0.6,"plagiarismRisk":0,"effort":0.25392857142857145,"composite":0.7543870170709793},"reasoning":"This statement invites user reflection while promoting AggTrade’s modern approach to DeFi.","sourcePatternIds":["angle:user-centric-improvements"],"sourceEvidence":[{"tweetId":"2053928427435037041","handle":"SushiSwap","excerpt":"Sushi Perps v2 is live now. Powered by @HyperliquidX Faster. Cleaner. Built around how you actually ","url":"https://x.com/SushiSwap/status/2053928427435037041","metric":"168 likes, 21 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_2","tier":"backup","rank":14,"text":"Perps are the new cool kid on the block! 🆒 Ready to level up your trades on AggTrade? The future of DeFi starts here!","format":"hot-take","theme":"trading-trends","scores":{"quality":0.8,"brandFit":0.7168553459119498,"expectedEngagement":0.6,"plagiarismRisk":0,"effort":0.35071428571428576,"composite":0.754142407906559},"reasoning":"This post creates excitement about the latest trend in DeFi while inviting users to join in, matching the voice's tone.","sourcePatternIds":["hook:early-adopter-benefits"],"sourceEvidence":[{"tweetId":"2039789742233936354","handle":"SushiSwap","excerpt":"Sushi Perps are LIVE Powered by @HyperliquidX Early traders get boosted Sushi point multipliers http","url":"https://x.com/SushiSwap/status/2039789742233936354","metric":"905 likes, 140 RTs"},{"tweetId":"2042327721376690438","handle":"SushiSwap","excerpt":"Trade perps, earn points. Only on Sushi Early traders still qualify for a multiplier. https://t.co/b","url":"https://x.com/SushiSwap/status/2042327721376690438","metric":"62 likes, 9 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_1","tier":"backup","rank":15,"text":"Is your DeFi experience feeling scattered? ⚡️ Fear not! The solution is here with AggTrade — your one-stop shop for swaps and perps!","format":"hot-take","theme":"decentralized-finance","scores":{"quality":0.6,"brandFit":0.8720754716981133,"expectedEngagement":0.7,"plagiarismRisk":0,"effort":0.3757142857142857,"composite":0.7504474393530998},"reasoning":"This taps into the frustration of fragmented DeFi while promoting AggTrade’s comprehensive offerings, fitting the engaging and informative tone.","sourcePatternIds":["hook:competitive-comparisons"],"sourceEvidence":[{"tweetId":"2053928427435037041","handle":"SushiSwap","excerpt":"Sushi Perps v2 is live now. Powered by @HyperliquidX Faster. Cleaner. Built around how you actually ","url":"https://x.com/SushiSwap/status/2053928427435037041","metric":"168 likes, 21 RTs"},{"tweetId":"2040827517125251141","handle":"SushiSwap","excerpt":"Farming is always better on Sushi. Perps are live. Start farming. https://t.co/yWRyUr8b7Z","url":"https://x.com/SushiSwap/status/2040827517125251141","metric":"59 likes, 4 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_25","tier":"backup","rank":16,"text":"Perps are not just the next big thing; they’re essential for your trading strategy! 🔑 Unlock new potential with AggTrade.","format":"observation","theme":"trading-strategy","scores":{"quality":0.7,"brandFit":0.7869182389937107,"expectedEngagement":0.6,"plagiarismRisk":0,"effort":0.28785714285714287,"composite":0.7479438454627133},"reasoning":"This emphasizes the importance of perps while maintaining an engaging and informative tone.","sourcePatternIds":["format:one-line-observation"],"sourceEvidence":[{"tweetId":"2051914540078543137","handle":"Morpho","excerpt":"RT @PaulFrambot: Spending two weeks in Singapore, Hong Kong, Tokyo and Seoul. One thing I’m apprecia","url":"https://x.com/Morpho/status/2051914540078543137","metric":"192 likes, 6 RTs"},{"tweetId":"2051339603584446687","handle":"Morpho","excerpt":"RT @MerlinEgalite: \"Lending is a product that never has a demand problem.\" True. What's capping the ","url":"https://x.com/Morpho/status/2051339603584446687","metric":"55 likes, 4 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_20","tier":"backup","rank":17,"text":"Is your DeFi toolkit a bit too basic? ✏️ Time to level up with AggTrade! Perks, swaps, and perps — it’s all here.","format":"question","theme":"trading-tools","scores":{"quality":0.7,"brandFit":0.7642767295597485,"expectedEngagement":0.6,"plagiarismRisk":0,"effort":0.3417857142857143,"composite":0.7368906109613658},"reasoning":"This post invites the audience to evaluate their trading tools and promotes AggTrade’s comprehensive offerings.","sourcePatternIds":["hook:question-first"],"sourceEvidence":[{"tweetId":"2051273330934665455","handle":"Morpho","excerpt":"RT @OpenCover: 🏆 A month after launch, 15+ Covered Vaults are live across @Ethereum, @Optimism, @Ba","url":"https://x.com/Morpho/status/2051273330934665455","metric":"28 likes, 7 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar876_0","tier":"backup","rank":18,"text":"What if trading perps felt like wielding a katana? ⚔️ Precision, speed, and finesse! AggTrade brings those qualities to your DeFi experience.","format":"question","theme":"trading-experience","scores":{"quality":0.7,"brandFit":0.8347169811320755,"expectedEngagement":0.5,"plagiarismRisk":0,"effort":0.3917857142857143,"composite":0.7295006738544475},"reasoning":"This post uses playful imagery to engage the audience and aligns with the emphasis on innovation in DeFi, leveraging the question format.","sourcePatternIds":["hook:question-first"],"sourceEvidence":[{"tweetId":"2051273330934665455","handle":"Morpho","excerpt":"RT @OpenCover: 🏆 A month after launch, 15+ Covered Vaults are live across @Ethereum, @Optimism, @Ba","url":"https://x.com/Morpho/status/2051273330934665455","metric":"28 likes, 7 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_7","tier":"backup","rank":19,"text":"Curious how perps can spice up your trading game? 🍾 Discover the potential on AggTrade and join the revolution!","format":"question","theme":"trading-potential","scores":{"quality":0.7,"brandFit":0.7017610062893083,"expectedEngagement":0.6,"plagiarismRisk":0,"effort":0.27,"composite":0.7284402515723271},"reasoning":"This compels users to explore new features while maintaining a playful and engaging tone.","sourcePatternIds":["hook:early-adopter-benefits"],"sourceEvidence":[{"tweetId":"2039789742233936354","handle":"SushiSwap","excerpt":"Sushi Perps are LIVE Powered by @HyperliquidX Early traders get boosted Sushi point multipliers http","url":"https://x.com/SushiSwap/status/2039789742233936354","metric":"905 likes, 140 RTs"},{"tweetId":"2042327721376690438","handle":"SushiSwap","excerpt":"Trade perps, earn points. Only on Sushi Early traders still qualify for a multiplier. https://t.co/b","url":"https://x.com/SushiSwap/status/2042327721376690438","metric":"62 likes, 9 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_28","tier":"backup","rank":20,"text":"Imagine a world where your trading goals are within reach… 🌈 That’s the essence of AggTrade! What’s your next big move?","format":"question","theme":"trading-goals","scores":{"quality":0.7,"brandFit":0.7818867924528302,"expectedEngagement":0.5,"plagiarismRisk":0,"effort":0.28428571428571425,"composite":0.7270431266846362},"reasoning":"This invokes a sense of aspiration and curiosity, enticing users to share their trading aspirations.","sourcePatternIds":["hook:question-first"],"sourceEvidence":[{"tweetId":"2051273330934665455","handle":"Morpho","excerpt":"RT @OpenCover: 🏆 A month after launch, 15+ Covered Vaults are live across @Ethereum, @Optimism, @Ba","url":"https://x.com/Morpho/status/2051273330934665455","metric":"28 likes, 7 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_18","tier":"backup","rank":21,"text":"How do you maximize your yield in DeFi? 🚀 Explore AggTrade’s features and become a trading pro!","format":"micro-framework","theme":"yield-strategy","scores":{"quality":0.7,"brandFit":0.6615094339622641,"expectedEngagement":0.5,"plagiarismRisk":0,"effort":0.24142857142857144,"composite":0.7012345013477089},"reasoning":"This encourages users to explore features while implying value and expertise, matching the tone.","sourcePatternIds":["hook:three-things-list"],"sourceEvidence":[{"tweetId":"2052373295639429615","handle":"Morpho","excerpt":"Morpho Effect: April 2026 🔹 Morpho's fixed-rate protocol has a name: Morpho Midnight 🔹 Morpho is F","url":"https://x.com/Morpho/status/2052373295639429615","metric":"42 likes, 4 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_12","tier":"backup","rank":22,"text":"If AggTrade were an animal, it would be a lion — fierce, innovative, and ready to conquer the DeFi jungle! 🦁 What do you think?","format":"question","theme":"community-building","scores":{"quality":0.6,"brandFit":0.8020125786163522,"expectedEngagement":0.5,"plagiarismRisk":0,"effort":0.2985714285714286,"composite":0.7006460017969453},"reasoning":"This engages the audience with fun imagery and seeks community input, fostering interaction.","sourcePatternIds":["hook:question-first"],"sourceEvidence":[{"tweetId":"2051273330934665455","handle":"Morpho","excerpt":"RT @OpenCover: 🏆 A month after launch, 15+ Covered Vaults are live across @Ethereum, @Optimism, @Ba","url":"https://x.com/Morpho/status/2051273330934665455","metric":"28 likes, 7 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_30","tier":"backup","rank":23,"text":"Rediscover the art of trading with AggTrade! 🎨 A platform where creativity meets intuition. What are your trading tactics?","format":"question","theme":"trading-strategy","scores":{"quality":0.7,"brandFit":0.669433962264151,"expectedEngagement":0.5,"plagiarismRisk":0,"effort":0.35964285714285715,"composite":0.6913942048517521},"reasoning":"This utilizes an inviting question about creativity in trading while encouraging community interaction.","sourcePatternIds":["hook:question-first"],"sourceEvidence":[{"tweetId":"2051273330934665455","handle":"Morpho","excerpt":"RT @OpenCover: 🏆 A month after launch, 15+ Covered Vaults are live across @Ethereum, @Optimism, @Ba","url":"https://x.com/Morpho/status/2051273330934665455","metric":"28 likes, 7 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_6","tier":"backup","rank":24,"text":"Who says DeFi can’t be fun? 😄 With AggTrade's all-in-one platform, trading is not just about numbers… it's about enjoying the ride!","format":"one-liner","theme":"decentralized-finance","scores":{"quality":0.6,"brandFit":0.7520754716981133,"expectedEngagement":0.5,"plagiarismRisk":0,"effort":0.3057142857142857,"composite":0.6874474393530997},"reasoning":"This statement emphasizes the enjoyment of DeFi while keeping the tone playful and engaging.","sourcePatternIds":["format:one-line-observation"],"sourceEvidence":[{"tweetId":"2051914540078543137","handle":"Morpho","excerpt":"RT @PaulFrambot: Spending two weeks in Singapore, Hong Kong, Tokyo and Seoul. One thing I’m apprecia","url":"https://x.com/Morpho/status/2051914540078543137","metric":"192 likes, 6 RTs"},{"tweetId":"2051339603584446687","handle":"Morpho","excerpt":"RT @MerlinEgalite: \"Lending is a product that never has a demand problem.\" True. What's capping the ","url":"https://x.com/Morpho/status/2051339603584446687","metric":"55 likes, 4 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_27","tier":"backup","rank":25,"text":"Are you ready to swap like a pro? 🔄 Join the DeFi revolution with AggTrade and take your trades to the next level!","format":"micro-framework","theme":"trading-tools","scores":{"quality":0.6,"brandFit":0.709308176100629,"expectedEngagement":0.5,"plagiarismRisk":0,"effort":0.27535714285714286,"composite":0.679791329739443},"reasoning":"This promotes user engagement by inviting them to elevate their trading experience in a playful manner.","sourcePatternIds":["angle:user-centric-improvements"],"sourceEvidence":[{"tweetId":"2053928427435037041","handle":"SushiSwap","excerpt":"Sushi Perps v2 is live now. Powered by @HyperliquidX Faster. Cleaner. Built around how you actually ","url":"https://x.com/SushiSwap/status/2053928427435037041","metric":"168 likes, 21 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_17","tier":"backup","rank":26,"text":"AggTrade is like a DeFi buffet — all your favorite trading options just within reach! 🍽️ Dig in and enjoy the spread.","format":"one-liner","theme":"trading-options","scores":{"quality":0.6,"brandFit":0.7768553459119497,"expectedEngagement":0.4,"plagiarismRisk":0,"effort":0.2807142857142857,"composite":0.6761424079065589},"reasoning":"This culinary analogy makes trading feel accessible and fun, fitting the playful voice effectively.","sourcePatternIds":["format:one-line-observation"],"sourceEvidence":[{"tweetId":"2051914540078543137","handle":"Morpho","excerpt":"RT @PaulFrambot: Spending two weeks in Singapore, Hong Kong, Tokyo and Seoul. One thing I’m apprecia","url":"https://x.com/Morpho/status/2051914540078543137","metric":"192 likes, 6 RTs"},{"tweetId":"2051339603584446687","handle":"Morpho","excerpt":"RT @MerlinEgalite: \"Lending is a product that never has a demand problem.\" True. What's capping the ","url":"https://x.com/Morpho/status/2051339603584446687","metric":"55 likes, 4 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"},{"id":"cand_mp2ar877_22","tier":"backup","rank":27,"text":"Why choose between efficiency and innovation? 🤔 With AggTrade, you can have both! Trade smarter with our DeFi solutions.","format":"one-liner","theme":"user-experience","scores":{"quality":0.6,"brandFit":0.7244025157232705,"expectedEngagement":0.5,"plagiarismRisk":0,"effort":0.3560714285714286,"composite":0.6754934860736748},"reasoning":"This statement contrasts common issues in trading with the benefits of AggTrade, maintaining an engaging tone.","sourcePatternIds":["hook:competitive-comparisons"],"sourceEvidence":[{"tweetId":"2053928427435037041","handle":"SushiSwap","excerpt":"Sushi Perps v2 is live now. Powered by @HyperliquidX Faster. Cleaner. Built around how you actually ","url":"https://x.com/SushiSwap/status/2053928427435037041","metric":"168 likes, 21 RTs"},{"tweetId":"2040827517125251141","handle":"SushiSwap","excerpt":"Farming is always better on Sushi. Perps are live. Start farming. https://t.co/yWRyUr8b7Z","url":"https://x.com/SushiSwap/status/2040827517125251141","metric":"59 likes, 4 RTs"}],"createdAt":"2026-05-12T07:16:07.362Z"}],"insights":{"generatedAt":"2026-05-12T07:15:12.977Z","target":"AggTrade_XYZ","competitors":["SushiSwap","Morpho"],"topHooks":[{"signature":"collaboration-spotlight","description":"Highlighting partnerships or collaborations with specific entities to bolster credibility.","avgEngagement":739,"frequency":2},{"signature":"early-adopter-benefits","description":"Highlighting special perks or multipliers for early users to incentivize engagement.","avgEngagement":500,"frequency":3},{"signature":"competitive-comparisons","description":"Emphasizing distinctive features that set the service apart from competitors.","avgEngagement":158,"frequency":2},{"signature":"three-things-list","description":"Presenting a list of three related developments or achievements to emphasize progress and engagement.","avgEngagement":55,"frequency":1},{"signature":"question-first","description":"Starting with a provocative or engaging question to draw readers' curiosity towards the response or insight shared.","avgEngagement":48,"frequency":1}],"topFormats":[{"signature":"rt-and-comment","description":"Retweeting others' content with a comment that adds value or perspective to the original message.","avgEngagement":265,"frequency":2},{"signature":"announcement-update","description":"Making announcements about new features or updates in a concise, impactful manner.","avgEngagement":205,"frequency":2},{"signature":"one-line-observation","description":"A concise statement reflecting an observation or insight related to the industry or product.","avgEngagement":144,"frequency":2},{"signature":"how-to-participate","description":"Providing a clear set of actions or steps for participation in a program or initiative.","avgEngagement":66,"frequency":2}],"hotTopics":[{"topic":"educational-content","mentions":2,"avgEngagement":162},{"topic":"decentralized-finance","mentions":2,"avgEngagement":156}],"postingCadence":[{"handle":"SushiSwap","postsPerWeek":3.6,"medianHourUTC":19},{"handle":"Morpho","postsPerWeek":14,"medianHourUTC":12}],"patterns":[{"id":"hook:collaboration-spotlight","kind":"hook","signature":"collaboration-spotlight","description":"Highlighting partnerships or collaborations with specific entities to bolster credibility.","sourceTweetIds":["2039789742233936354","2040514854281212126"],"competitorHandles":["SushiSwap"],"avgEngagement":739,"frequency":2},{"id":"hook:early-adopter-benefits","kind":"hook","signature":"early-adopter-benefits","description":"Highlighting special perks or multipliers for early users to incentivize engagement.","sourceTweetIds":["2039789742233936354","2042327721376690438","2052537408374136977"],"competitorHandles":["SushiSwap"],"avgEngagement":500,"frequency":3},{"id":"format:rt-and-comment","kind":"format","signature":"rt-and-comment","description":"Retweeting others' content with a comment that adds value or perspective to the original message.","sourceTweetIds":["2050153294606254456","2051292658128031873"],"competitorHandles":["Morpho"],"avgEngagement":265,"frequency":2},{"id":"format:announcement-update","kind":"format","signature":"announcement-update","description":"Making announcements about new features or updates in a concise, impactful manner.","sourceTweetIds":["2053928427435037041","2041239610290778158"],"competitorHandles":["SushiSwap"],"avgEngagement":205,"frequency":2},{"id":"angle:build-in-public-honesty","kind":"angle","signature":"build-in-public-honesty","description":"Sharing updates about ongoing projects or hiring efforts to showcase transparency and growth.","sourceTweetIds":["2051893560094466058"],"competitorHandles":["Morpho"],"avgEngagement":314,"frequency":1},{"id":"topic:educational-content","kind":"topic","signature":"educational-content","description":"Promoting educational resources, such as videos or podcasts, to engage users and provide value.","sourceTweetIds":["2041740411773899250","2049945698880074039"],"competitorHandles":["SushiSwap"],"avgEngagement":162,"frequency":2},{"id":"hook:competitive-comparisons","kind":"hook","signature":"competitive-comparisons","description":"Emphasizing distinctive features that set the service apart from competitors.","sourceTweetIds":["2053928427435037041","2040827517125251141"],"competitorHandles":["SushiSwap"],"avgEngagement":158,"frequency":2},{"id":"topic:decentralized-finance","kind":"topic","signature":"decentralized-finance","description":"Discussing developments, security concerns, or innovations within decentralized finance platforms.","sourceTweetIds":["2053755636400242730","2051684319781929409"],"competitorHandles":["Morpho"],"avgEngagement":156,"frequency":2},{"id":"angle:user-centric-improvements","kind":"angle","signature":"user-centric-improvements","description":"Focusing on how new features improve the user experience and making trading more efficient.","sourceTweetIds":["2053928427435037041"],"competitorHandles":["SushiSwap"],"avgEngagement":240,"frequency":1},{"id":"format:one-line-observation","kind":"format","signature":"one-line-observation","description":"A concise statement reflecting an observation or insight related to the industry or product.","sourceTweetIds":["2051914540078543137","2051339603584446687"],"competitorHandles":["Morpho"],"avgEngagement":144,"frequency":2},{"id":"angle:community-building","kind":"angle","signature":"community-building","description":"Encouraging sharing and interaction within the community, often by showcasing user-generated content.","sourceTweetIds":["2040515209631043924","2052537408374136977"],"competitorHandles":["SushiSwap"],"avgEngagement":75,"frequency":2},{"id":"format:how-to-participate","kind":"format","signature":"how-to-participate","description":"Providing a clear set of actions or steps for participation in a program or initiative.","sourceTweetIds":["2049899992437944428","2052537408374136977"],"competitorHandles":["SushiSwap"],"avgEngagement":66,"frequency":2},{"id":"hook:three-things-list","kind":"hook","signature":"three-things-list","description":"Presenting a list of three related developments or achievements to emphasize progress and engagement.","sourceTweetIds":["2052373295639429615"],"competitorHandles":["Morpho"],"avgEngagement":55,"frequency":1},{"id":"hook:question-first","kind":"hook","signature":"question-first","description":"Starting with a provocative or engaging question to draw readers' curiosity towards the response or insight shared.","sourceTweetIds":["2051273330934665455"],"competitorHandles":["Morpho"],"avgEngagement":48,"frequency":1}]},"voice":{"handle":"AggTrade_XYZ","sampleSize":5,"avgTweetLength":159,"sentenceLengthP50":19,"emojiRate":0.8,"hashtagRate":0.6,"punctuationFingerprint":{"ellipsis":0,"emDash":0.4,"questionMark":0.2,"exclamation":0.6},"vocabulary":{"topNouns":["perps","katana","defi","aggtrade","aggregator","swaps","one","diesel","live","trade","perpetuals","directly"],"topVerbs":["lending","borrowing","try","introducing","fragmented","fixes","use"]},"hookPatterns":["Introducing","What other animals do Web3 companies use?","Perps are now LIVE"],"taboo":["never uses hashtags","avoids generic motivation"],"styleNotes":"The voice is engaging and informative, emphasizing innovation in DeFi with a slightly playful and light-hearted tone.","exampleTweets":[{"id":"2050210902591631680","text":"Perps are now LIVE on AggTrade ⚔️\n\nTrade perpetuals directly on @katana through AggTrade — the DeFi aggregator built for the Katana ecosystem.\n\nSwaps, lending, borrowing, yield, and now perps — all in one place.\n\nTry it now: https://t.co/zUWomSHTNq\n\n#Katana #DeFi #Perps https://t.co/iHKDuqUoGj"},{"id":"1887952719966835107","text":"@1deltaDAO integrates Diesel so @fuel_network traders can swap with the lowest fees and best prices. \n\nLFG! https://t.co/byZdsWttWG"},{"id":"2046923037195546993","text":"Introducing https://t.co/G4xviHRhsF! The All-in-One DeFi Aggregator on @katana \n\nDeFi is fragmented.\n\nSwaps here. Lending there. Perps somewhere else.\n\nAggTrade fixes that. 🧵🧵🧵 https://t.co/rCquSlvyeC"},{"id":"2049119080314228892","text":"gKatana"},{"id":"1888810403737813389","text":"@JupiterExchange has a cat\n@UniswapFND has a unicorn\n@PancakeSwap has a bunny\n\nWhat other animals do Web3 companies use?\n\nWe should have a mascot for Diesel too!"}]}};
+
+function el(tag, attrs, children) {
+  const e = document.createElement(tag);
+  if (attrs) for (const [k, v] of Object.entries(attrs)) {
+    if (k === 'class') e.className = v;
+    else if (k === 'html') e.innerHTML = v;
+    else e.setAttribute(k, v);
+  }
+  if (children) for (const c of children) if (c) e.append(c);
+  return e;
+}
+
+function pct(n) { return Math.round(n * 100); }
+
+function scoreCls(v, invert) {
+  const x = invert ? 1 - v : v;
+  if (x >= 0.75) return 'score score-good';
+  if (x >= 0.5) return 'score score-ok';
+  return 'score score-bad';
+}
+
+function buildCard(c) {
+  const card = el('div', { class: 'card ' + c.tier });
+
+  const head = el('div', { class: 'card-head' });
+  head.append(
+    el('div', { class: 'left' }, [
+      el('span', { class: 'rank' }, [document.createTextNode('#' + c.rank)]),
+      el('span', { class: 'pill format' }, [document.createTextNode(c.format)]),
+      el('span', { class: 'pill' }, [document.createTextNode(c.theme)]),
+    ]),
+    el('span', { class: 'pill' }, [document.createTextNode(c.tier)])
+  );
+  card.append(head);
+
+  card.append(el('div', { class: 'post-text' }, [document.createTextNode(c.text)]));
+
+  if (c.imageBrief) {
+    card.append(el('div', { class: 'image-brief' }, [document.createTextNode('Image idea: ' + c.imageBrief)]));
+  }
+
+  const scores = el('div', { class: 'scores' });
+  scores.append(
+    el('span', { class: scoreCls(c.scores.composite) }, [document.createTextNode('Composite ' + pct(c.scores.composite))]),
+    el('span', { class: scoreCls(c.scores.quality) }, [document.createTextNode('Quality ' + pct(c.scores.quality))]),
+    el('span', { class: scoreCls(c.scores.brandFit) }, [document.createTextNode('Fit ' + pct(c.scores.brandFit))]),
+    el('span', { class: scoreCls(c.scores.plagiarismRisk, true) }, [document.createTextNode('Risk ' + pct(c.scores.plagiarismRisk))]),
+    el('span', { class: scoreCls(c.scores.effort, true) }, [document.createTextNode('Effort ' + pct(c.scores.effort))]),
+    el('span', { class: scoreCls(c.scores.expectedEngagement) }, [document.createTextNode('Eng ' + pct(c.scores.expectedEngagement))])
+  );
+  card.append(scores);
+
+  if (c.reasoning) {
+    card.append(el('div', { class: 'reasoning' }, [document.createTextNode('Why it lands: ' + c.reasoning)]));
+  }
+
+  const actions = el('div', { class: 'card-actions' });
+  const copyBtn = el('button', {}, [document.createTextNode('Copy')]);
+  copyBtn.onclick = () => {
+    navigator.clipboard.writeText(c.text).then(showToast);
+  };
+  actions.append(copyBtn);
+
+  const tweetUrl = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(c.text);
+  const postBtn = el('a', { href: tweetUrl, target: '_blank', rel: 'noopener' }, [document.createTextNode('Open in X')]);
+  postBtn.className = 'ghost';
+  postBtn.style.cssText = 'text-decoration:none;padding:6px 12px;border-radius:6px;font-size:12px;background:transparent;color:var(--muted);border:1px solid var(--border);';
+  actions.append(postBtn);
+  card.append(actions);
+
+  if (c.sourceEvidence && c.sourceEvidence.length > 0) {
+    const details = el('details', { class: 'evidence' });
+    details.append(el('summary', {}, [document.createTextNode('Source evidence (' + c.sourceEvidence.length + ')')]));
+    const ul = el('ul');
+    for (const ev of c.sourceEvidence) {
+      const li = el('li');
+      const link = el('a', { href: ev.url, target: '_blank', rel: 'noopener' }, [document.createTextNode('@' + ev.handle)]);
+      li.append(link, document.createTextNode(' — "' + ev.excerpt + '..." (' + ev.metric + ')'));
+      ul.append(li);
+    }
+    details.append(ul);
+    card.append(details);
+  }
+
+  return card;
+}
+
+function showToast() {
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1200);
+}
+
+function render() {
+  const format = document.getElementById('filter-format').value;
+  const theme = document.getElementById('filter-theme').value;
+  const sort = document.getElementById('sort').value;
+  const hideBackup = document.getElementById('hide-backup').checked;
+
+  let list = DATA.candidates.slice();
+  if (format) list = list.filter((c) => c.format === format);
+  if (theme) list = list.filter((c) => c.theme === theme);
+  if (hideBackup) list = list.filter((c) => c.tier === 'hero');
+
+  list.sort((a, b) => (b.scores[sort] ?? 0) - (a.scores[sort] ?? 0));
+
+  const root = document.getElementById('cards');
+  root.innerHTML = '';
+
+  const hero = list.filter((c) => c.tier === 'hero');
+  const backup = list.filter((c) => c.tier === 'backup');
+
+  if (hero.length > 0) {
+    root.append(el('div', { class: 'tier-header' }, [document.createTextNode('Hero Tier (' + hero.length + ')')]));
+    for (const c of hero) root.append(buildCard(c));
+  }
+  if (backup.length > 0) {
+    root.append(el('div', { class: 'tier-header' }, [document.createTextNode('Backup Tier (' + backup.length + ')')]));
+    for (const c of backup) root.append(buildCard(c));
+  }
+  if (list.length === 0) root.append(el('div', { class: 'empty' }, [document.createTextNode('No candidates match the filters.')]));
+
+  document.getElementById('count-chip').textContent = list.length + ' shown';
+}
+
+document.getElementById('filter-format').addEventListener('change', render);
+document.getElementById('filter-theme').addEventListener('change', render);
+document.getElementById('sort').addEventListener('change', render);
+document.getElementById('hide-backup').addEventListener('change', render);
+render();
+</script>
+</body>
+</html>

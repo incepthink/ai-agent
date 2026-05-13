@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "msg": "success",
+  "data": {
+    "id": "1303577160234328066",
+    "name": "Sushi.com",
+    "userName": "SushiSwap",
+    "location": "Tokyo, Japan",
+    "url": "https://t.co/NxyGfYppoa",
+    "description": "Multi-chain DEX and aggregator\nSwap: https://t.co/NxyGfYppoa  Join: https://t.co/kbr9dDN5Q2",
+    "entities": {
+      "description": {
+        "urls": [
+          {
+            "display_url": "sushi.com",
+            "expanded_url": "http://www.sushi.com",
+            "indices": [
+              37,
+              60
+            ],
+            "url": "https://t.co/NxyGfYppoa"
+          },
+          {
+            "display_url": "t.me/sushiswaphq",
+            "expanded_url": "https://t.me/sushiswaphq",
+            "indices": [
+              68,
+              91
+            ],
+            "url": "https://t.co/kbr9dDN5Q2"
+          }
+        ]
+      },
+      "url": {
+        "urls": [
+          {
+            "display_url": "sushi.com",
+            "expanded_url": "http://www.sushi.com",
+            "indices": [
+              0,
+              23
+            ],
+            "url": "https://t.co/NxyGfYppoa"
+          }
+        ]
+      }
+    },
+    "protected": false,
+    "isVerified": false,
+    "isBlueVerified": true,
+    "verifiedType": "Business",
+    "followers": 369933,
+    "following": 95,
+    "favouritesCount": 6701,
+    "statusesCount": 6303,
+    "mediaCount": 2082,
+    "createdAt": "2020-09-09T06:13:42.000000Z",
+    "coverPicture": "https://pbs.twimg.com/profile_banners/1303577160234328066/1729524501",
+    "profilePicture": "https://pbs.twimg.com/profile_images/2021693386558722048/9YNuOpXf_normal.jpg",
+    "canDm": true,
+    "affiliatesHighlightedLabel": {},
+    "isAutomated": false,
+    "automatedBy": null,
+    "pinnedTweetIds": [
+      "2053928427435037041"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "handle": "AggTrade_XYZ",
+  "sampleSize": 5,
+  "avgTweetLength": 159,
+  "sentenceLengthP50": 19,
+  "emojiRate": 0.8,
+  "hashtagRate": 0.6,
+  "punctuationFingerprint": {
+    "ellipsis": 0,
+    "emDash": 0.4,
+    "questionMark": 0.2,
+    "exclamation": 0.6
+  },
+  "vocabulary": {
+    "topNouns": [
+      "perps",
+      "katana",
+      "defi",
+      "aggtrade",
+      "aggregator",
+      "swaps",
+      "one",
+      "diesel",
+      "live",
+      "trade",
+      "perpetuals",
+      "directly"
+    ],
+    "topVerbs": [
+      "lending",
+      "borrowing",
+      "try",
+      "introducing",
+      "fragmented",
+      "fixes",
+      "use"
+    ]
+  },
+  "hookPatterns": [
+    "Introducing",
+    "What other animals do Web3 companies use?",
+    "Perps are now LIVE"
+  ],
+  "taboo": [
+    "never uses hashtags",
+    "avoids generic motivation"
+  ],
+  "styleNotes": "The voice is engaging and informative, emphasizing innovation in DeFi with a slightly playful and light-hearted tone.",
+  "exampleTweets": [
+    {
+      "id": "2050210902591631680",
+      "text": "Perps are now LIVE on AggTrade ⚔️\n\nTrade perpetuals directly on @katana through AggTrade — the DeFi aggregator built for the Katana ecosystem.\n\nSwaps, lending, borrowing, yield, and now perps — all in one place.\n\nTry it now: https://t.co/zUWomSHTNq\n\n#Katana #DeFi #Perps https://t.co/iHKDuqUoGj"
+    },
+    {
+      "id": "1887952719966835107",
+      "text": "@1deltaDAO integrates Diesel so @fuel_network traders can swap with the lowest fees and best prices. \n\nLFG! https://t.co/byZdsWttWG"
+    },
+    {
+      "id": "2046923037195546993",
+      "text": "Introducing https://t.co/G4xviHRhsF! The All-in-One DeFi Aggregator on @katana \n\nDeFi is fragmented.\n\nSwaps here. Lending there. Perps somewhere else.\n\nAggTrade fixes that. 🧵🧵🧵 https://t.co/rCquSlvyeC"
+    },
+    {
+      "id": "2049119080314228892",
+      "text": "gKatana"
+    },
+    {
+      "id": "1888810403737813389",
+      "text": "@JupiterExchange has a cat\n@UniswapFND has a unicorn\n@PancakeSwap has a bunny\n\nWhat other animals do Web3 companies use?\n\nWe should have a mascot for Diesel too!"
+    }
+  ]
+}

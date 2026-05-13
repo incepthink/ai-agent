@@ -1,6 +1,4 @@
 node_modules/
 dist/
-output/
-cache/
 data/twitter/
 .env

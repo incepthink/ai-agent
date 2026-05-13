@@ -1,0 +1,59 @@
+{
+  "status": "success",
+  "msg": "success",
+  "data": {
+    "id": "1830244696188489728",
+    "name": "AggTrade",
+    "userName": "AggTrade_XYZ",
+    "location": "Global",
+    "url": "https://t.co/lyxXPWUfJZ",
+    "description": "The Unified Trading Experience on @katana",
+    "entities": {
+      "description": {
+        "user_mentions": [
+          {
+            "id_str": "",
+            "indices": [
+              34,
+              41
+            ],
+            "name": "",
+            "screen_name": "katana"
+          }
+        ]
+      },
+      "url": {
+        "urls": [
+          {
+            "display_url": "aggtrade.xyz",
+            "expanded_url": "https://aggtrade.xyz/",
+            "indices": [
+              0,
+              23
+            ],
+            "url": "https://t.co/lyxXPWUfJZ"
+          }
+        ]
+      }
+    },
+    "protected": false,
+    "isVerified": false,
+    "isBlueVerified": true,
+    "verifiedType": null,
+    "followers": 525,
+    "following": 141,
+    "favouritesCount": 299,
+    "statusesCount": 99,
+    "mediaCount": 7,
+    "createdAt": "2024-09-01T14:02:06.000000Z",
+    "coverPicture": "https://pbs.twimg.com/profile_banners/1830244696188489728/1776767311",
+    "profilePicture": "https://pbs.twimg.com/profile_images/2046536545025597440/d_4OX4tI_normal.jpg",
+    "canDm": true,
+    "affiliatesHighlightedLabel": {},
+    "isAutomated": false,
+    "automatedBy": null,
+    "pinnedTweetIds": [
+      "2050210902591631680"
+    ]
+  }
+}

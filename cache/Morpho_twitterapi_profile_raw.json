@@ -1,0 +1,47 @@
+{
+  "status": "success",
+  "msg": "success",
+  "data": {
+    "id": "1420789685811650560",
+    "name": "Morpho 🦋",
+    "userName": "Morpho",
+    "location": "",
+    "url": "https://t.co/vRRouhjMJ3",
+    "description": "The open credit network for the world",
+    "entities": {
+      "description": {},
+      "url": {
+        "urls": [
+          {
+            "display_url": "app.morpho.org",
+            "expanded_url": "http://app.morpho.org",
+            "indices": [
+              0,
+              23
+            ],
+            "url": "https://t.co/vRRouhjMJ3"
+          }
+        ]
+      }
+    },
+    "protected": false,
+    "isVerified": false,
+    "isBlueVerified": true,
+    "verifiedType": "Business",
+    "followers": 108883,
+    "following": 24,
+    "favouritesCount": 11529,
+    "statusesCount": 6137,
+    "mediaCount": 1200,
+    "createdAt": "2021-07-29T16:57:22.000000Z",
+    "coverPicture": "https://pbs.twimg.com/profile_banners/1420789685811650560/1756200045",
+    "profilePicture": "https://pbs.twimg.com/profile_images/1930600293915410432/dgTU7UNU_normal.jpg",
+    "canDm": true,
+    "affiliatesHighlightedLabel": {},
+    "isAutomated": false,
+    "automatedBy": null,
+    "pinnedTweetIds": [
+      "1972662796593533251"
+    ]
+  }
+}

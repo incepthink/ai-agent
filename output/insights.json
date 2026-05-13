@@ -1,0 +1,299 @@
+{
+  "generatedAt": "2026-05-12T07:15:12.977Z",
+  "target": "AggTrade_XYZ",
+  "competitors": [
+    "SushiSwap",
+    "Morpho"
+  ],
+  "topHooks": [
+    {
+      "signature": "collaboration-spotlight",
+      "description": "Highlighting partnerships or collaborations with specific entities to bolster credibility.",
+      "avgEngagement": 739,
+      "frequency": 2
+    },
+    {
+      "signature": "early-adopter-benefits",
+      "description": "Highlighting special perks or multipliers for early users to incentivize engagement.",
+      "avgEngagement": 500,
+      "frequency": 3
+    },
+    {
+      "signature": "competitive-comparisons",
+      "description": "Emphasizing distinctive features that set the service apart from competitors.",
+      "avgEngagement": 158,
+      "frequency": 2
+    },
+    {
+      "signature": "three-things-list",
+      "description": "Presenting a list of three related developments or achievements to emphasize progress and engagement.",
+      "avgEngagement": 55,
+      "frequency": 1
+    },
+    {
+      "signature": "question-first",
+      "description": "Starting with a provocative or engaging question to draw readers' curiosity towards the response or insight shared.",
+      "avgEngagement": 48,
+      "frequency": 1
+    }
+  ],
+  "topFormats": [
+    {
+      "signature": "rt-and-comment",
+      "description": "Retweeting others' content with a comment that adds value or perspective to the original message.",
+      "avgEngagement": 265,
+      "frequency": 2
+    },
+    {
+      "signature": "announcement-update",
+      "description": "Making announcements about new features or updates in a concise, impactful manner.",
+      "avgEngagement": 205,
+      "frequency": 2
+    },
+    {
+      "signature": "one-line-observation",
+      "description": "A concise statement reflecting an observation or insight related to the industry or product.",
+      "avgEngagement": 144,
+      "frequency": 2
+    },
+    {
+      "signature": "how-to-participate",
+      "description": "Providing a clear set of actions or steps for participation in a program or initiative.",
+      "avgEngagement": 66,
+      "frequency": 2
+    }
+  ],
+  "hotTopics": [
+    {
+      "topic": "educational-content",
+      "mentions": 2,
+      "avgEngagement": 162
+    },
+    {
+      "topic": "decentralized-finance",
+      "mentions": 2,
+      "avgEngagement": 156
+    }
+  ],
+  "postingCadence": [
+    {
+      "handle": "SushiSwap",
+      "postsPerWeek": 3.6,
+      "medianHourUTC": 19
+    },
+    {
+      "handle": "Morpho",
+      "postsPerWeek": 14,
+      "medianHourUTC": 12
+    }
+  ],
+  "patterns": [
+    {
+      "id": "hook:collaboration-spotlight",
+      "kind": "hook",
+      "signature": "collaboration-spotlight",
+      "description": "Highlighting partnerships or collaborations with specific entities to bolster credibility.",
+      "sourceTweetIds": [
+        "2039789742233936354",
+        "2040514854281212126"
+      ],
+      "competitorHandles": [
+        "SushiSwap"
+      ],
+      "avgEngagement": 739,
+      "frequency": 2
+    },
+    {
+      "id": "hook:early-adopter-benefits",
+      "kind": "hook",
+      "signature": "early-adopter-benefits",
+      "description": "Highlighting special perks or multipliers for early users to incentivize engagement.",
+      "sourceTweetIds": [
+        "2039789742233936354",
+        "2042327721376690438",
+        "2052537408374136977"
+      ],
+      "competitorHandles": [
+        "SushiSwap"
+      ],
+      "avgEngagement": 500,
+      "frequency": 3
+    },
+    {
+      "id": "format:rt-and-comment",
+      "kind": "format",
+      "signature": "rt-and-comment",
+      "description": "Retweeting others' content with a comment that adds value or perspective to the original message.",
+      "sourceTweetIds": [
+        "2050153294606254456",
+        "2051292658128031873"
+      ],
+      "competitorHandles": [
+        "Morpho"
+      ],
+      "avgEngagement": 265,
+      "frequency": 2
+    },
+    {
+      "id": "format:announcement-update",
+      "kind": "format",
+      "signature": "announcement-update",
+      "description": "Making announcements about new features or updates in a concise, impactful manner.",
+      "sourceTweetIds": [
+        "2053928427435037041",
+        "2041239610290778158"
+      ],
+      "competitorHandles": [
+        "SushiSwap"
+      ],
+      "avgEngagement": 205,
+      "frequency": 2
+    },
+    {
+      "id": "angle:build-in-public-honesty",
+      "kind": "angle",
+      "signature": "build-in-public-honesty",
+      "description": "Sharing updates about ongoing projects or hiring efforts to showcase transparency and growth.",
+      "sourceTweetIds": [
+        "2051893560094466058"
+      ],
+      "competitorHandles": [
+        "Morpho"
+      ],
+      "avgEngagement": 314,
+      "frequency": 1
+    },
+    {
+      "id": "topic:educational-content",
+      "kind": "topic",
+      "signature": "educational-content",
+      "description": "Promoting educational resources, such as videos or podcasts, to engage users and provide value.",
+      "sourceTweetIds": [
+        "2041740411773899250",
+        "2049945698880074039"
+      ],
+      "competitorHandles": [
+        "SushiSwap"
+      ],
+      "avgEngagement": 162,
+      "frequency": 2
+    },
+    {
+      "id": "hook:competitive-comparisons",
+      "kind": "hook",
+      "signature": "competitive-comparisons",
+      "description": "Emphasizing distinctive features that set the service apart from competitors.",
+      "sourceTweetIds": [
+        "2053928427435037041",
+        "2040827517125251141"
+      ],
+      "competitorHandles": [
+        "SushiSwap"
+      ],
+      "avgEngagement": 158,
+      "frequency": 2
+    },
+    {
+      "id": "topic:decentralized-finance",
+      "kind": "topic",
+      "signature": "decentralized-finance",
+      "description": "Discussing developments, security concerns, or innovations within decentralized finance platforms.",
+      "sourceTweetIds": [
+        "2053755636400242730",
+        "2051684319781929409"
+      ],
+      "competitorHandles": [
+        "Morpho"
+      ],
+      "avgEngagement": 156,
+      "frequency": 2
+    },
+    {
+      "id": "angle:user-centric-improvements",
+      "kind": "angle",
+      "signature": "user-centric-improvements",
+      "description": "Focusing on how new features improve the user experience and making trading more efficient.",
+      "sourceTweetIds": [
+        "2053928427435037041"
+      ],
+      "competitorHandles": [
+        "SushiSwap"
+      ],
+      "avgEngagement": 240,
+      "frequency": 1
+    },
+    {
+      "id": "format:one-line-observation",
+      "kind": "format",
+      "signature": "one-line-observation",
+      "description": "A concise statement reflecting an observation or insight related to the industry or product.",
+      "sourceTweetIds": [
+        "2051914540078543137",
+        "2051339603584446687"
+      ],
+      "competitorHandles": [
+        "Morpho"
+      ],
+      "avgEngagement": 144,
+      "frequency": 2
+    },
+    {
+      "id": "angle:community-building",
+      "kind": "angle",
+      "signature": "community-building",
+      "description": "Encouraging sharing and interaction within the community, often by showcasing user-generated content.",
+      "sourceTweetIds": [
+        "2040515209631043924",
+        "2052537408374136977"
+      ],
+      "competitorHandles": [
+        "SushiSwap"
+      ],
+      "avgEngagement": 75,
+      "frequency": 2
+    },
+    {
+      "id": "format:how-to-participate",
+      "kind": "format",
+      "signature": "how-to-participate",
+      "description": "Providing a clear set of actions or steps for participation in a program or initiative.",
+      "sourceTweetIds": [
+        "2049899992437944428",
+        "2052537408374136977"
+      ],
+      "competitorHandles": [
+        "SushiSwap"
+      ],
+      "avgEngagement": 66,
+      "frequency": 2
+    },
+    {
+      "id": "hook:three-things-list",
+      "kind": "hook",
+      "signature": "three-things-list",
+      "description": "Presenting a list of three related developments or achievements to emphasize progress and engagement.",
+      "sourceTweetIds": [
+        "2052373295639429615"
+      ],
+      "competitorHandles": [
+        "Morpho"
+      ],
+      "avgEngagement": 55,
+      "frequency": 1
+    },
+    {
+      "id": "hook:question-first",
+      "kind": "hook",
+      "signature": "question-first",
+      "description": "Starting with a provocative or engaging question to draw readers' curiosity towards the response or insight shared.",
+      "sourceTweetIds": [
+        "2051273330934665455"
+      ],
+      "competitorHandles": [
+        "Morpho"
+      ],
+      "avgEngagement": 48,
+      "frequency": 1
+    }
+  ]
+}
