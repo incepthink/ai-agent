@@ -4,6 +4,12 @@ import type { Insights, PostCandidate, VoiceProfile } from "../types.js";
 
 const OUTPUT_DIR = "./output";
 
+export interface ChartAsset {
+  handle: string;
+  kind: string;
+  path: string;
+}
+
 function escapeHtml(s: string): string {
   return s
     .replace(/&/g, "&amp;")
@@ -27,7 +33,8 @@ function scoreClass(value: number, invert = false): string {
 export function renderDashboard(
   candidates: PostCandidate[],
   insights: Insights,
-  voice: VoiceProfile
+  voice: VoiceProfile,
+  charts: ChartAsset[] = []
 ): string {
   const outPath = path.join(OUTPUT_DIR, "dashboard.html");
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
@@ -36,6 +43,38 @@ export function renderDashboard(
   const allFormats = [...new Set(candidates.map((c) => c.format))].sort();
 
   const dataJson = JSON.stringify({ candidates, insights, voice });
+
+  const byHandle = new Map<string, ChartAsset[]>();
+  for (const c of charts) {
+    if (c.handle === "_all") continue;
+    if (!byHandle.has(c.handle)) byHandle.set(c.handle, []);
+    byHandle.get(c.handle)!.push(c);
+  }
+  const comparison = charts.find((c) => c.handle === "_all");
+
+  const chartLabel = (kind: string): string => {
+    switch (kind) {
+      case "heatmap": return "Posting Heatmap";
+      case "engagement": return "Engagement Over Time";
+      case "hashtags": return "Top Hashtags";
+      case "posttypes": return "Post Type Breakdown";
+      default: return kind;
+    }
+  };
+
+  const analyticsHtml = charts.length === 0
+    ? `<div class="empty">No charts were generated.</div>`
+    : `
+      ${comparison
+        ? `<div class="chart-group"><h2>Head-to-head</h2><div class="chart-section"><h3>Comparison</h3><img src="${escapeHtml(path.basename(comparison.path))}" alt="comparison"/></div></div>`
+        : ""}
+      ${[...byHandle.entries()].map(([handle, items]) => `
+        <div class="chart-group">
+          <h2>@${escapeHtml(handle)}</h2>
+          ${items.map((c) => `<div class="chart-section"><h3>${escapeHtml(chartLabel(c.kind))}</h3><img src="${escapeHtml(path.basename(c.path))}" alt="${escapeHtml(c.kind)} for ${escapeHtml(handle)}"/></div>`).join("")}
+        </div>
+      `).join("")}
+    `;
 
   const html = `<!doctype html>
 <html lang="en">
@@ -102,6 +141,17 @@ export function renderDashboard(
   .intel-panel .num { color: var(--accent); font-weight: 600; }
   .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--good); color: white; padding: 10px 18px; border-radius: 8px; opacity: 0; transition: opacity 0.2s; pointer-events: none; }
   .toast.show { opacity: 1; }
+  .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+  .tab { background: transparent; color: var(--muted); border: none; border-bottom: 2px solid transparent; padding: 10px 16px; font: inherit; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; }
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+  .chart-group { margin-bottom: 28px; }
+  .chart-group > h2 { font-size: 16px; margin: 0 0 12px; }
+  .chart-section { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin-bottom: 16px; }
+  .chart-section h3 { margin: 0 0 12px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .chart-section img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 8px; background: #fff; }
 </style>
 </head>
 <body>
@@ -118,6 +168,13 @@ export function renderDashboard(
 </header>
 
 <div class="container">
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="posts">Posts</button>
+    <button class="tab" data-tab="analytics">Analytics</button>
+  </nav>
+
+  <div id="tab-posts" class="tab-panel active">
 
   <div class="intel">
     <div class="intel-panel">
@@ -159,6 +216,12 @@ export function renderDashboard(
   </div>
 
   <div id="cards"></div>
+
+  </div>
+
+  <div id="tab-analytics" class="tab-panel">
+    ${analyticsHtml}
+  </div>
 
 </div>
 
@@ -296,6 +359,16 @@ document.getElementById('filter-theme').addEventListener('change', render);
 document.getElementById('sort').addEventListener('change', render);
 document.getElementById('hide-backup').addEventListener('change', render);
 render();
+
+document.querySelectorAll('.tab').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach((b) => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach((p) => p.classList.remove('active'));
+    btn.classList.add('active');
+    const target = document.getElementById('tab-' + btn.dataset.tab);
+    if (target) target.classList.add('active');
+  });
+});
 </script>
 </body>
 </html>`;

@@ -13,10 +13,21 @@ import {
 } from "./tools/twitter-twitterapi.js";
 import { inferVoiceProfile } from "./tools/voice.js";
 import { minePatterns, buildInsights } from "./tools/mining.js";
-import { generateCandidates, buildEvidence, rawToCandidate } from "./tools/generate.js";
+import {
+  generateCandidates,
+  buildEvidence,
+  rawToCandidate,
+} from "./tools/generate.js";
 import { scoreCandidates, filterAndRank } from "./tools/score.js";
 import { writeArtifacts } from "./tools/artifacts.js";
-import { renderDashboard } from "./tools/dashboard.js";
+import { renderDashboard, type ChartAsset } from "./tools/dashboard.js";
+import {
+  generatePostingHeatmap,
+  generateEngagementChart,
+  generateHashtagChart,
+  generatePostTypeChart,
+  generateComparisonChart,
+} from "./tools/chart.js";
 import type {
   AgentOptions,
   CompetitorData,
@@ -56,17 +67,28 @@ export async function runAgent(options: AgentOptions): Promise<RunResult> {
   const rawCount = Math.ceil((HERO_COUNT + backupCount) * RAW_OVERSAMPLE_RATIO);
 
   const twitter: TwitterProvider = demo
-    ? { fetchUserTweets: fetchUserTweetsMock, getUserProfile: getUserProfileMock }
+    ? {
+        fetchUserTweets: fetchUserTweetsMock,
+        getUserProfile: getUserProfileMock,
+      }
     : provider === "twitterapi"
-      ? { fetchUserTweets: fetchUserTweetsTwitterApi, getUserProfile: getUserProfileTwitterApi }
-      : { fetchUserTweets: fetchUserTweetsApify, getUserProfile: getUserProfileApify };
+      ? {
+          fetchUserTweets: fetchUserTweetsTwitterApi,
+          getUserProfile: getUserProfileTwitterApi,
+        }
+      : {
+          fetchUserTweets: fetchUserTweetsApify,
+          getUserProfile: getUserProfileApify,
+        };
 
   const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
   const cleanTarget = target.replace(/^@/, "");
   const cleanCompetitors = competitors.map((c) => c.replace(/^@/, ""));
 
-  console.log(`\n[1/7] Fetching profiles — target @${cleanTarget} + ${cleanCompetitors.length} competitors...`);
+  console.log(
+    `\n[1/7] Fetching profiles — target @${cleanTarget} + ${cleanCompetitors.length} competitors...`,
+  );
   const [targetProfile, ...competitorProfiles] = await Promise.all([
     twitter.getUserProfile(cleanTarget),
     ...cleanCompetitors.map((h) => twitter.getUserProfile(h)),
@@ -75,28 +97,59 @@ export async function runAgent(options: AgentOptions): Promise<RunResult> {
   console.log(`[1/7] Fetching tweets...`);
   const [targetTweets, ...competitorTweetsList] = await Promise.all([
     twitter.fetchUserTweets(cleanTarget, maxTweetsPerUser),
-    ...cleanCompetitors.map((h) => twitter.fetchUserTweets(h, maxTweetsPerUser)),
+    ...cleanCompetitors.map((h) =>
+      twitter.fetchUserTweets(h, maxTweetsPerUser),
+    ),
   ]);
 
-  const competitorData: CompetitorData[] = cleanCompetitors.map((_handle, i) => ({
-    profile: competitorProfiles[i],
-    tweets: competitorTweetsList[i],
-  }));
+  const competitorData: CompetitorData[] = cleanCompetitors.map(
+    (_handle, i) => ({
+      profile: competitorProfiles[i],
+      tweets: competitorTweetsList[i],
+    }),
+  );
 
-  console.log(`[1/7] Got ${targetTweets.length} target tweets, ${competitorData.reduce((a, c) => a + c.tweets.length, 0)} competitor tweets`);
+  console.log(
+    `[1/7] Got ${targetTweets.length} target tweets, ${competitorData.reduce((a, c) => a + c.tweets.length, 0)} competitor tweets`,
+  );
 
   console.log(`\n[2/7] Inferring voice profile from @${cleanTarget}...`);
   const voice = await inferVoiceProfile(openai, cleanTarget, targetTweets);
   console.log(`[2/7] Voice: ${voice.styleNotes || "(no style notes)"}`);
 
-  console.log(`\n[3/7] Mining patterns from ${competitorData.length} competitor(s)...`);
+  console.log(
+    `\n[3/7] Mining patterns from ${competitorData.length} competitor(s)...`,
+  );
   const patterns = await minePatterns(openai, competitorData);
   console.log(`[3/7] Extracted ${patterns.length} unique patterns`);
 
   const insights = buildInsights(cleanTarget, competitorData, patterns);
 
+  console.log(`\n[3.5/7] Rendering analytics charts...`);
+  const chartTasks: Array<Promise<ChartAsset>> = [];
+  const pushCharts = (handle: string, tweets: Tweet[]): void => {
+    chartTasks.push(
+      generatePostingHeatmap(handle, tweets).then((p) => ({ handle, kind: "heatmap", path: p })),
+      generateEngagementChart(handle, tweets).then((p) => ({ handle, kind: "engagement", path: p })),
+      generateHashtagChart(handle, tweets).then((p) => ({ handle, kind: "hashtags", path: p })),
+      generatePostTypeChart(handle, tweets).then((p) => ({ handle, kind: "posttypes", path: p })),
+    );
+  };
+  pushCharts(cleanTarget, targetTweets);
+  for (const c of competitorData) pushCharts(c.profile.username, c.tweets);
+  chartTasks.push(
+    generateComparisonChart(competitorData).then((p) => ({ handle: "_all", kind: "comparison", path: p })),
+  );
+  const charts = await Promise.all(chartTasks);
+  console.log(`[3.5/7] Rendered ${charts.length} chart PNGs`);
+
   console.log(`\n[4/7] Generating ${rawCount} raw candidates...`);
-  const rawCandidates = await generateCandidates(openai, patterns, voice, rawCount);
+  const rawCandidates = await generateCandidates(
+    openai,
+    patterns,
+    voice,
+    rawCount,
+  );
   console.log(`[4/7] LLM returned ${rawCandidates.length} raw candidates`);
 
   const createdAt = new Date().toISOString();
@@ -113,24 +166,48 @@ export async function runAgent(options: AgentOptions): Promise<RunResult> {
   }
 
   console.log(`\n[5/7] Scoring ${candidates.length} candidates...`);
-  candidates = await scoreCandidates(openai, candidates, voice, patterns, allCompetitorTweets);
+  candidates = await scoreCandidates(
+    openai,
+    candidates,
+    voice,
+    patterns,
+    allCompetitorTweets,
+  );
 
-  console.log(`\n[6/7] Filtering (plagiarism < ${PLAGIARISM_THRESHOLD}) and ranking...`);
-  const rejected = candidates.filter((c) => c.scores.plagiarismRisk >= PLAGIARISM_THRESHOLD).length;
-  if (rejected > 0) console.log(`[6/7] Dropped ${rejected} candidates over plagiarism threshold`);
+  console.log(
+    `\n[6/7] Filtering (plagiarism < ${PLAGIARISM_THRESHOLD}) and ranking...`,
+  );
+  const rejected = candidates.filter(
+    (c) => c.scores.plagiarismRisk >= PLAGIARISM_THRESHOLD,
+  ).length;
+  if (rejected > 0)
+    console.log(
+      `[6/7] Dropped ${rejected} candidates over plagiarism threshold`,
+    );
 
-  const ranked = filterAndRank(candidates, HERO_COUNT, backupCount, PLAGIARISM_THRESHOLD);
+  const ranked = filterAndRank(
+    candidates,
+    HERO_COUNT,
+    backupCount,
+    PLAGIARISM_THRESHOLD,
+  );
 
   // Attach source evidence (top patterns per candidate → top tweets).
   for (const c of ranked) {
     c.sourceEvidence = buildEvidence(c.sourcePatternIds, patterns, tweetIndex);
   }
 
-  console.log(`[6/7] Final library: ${ranked.filter((c) => c.tier === "hero").length} hero + ${ranked.filter((c) => c.tier === "backup").length} backup`);
+  console.log(
+    `[6/7] Final library: ${ranked.filter((c) => c.tier === "hero").length} hero + ${ranked.filter((c) => c.tier === "backup").length} backup`,
+  );
 
   console.log(`\n[7/7] Writing artifacts + dashboard...`);
-  const { postsPath, insightsPath, voicePath } = writeArtifacts(ranked, insights, voice);
-  const dashboardPath = renderDashboard(ranked, insights, voice);
+  const { postsPath, insightsPath, voicePath } = writeArtifacts(
+    ranked,
+    insights,
+    voice,
+  );
+  const dashboardPath = renderDashboard(ranked, insights, voice, charts);
 
   void targetProfile;
 

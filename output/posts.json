@@ -1,156 +1,22 @@
 [
   {
-    "id": "cand_mp2ar877_14",
+    "id": "cand_mp3oug0b_15",
     "tier": "hero",
     "rank": 1,
-    "text": "Why stick to one tool when you can have them all? ⚒️ AggTrade combines swaps, lending, borrowing, and perps — all in one place!",
-    "format": "one-liner",
-    "theme": "trading-tools",
+    "text": "The thrill of DeFi trading is real! 🎢 Are you ready to join the fun on AggTrade? #AggTrade #DeFi",
+    "format": "hook",
+    "theme": "user-engagement",
     "scores": {
       "quality": 0.9,
-      "brandFit": 0.919496855345912,
-      "expectedEngagement": 0.7,
-      "plagiarismRisk": 0,
-      "effort": 0.2967857142857143,
-      "composite": 0.8601956424079066
-    },
-    "reasoning": "This presents AggTrade’s versatility effectively while maintaining an engaging and informative tone.",
-    "sourcePatternIds": [
-      "hook:competitive-comparisons"
-    ],
-    "sourceEvidence": [
-      {
-        "tweetId": "2053928427435037041",
-        "handle": "SushiSwap",
-        "excerpt": "Sushi Perps v2 is live now. Powered by @HyperliquidX Faster. Cleaner. Built around how you actually ",
-        "url": "https://x.com/SushiSwap/status/2053928427435037041",
-        "metric": "168 likes, 21 RTs"
-      },
-      {
-        "tweetId": "2040827517125251141",
-        "handle": "SushiSwap",
-        "excerpt": "Farming is always better on Sushi. Perps are live. Start farming. https://t.co/yWRyUr8b7Z",
-        "url": "https://x.com/SushiSwap/status/2040827517125251141",
-        "metric": "59 likes, 4 RTs"
-      }
-    ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
-  },
-  {
-    "id": "cand_mp2ar877_4",
-    "tier": "hero",
-    "rank": 2,
-    "text": "Introducing seamless swaps on AggTrade! 💨 Bid adieu to high fees and long waits. Experience trading like never before!",
-    "format": "observation",
-    "theme": "user-experience",
-    "scores": {
-      "quality": 0.9,
-      "brandFit": 0.83937106918239,
+      "brandFit": 0.6720251572327045,
       "expectedEngagement": 0.8,
       "plagiarismRisk": 0,
-      "effort": 0.35250000000000004,
-      "composite": 0.8545927672955975
+      "effort": 0.3132142857142857,
+      "composite": 0.8166848607367476
     },
-    "reasoning": "The delivery is lively and encourages users to take action, embodying AggTrade's innovative spirit.",
+    "reasoning": "Using exciting language captures interest while promoting the platform as a fun trading destination.",
     "sourcePatternIds": [
-      "format:announcement-update"
-    ],
-    "sourceEvidence": [
-      {
-        "tweetId": "2053928427435037041",
-        "handle": "SushiSwap",
-        "excerpt": "Sushi Perps v2 is live now. Powered by @HyperliquidX Faster. Cleaner. Built around how you actually ",
-        "url": "https://x.com/SushiSwap/status/2053928427435037041",
-        "metric": "168 likes, 21 RTs"
-      },
-      {
-        "tweetId": "2041239610290778158",
-        "handle": "SushiSwap",
-        "excerpt": "hyperliquid traders discovering sushi perps point season https://t.co/ULiiep29XA",
-        "url": "https://x.com/SushiSwap/status/2041239610290778158",
-        "metric": "127 likes, 10 RTs"
-      }
-    ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
-  },
-  {
-    "id": "cand_mp2ar877_13",
-    "tier": "hero",
-    "rank": 3,
-    "text": "The world of DeFi keeps evolving, but with AggTrade, you’ll always be ahead! 🏁 What’s your DeFi prediction for the next big trend?",
-    "format": "question",
-    "theme": "decentralized-finance",
-    "scores": {
-      "quality": 0.8,
-      "brandFit": 0.929559748427673,
-      "expectedEngagement": 0.8,
-      "plagiarismRisk": 0,
-      "effort": 0.30392857142857144,
-      "composite": 0.8519970799640612
-    },
-    "reasoning": "This invites the audience to participate in a forward-looking discussion, aligning with the innovative tone.",
-    "sourcePatternIds": [
-      "hook:question-first"
-    ],
-    "sourceEvidence": [
-      {
-        "tweetId": "2051273330934665455",
-        "handle": "Morpho",
-        "excerpt": "RT @OpenCover: 🏆 A month after launch, 15+ Covered Vaults are live across @Ethereum, @Optimism, @Ba",
-        "url": "https://x.com/Morpho/status/2051273330934665455",
-        "metric": "28 likes, 7 RTs"
-      }
-    ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
-  },
-  {
-    "id": "cand_mp2ar877_10",
-    "tier": "hero",
-    "rank": 4,
-    "text": "Web3 innovation is like a game of chess — anticipating moves is key! ♟️ Are you ready to strategize your next trade with AggTrade?",
-    "format": "question",
-    "theme": "trading-strategy",
-    "scores": {
-      "quality": 0.8,
-      "brandFit": 0.8670440251572328,
-      "expectedEngagement": 0.7,
-      "plagiarismRisk": 0,
-      "effort": 0.30214285714285716,
-      "composite": 0.8165467205750225
-    },
-    "reasoning": "This uses a clever analogy to engage users in thinking about strategy, consistent with the playful tone.",
-    "sourcePatternIds": [
-      "hook:question-first"
-    ],
-    "sourceEvidence": [
-      {
-        "tweetId": "2051273330934665455",
-        "handle": "Morpho",
-        "excerpt": "RT @OpenCover: 🏆 A month after launch, 15+ Covered Vaults are live across @Ethereum, @Optimism, @Ba",
-        "url": "https://x.com/Morpho/status/2051273330934665455",
-        "metric": "28 likes, 7 RTs"
-      }
-    ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
-  },
-  {
-    "id": "cand_mp2ar877_23",
-    "tier": "hero",
-    "rank": 5,
-    "text": "What’s cooler than your average DeFi swap? 🌟 How about perps? Dive into the game-changing features on AggTrade!",
-    "format": "hot-take",
-    "theme": "trading-trends",
-    "scores": {
-      "quality": 0.9,
-      "brandFit": 0.7617610062893082,
-      "expectedEngagement": 0.7,
-      "plagiarismRisk": 0,
-      "effort": 0.34,
-      "composite": 0.816440251572327
-    },
-    "reasoning": "This emphasizes excitement about new features while promoting user exploration of AggTrade.",
-    "sourcePatternIds": [
-      "hook:early-adopter-benefits"
+      "hook:early-adopter-incentive"
     ],
     "sourceEvidence": [
       {
@@ -168,34 +34,256 @@
         "metric": "62 likes, 9 RTs"
       }
     ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
+    "createdAt": "2026-05-13T06:38:18.251Z"
   },
   {
-    "id": "cand_mp2ar877_16",
+    "id": "cand_mp3oug0b_13",
     "tier": "hero",
-    "rank": 6,
-    "text": "Ever wonder how perps can boost your trading strategy? 📈 Discover the magic of AggTrade where innovation meets simplicity.",
-    "format": "hook",
-    "theme": "trading-strategy",
+    "rank": 2,
+    "text": "What’s the best trade you’ve ever made on AggTrade? 🥇 Share your win with us! #AggTrade",
+    "format": "question",
+    "theme": "success-sharing",
     "scores": {
       "quality": 0.8,
-      "brandFit": 0.849433962264151,
+      "brandFit": 0.7613836477987421,
       "expectedEngagement": 0.7,
       "plagiarismRisk": 0,
-      "effort": 0.28964285714285715,
-      "composite": 0.8133942048517521
+      "effort": 0.29714285714285715,
+      "composite": 0.7906316262353998
     },
-    "reasoning": "The post promotes exploration and curiosity around trading strategies while keeping the engaging tone.",
+    "reasoning": "Inviting users to share successes cultivates engagement and community spirit, fitting the energetic vibe.",
     "sourcePatternIds": [
-      "topic:decentralized-finance"
+      "format:user-generated-content-prompt"
     ],
     "sourceEvidence": [
+      {
+        "tweetId": "2052537408374136977",
+        "handle": "SushiSwap",
+        "excerpt": "Share your Sushi Perps PnL for a shot at 100,000 points. How to Enter: - quote tweet with your PnL c",
+        "url": "https://x.com/SushiSwap/status/2052537408374136977",
+        "metric": "38 likes, 7 RTs"
+      },
+      {
+        "tweetId": "2041181201789022388",
+        "handle": "SushiSwap",
+        "excerpt": "RT @alexmccurryo: Building @SushiSwap | Episode 2 https://t.co/JLiSko74j4",
+        "url": "https://x.com/SushiSwap/status/2041181201789022388",
+        "metric": "62 likes, 6 RTs"
+      }
+    ],
+    "createdAt": "2026-05-13T06:38:18.251Z"
+  },
+  {
+    "id": "cand_mp3oug0b_0",
+    "tier": "hero",
+    "rank": 3,
+    "text": "AggTrade’s the katana of DeFi! ⚔️ Which other trading tools are cutting through the noise? Let’s hear your faves! #AggTrade #DeFi",
+    "format": "question",
+    "theme": "trading-tools",
+    "scores": {
+      "quality": 0.8,
+      "brandFit": 0.7525283018867925,
+      "expectedEngagement": 0.7,
+      "plagiarismRisk": 0,
+      "effort": 0.4403571428571429,
+      "composite": 0.7740963611859838
+    },
+    "reasoning": "This taps into community engagement while encouraging users to share their preferred tools, matching the voice's energetic tone.",
+    "sourcePatternIds": [
+      "angle:community-encouragement"
+    ],
+    "sourceEvidence": [
+      {
+        "tweetId": "2052537408374136977",
+        "handle": "SushiSwap",
+        "excerpt": "Share your Sushi Perps PnL for a shot at 100,000 points. How to Enter: - quote tweet with your PnL c",
+        "url": "https://x.com/SushiSwap/status/2052537408374136977",
+        "metric": "38 likes, 7 RTs"
+      },
+      {
+        "tweetId": "2040515209631043924",
+        "handle": "SushiSwap",
+        "excerpt": "RT @alexmccurryo: One wallet did $2M volume yesterday on Sushi perps. Someone is point hunting...👀\ud83c",
+        "url": "https://x.com/SushiSwap/status/2040515209631043924",
+        "metric": "62 likes, 6 RTs"
+      }
+    ],
+    "createdAt": "2026-05-13T06:38:18.251Z"
+  },
+  {
+    "id": "cand_mp3oug0b_4",
+    "tier": "hero",
+    "rank": 4,
+    "text": "Are you ready to upgrade your DeFi game? 🚀 Join us on AggTrade for unparalleled trading experiences! #AggTrade #DeFi",
+    "format": "one-liner",
+    "theme": "user-engagement",
+    "scores": {
+      "quality": 0.7,
+      "brandFit": 0.7223396226415095,
+      "expectedEngagement": 0.8,
+      "plagiarismRisk": 0,
+      "effort": 0.3489285714285715,
+      "composite": 0.7656920485175203
+    },
+    "reasoning": "This invites users to engage actively while highlighting the brand's innovative spirit in DeFi.",
+    "sourcePatternIds": [
+      "hook:early-adopter-incentive"
+    ],
+    "sourceEvidence": [
+      {
+        "tweetId": "2039789742233936354",
+        "handle": "SushiSwap",
+        "excerpt": "Sushi Perps are LIVE Powered by @HyperliquidX Early traders get boosted Sushi point multipliers http",
+        "url": "https://x.com/SushiSwap/status/2039789742233936354",
+        "metric": "905 likes, 140 RTs"
+      },
+      {
+        "tweetId": "2042327721376690438",
+        "handle": "SushiSwap",
+        "excerpt": "Trade perps, earn points. Only on Sushi Early traders still qualify for a multiplier. https://t.co/b",
+        "url": "https://x.com/SushiSwap/status/2042327721376690438",
+        "metric": "62 likes, 9 RTs"
+      }
+    ],
+    "createdAt": "2026-05-13T06:38:18.251Z"
+  },
+  {
+    "id": "cand_mp3oug0b_3",
+    "tier": "hero",
+    "rank": 5,
+    "text": "Have you tried our diesel trades yet? 🔥 AggTrade is where the power of DeFi meets the excitement of trading! #Diesel #AggTrade",
+    "format": "hot-take",
+    "theme": "new-features",
+    "scores": {
+      "quality": 0.8,
+      "brandFit": 0.747496855345912,
+      "expectedEngagement": 0.6,
+      "plagiarismRisk": 0,
+      "effort": 0.36678571428571427,
+      "composite": 0.7601956424079065
+    },
+    "reasoning": "This emphasizes a specific feature of AggTrade and energizes the audience, making them curious to try it.",
+    "sourcePatternIds": [
+      "topic:trading-updates"
+    ],
+    "sourceEvidence": [
+      {
+        "tweetId": "2053928427435037041",
+        "handle": "SushiSwap",
+        "excerpt": "Sushi Perps v2 is live now. Powered by @HyperliquidX Faster. Cleaner. Built around how you actually ",
+        "url": "https://x.com/SushiSwap/status/2053928427435037041",
+        "metric": "168 likes, 21 RTs"
+      },
+      {
+        "tweetId": "2040514854281212126",
+        "handle": "SushiSwap",
+        "excerpt": "RT @BSCNews: 🚨DEFI: PERPS TRADING GOES LIVE ON SUSHI Powered by @HyperliquidX $HYPE, perpetual futu",
+        "url": "https://x.com/SushiSwap/status/2040514854281212126",
+        "metric": "86 likes, 16 RTs"
+      }
+    ],
+    "createdAt": "2026-05-13T06:38:18.251Z"
+  },
+  {
+    "id": "cand_mp3oug0b_8",
+    "tier": "hero",
+    "rank": 6,
+    "text": "AggTrade is the sushi chef of DeFi! 🍣 Fresh ideas and tasty trades, all in one spot! What’s your order? #AggTrade",
+    "format": "observation",
+    "theme": "creative-analogies",
+    "scores": {
+      "quality": 0.8,
+      "brandFit": 0.8267924528301888,
+      "expectedEngagement": 0.5,
+      "plagiarismRisk": 0,
+      "effort": 0.4135714285714286,
+      "composite": 0.7553409703504043
+    },
+    "reasoning": "Using a playful analogy resonates with the voice and engages users to participate by sharing their picks.",
+    "sourcePatternIds": [
+      "angle:future-focused-mindset"
+    ],
+    "sourceEvidence": [
+      {
+        "tweetId": "2051893560094466058",
+        "handle": "Morpho",
+        "excerpt": "RT @PaulFrambot: The Morpho team has been cooking these past 3 months, but our ambitions go far beyo",
+        "url": "https://x.com/Morpho/status/2051893560094466058",
+        "metric": "275 likes, 12 RTs"
+      },
       {
         "tweetId": "2053755636400242730",
         "handle": "Morpho",
         "excerpt": "RT @MerlinEgalite: The ability to create earn &amp; borrow products will become so commoditized that",
         "url": "https://x.com/Morpho/status/2053755636400242730",
         "metric": "177 likes, 11 RTs"
+      }
+    ],
+    "createdAt": "2026-05-13T06:38:18.251Z"
+  },
+  {
+    "id": "cand_mp3oug0b_1",
+    "tier": "hero",
+    "rank": 7,
+    "text": "Perps? Swaps? 🚀 You can have them ALL on AggTrade! Your DeFi playground awaits. #Perps #DeFi #AggTrade",
+    "format": "one-liner",
+    "theme": "aggregated-services",
+    "scores": {
+      "quality": 0.7,
+      "brandFit": 0.639119496855346,
+      "expectedEngagement": 0.8,
+      "plagiarismRisk": 0,
+      "effort": 0.46392857142857147,
+      "composite": 0.7333870170709794
+    },
+    "reasoning": "This promotes AggTrade’s comprehensive service offerings with enthusiastic language, fitting the promotional style.",
+    "sourcePatternIds": [
+      "topic:trading-updates"
+    ],
+    "sourceEvidence": [
+      {
+        "tweetId": "2053928427435037041",
+        "handle": "SushiSwap",
+        "excerpt": "Sushi Perps v2 is live now. Powered by @HyperliquidX Faster. Cleaner. Built around how you actually ",
+        "url": "https://x.com/SushiSwap/status/2053928427435037041",
+        "metric": "168 likes, 21 RTs"
+      },
+      {
+        "tweetId": "2040514854281212126",
+        "handle": "SushiSwap",
+        "excerpt": "RT @BSCNews: 🚨DEFI: PERPS TRADING GOES LIVE ON SUSHI Powered by @HyperliquidX $HYPE, perpetual futu",
+        "url": "https://x.com/SushiSwap/status/2040514854281212126",
+        "metric": "86 likes, 16 RTs"
+      }
+    ],
+    "createdAt": "2026-05-13T06:38:18.251Z"
+  },
+  {
+    "id": "cand_mp3oug0b_9",
+    "tier": "backup",
+    "rank": 8,
+    "text": "Perps update coming! Are you LFG? 🚀 Stay tuned for the latest on AggTrade’s perps integration! #Perps #DeFi",
+    "format": "hook",
+    "theme": "update-announcement",
+    "scores": {
+      "quality": 0.8,
+      "brandFit": 0.6396981132075472,
+      "expectedEngagement": 0.6,
+      "plagiarismRisk": 0,
+      "effort": 0.4028571428571429,
+      "composite": 0.7296388140161725
+    },
+    "reasoning": "This builds anticipation around upcoming features and maintains excitement for the audience.",
+    "sourcePatternIds": [
+      "hook:breaking-news"
+    ],
+    "sourceEvidence": [
+      {
+        "tweetId": "2050153294606254456",
+        "handle": "Morpho",
+        "excerpt": "RT @glider__: Morpho is now on Glider. Lend USDC on Glider through @SteakhouseFi's curated High Yiel",
+        "url": "https://x.com/Morpho/status/2050153294606254456",
+        "metric": "265 likes, 44 RTs"
       },
       {
         "tweetId": "2051684319781929409",
@@ -205,26 +293,63 @@
         "metric": "70 likes, 10 RTs"
       }
     ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
+    "createdAt": "2026-05-13T06:38:18.251Z"
   },
   {
-    "id": "cand_mp2ar877_21",
-    "tier": "hero",
-    "rank": 7,
-    "text": "In the world of DeFi, simplicity is the ultimate sophistication! 🖌️ Discover how AggTrade streamlines trading like a pro.",
-    "format": "observation",
-    "theme": "trading-experience",
+    "id": "cand_mp3oug0b_10",
+    "tier": "backup",
+    "rank": 9,
+    "text": "The DeFi landscape is changing fast! 🌟 What are you most excited about right now? #AggTrade",
+    "format": "question",
+    "theme": "industry-engagement",
     "scores": {
-      "quality": 0.8,
-      "brandFit": 0.8469182389937108,
-      "expectedEngagement": 0.7,
+      "quality": 0.7,
+      "brandFit": 0.7114465408805031,
+      "expectedEngagement": 0.6,
       "plagiarismRisk": 0,
-      "effort": 0.28785714285714287,
-      "composite": 0.8129438454627134
+      "effort": 0.30428571428571427,
+      "composite": 0.7274330637915544
     },
-    "reasoning": "This statement highlights user-centric design while showcasing AggTrade’s innovative focus.",
+    "reasoning": "Engaging followers by asking about their interests encourages interaction and community engagement.",
     "sourcePatternIds": [
-      "angle:user-centric-improvements"
+      "angle:community-encouragement"
+    ],
+    "sourceEvidence": [
+      {
+        "tweetId": "2052537408374136977",
+        "handle": "SushiSwap",
+        "excerpt": "Share your Sushi Perps PnL for a shot at 100,000 points. How to Enter: - quote tweet with your PnL c",
+        "url": "https://x.com/SushiSwap/status/2052537408374136977",
+        "metric": "38 likes, 7 RTs"
+      },
+      {
+        "tweetId": "2040515209631043924",
+        "handle": "SushiSwap",
+        "excerpt": "RT @alexmccurryo: One wallet did $2M volume yesterday on Sushi perps. Someone is point hunting...👀\ud83c",
+        "url": "https://x.com/SushiSwap/status/2040515209631043924",
+        "metric": "62 likes, 6 RTs"
+      }
+    ],
+    "createdAt": "2026-05-13T06:38:18.251Z"
+  },
+  {
+    "id": "cand_mp3oug0b_7",
+    "tier": "backup",
+    "rank": 10,
+    "text": "Ready to dive into DeFi with the fastest swaps? ⚡️ AggTrade’s here to elevate your trading! #AggTrade #DeFi",
+    "format": "one-liner",
+    "theme": "speed-and-efficiency",
+    "scores": {
+      "quality": 0.7,
+      "brandFit": 0.697182389937107,
+      "expectedEngagement": 0.6,
+      "plagiarismRisk": 0,
+      "effort": 0.33107142857142857,
+      "composite": 0.7211884546271339
+    },
+    "reasoning": "This highlights AggTrade's performance while energizing the audience, leveraging their excitement about efficiency.",
+    "sourcePatternIds": [
+      "topic:trading-updates"
     ],
     "sourceEvidence": [
       {
@@ -233,28 +358,35 @@
         "excerpt": "Sushi Perps v2 is live now. Powered by @HyperliquidX Faster. Cleaner. Built around how you actually ",
         "url": "https://x.com/SushiSwap/status/2053928427435037041",
         "metric": "168 likes, 21 RTs"
+      },
+      {
+        "tweetId": "2040514854281212126",
+        "handle": "SushiSwap",
+        "excerpt": "RT @BSCNews: 🚨DEFI: PERPS TRADING GOES LIVE ON SUSHI Powered by @HyperliquidX $HYPE, perpetual futu",
+        "url": "https://x.com/SushiSwap/status/2040514854281212126",
+        "metric": "86 likes, 16 RTs"
       }
     ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
+    "createdAt": "2026-05-13T06:38:18.251Z"
   },
   {
-    "id": "cand_mp2ar877_19",
+    "id": "cand_mp3oug0b_20",
     "tier": "backup",
-    "rank": 8,
-    "text": "Perps are changing the game! 🔄 Ready to embrace this evolution with AggTrade? The journey starts now!",
-    "format": "hot-take",
-    "theme": "trading-trends",
+    "rank": 11,
+    "text": "Keep your DeFi trades lively! 🎉 Let AggTrade be your sidekick in success! #AggTrade #DeFi",
+    "format": "one-liner",
+    "theme": "supportive-innovation",
     "scores": {
-      "quality": 0.8,
-      "brandFit": 0.8566037735849057,
+      "quality": 0.7,
+      "brandFit": 0.5944150943396227,
       "expectedEngagement": 0.7,
       "plagiarismRisk": 0,
-      "effort": 0.3221428571428572,
-      "composite": 0.8119366576819407
+      "effort": 0.3007142857142857,
+      "composite": 0.7185323450134772
     },
-    "reasoning": "The enthusiastic call to action aligns with the voice’s innovative spirit and encourages user engagement.",
+    "reasoning": "This energizes the message while encouraging exploration of the platform, capturing the innovative tone.",
     "sourcePatternIds": [
-      "hook:early-adopter-benefits"
+      "hook:early-adopter-incentive"
     ],
     "sourceEvidence": [
       {
@@ -272,56 +404,100 @@
         "metric": "62 likes, 9 RTs"
       }
     ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
+    "createdAt": "2026-05-13T06:38:18.251Z"
   },
   {
-    "id": "cand_mp2ar877_9",
+    "id": "cand_mp3oug0b_27",
     "tier": "backup",
-    "rank": 9,
-    "text": "Ready to take your swaps to the next level? 🔝 Dive into the world of AggTrade and experience unparalleled efficiency!",
-    "format": "observation",
-    "theme": "user-experience",
+    "rank": 12,
+    "text": "What’s the next big thing in DeFi? 🌟 Let’s brainstorm it together on AggTrade! #AggTrade",
+    "format": "hook",
+    "theme": "innovative-ideas",
     "scores": {
-      "quality": 0.8,
-      "brandFit": 0.7768553459119497,
-      "expectedEngagement": 0.7,
+      "quality": 0.7,
+      "brandFit": 0.7038993710691823,
+      "expectedEngagement": 0.5,
       "plagiarismRisk": 0,
-      "effort": 0.2807142857142857,
-      "composite": 0.7961424079065589
+      "effort": 0.29892857142857143,
+      "composite": 0.7060819856244384
     },
-    "reasoning": "This observation promotes AggTrade's improvements focused on user efficiency while maintaining an upbeat tone.",
+    "reasoning": "Encouraging collaborative thinking inspires engagement and aligns well with the innovative DeFi narrative.",
     "sourcePatternIds": [
-      "angle:user-centric-improvements"
+      "angle:community-encouragement"
     ],
     "sourceEvidence": [
       {
-        "tweetId": "2053928427435037041",
+        "tweetId": "2052537408374136977",
         "handle": "SushiSwap",
-        "excerpt": "Sushi Perps v2 is live now. Powered by @HyperliquidX Faster. Cleaner. Built around how you actually ",
-        "url": "https://x.com/SushiSwap/status/2053928427435037041",
-        "metric": "168 likes, 21 RTs"
+        "excerpt": "Share your Sushi Perps PnL for a shot at 100,000 points. How to Enter: - quote tweet with your PnL c",
+        "url": "https://x.com/SushiSwap/status/2052537408374136977",
+        "metric": "38 likes, 7 RTs"
+      },
+      {
+        "tweetId": "2040515209631043924",
+        "handle": "SushiSwap",
+        "excerpt": "RT @alexmccurryo: One wallet did $2M volume yesterday on Sushi perps. Someone is point hunting...👀\ud83c",
+        "url": "https://x.com/SushiSwap/status/2040515209631043924",
+        "metric": "62 likes, 6 RTs"
       }
     ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
+    "createdAt": "2026-05-13T06:38:18.251Z"
   },
   {
-    "id": "cand_mp2ar877_29",
+    "id": "cand_mp3oug0b_17",
     "tier": "backup",
-    "rank": 10,
-    "text": "In the DeFi universe, staying informed is half the battle. 🔍 Ready to equip yourself with AggTrade’s top-tier tools?",
-    "format": "observation",
-    "theme": "trading-education",
+    "rank": 13,
+    "text": "Ready to swap your way to success? 🚀 AggTrade is your ultimate DeFi partner! #AggTrade #DeFi",
+    "format": "one-liner",
+    "theme": "partnership-promise",
     "scores": {
-      "quality": 0.8,
-      "brandFit": 0.8343396226415095,
+      "quality": 0.7,
+      "brandFit": 0.6019622641509434,
       "expectedEngagement": 0.6,
       "plagiarismRisk": 0,
-      "effort": 0.2789285714285714,
-      "composite": 0.7906920485175202
+      "effort": 0.30607142857142855,
+      "composite": 0.699883423180593
     },
-    "reasoning": "This emphasizes the continuous learning aspect of DeFi while promoting AggTrade’s features in an engaging way.",
+    "reasoning": "This energetic call to action fits the promotional style, encouraging users to get involved.",
     "sourcePatternIds": [
-      "topic:educational-content"
+      "angle:future-focused-mindset"
+    ],
+    "sourceEvidence": [
+      {
+        "tweetId": "2051893560094466058",
+        "handle": "Morpho",
+        "excerpt": "RT @PaulFrambot: The Morpho team has been cooking these past 3 months, but our ambitions go far beyo",
+        "url": "https://x.com/Morpho/status/2051893560094466058",
+        "metric": "275 likes, 12 RTs"
+      },
+      {
+        "tweetId": "2053755636400242730",
+        "handle": "Morpho",
+        "excerpt": "RT @MerlinEgalite: The ability to create earn &amp; borrow products will become so commoditized that",
+        "url": "https://x.com/Morpho/status/2053755636400242730",
+        "metric": "177 likes, 11 RTs"
+      }
+    ],
+    "createdAt": "2026-05-13T06:38:18.251Z"
+  },
+  {
+    "id": "cand_mp3oug0b_14",
+    "tier": "backup",
+    "rank": 14,
+    "text": "AggTrade is evolving fast! 🌠 What new features do you wish to see next? #DeFi #AggTrade",
+    "format": "question",
+    "theme": "feature-innovation",
+    "scores": {
+      "quality": 0.7,
+      "brandFit": 0.5893836477987422,
+      "expectedEngagement": 0.6,
+      "plagiarismRisk": 0,
+      "effort": 0.29714285714285715,
+      "composite": 0.6976316262353999
+    },
+    "reasoning": "This promotes user feedback while reinforcing a community-centric approach, echoing the voice's invitation to participate.",
+    "sourcePatternIds": [
+      "angle:build-in-public-approach"
     ],
     "sourceEvidence": [
       {
@@ -339,160 +515,26 @@
         "metric": "97 likes, 16 RTs"
       }
     ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
+    "createdAt": "2026-05-13T06:38:18.251Z"
   },
   {
-    "id": "cand_mp2ar877_11",
-    "tier": "backup",
-    "rank": 11,
-    "text": "Perps are not just a feature; they are your ticket to the future of DeFi on AggTrade! 🎟️ Have you explored them yet?",
-    "format": "micro-framework",
-    "theme": "trading-features",
-    "scores": {
-      "quality": 0.7,
-      "brandFit": 0.8943396226415095,
-      "expectedEngagement": 0.6,
-      "plagiarismRisk": 0,
-      "effort": 0.2789285714285714,
-      "composite": 0.7756920485175202
-    },
-    "reasoning": "This encourages exploration of perps while leveraging a catchy metaphor to captivate the audience.",
-    "sourcePatternIds": [
-      "hook:question-first"
-    ],
-    "sourceEvidence": [
-      {
-        "tweetId": "2051273330934665455",
-        "handle": "Morpho",
-        "excerpt": "RT @OpenCover: 🏆 A month after launch, 15+ Covered Vaults are live across @Ethereum, @Optimism, @Ba",
-        "url": "https://x.com/Morpho/status/2051273330934665455",
-        "metric": "28 likes, 7 RTs"
-      }
-    ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
-  },
-  {
-    "id": "cand_mp2ar877_15",
-    "tier": "backup",
-    "rank": 12,
-    "text": "Trading should feel like a game, not a chore! 🎮 With AggTrade, you trade perps and swaps effortlessly. Who’s ready to join the fun?",
-    "format": "hot-take",
-    "theme": "trading-experience",
-    "scores": {
-      "quality": 0.7,
-      "brandFit": 0.9320754716981132,
-      "expectedEngagement": 0.6,
-      "plagiarismRisk": 0,
-      "effort": 0.3757142857142857,
-      "composite": 0.7754474393530997
-    },
-    "reasoning": "This invokes a sense of enjoyment and excitement around trading, ideal for inspiring engagement.",
-    "sourcePatternIds": [
-      "hook:early-adopter-benefits"
-    ],
-    "sourceEvidence": [
-      {
-        "tweetId": "2039789742233936354",
-        "handle": "SushiSwap",
-        "excerpt": "Sushi Perps are LIVE Powered by @HyperliquidX Early traders get boosted Sushi point multipliers http",
-        "url": "https://x.com/SushiSwap/status/2039789742233936354",
-        "metric": "905 likes, 140 RTs"
-      },
-      {
-        "tweetId": "2042327721376690438",
-        "handle": "SushiSwap",
-        "excerpt": "Trade perps, earn points. Only on Sushi Early traders still qualify for a multiplier. https://t.co/b",
-        "url": "https://x.com/SushiSwap/status/2042327721376690438",
-        "metric": "62 likes, 9 RTs"
-      }
-    ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
-  },
-  {
-    "id": "cand_mp2ar877_26",
-    "tier": "backup",
-    "rank": 13,
-    "text": "Is your trading experience feeling outdated? 🕰️ Upgrade to AggTrade where innovation and ease collide!",
-    "format": "hot-take",
-    "theme": "trading-experience",
-    "scores": {
-      "quality": 0.7,
-      "brandFit": 0.799119496855346,
-      "expectedEngagement": 0.6,
-      "plagiarismRisk": 0,
-      "effort": 0.25392857142857145,
-      "composite": 0.7543870170709793
-    },
-    "reasoning": "This statement invites user reflection while promoting AggTrade’s modern approach to DeFi.",
-    "sourcePatternIds": [
-      "angle:user-centric-improvements"
-    ],
-    "sourceEvidence": [
-      {
-        "tweetId": "2053928427435037041",
-        "handle": "SushiSwap",
-        "excerpt": "Sushi Perps v2 is live now. Powered by @HyperliquidX Faster. Cleaner. Built around how you actually ",
-        "url": "https://x.com/SushiSwap/status/2053928427435037041",
-        "metric": "168 likes, 21 RTs"
-      }
-    ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
-  },
-  {
-    "id": "cand_mp2ar877_2",
-    "tier": "backup",
-    "rank": 14,
-    "text": "Perps are the new cool kid on the block! 🆒 Ready to level up your trades on AggTrade? The future of DeFi starts here!",
-    "format": "hot-take",
-    "theme": "trading-trends",
-    "scores": {
-      "quality": 0.8,
-      "brandFit": 0.7168553459119498,
-      "expectedEngagement": 0.6,
-      "plagiarismRisk": 0,
-      "effort": 0.35071428571428576,
-      "composite": 0.754142407906559
-    },
-    "reasoning": "This post creates excitement about the latest trend in DeFi while inviting users to join in, matching the voice's tone.",
-    "sourcePatternIds": [
-      "hook:early-adopter-benefits"
-    ],
-    "sourceEvidence": [
-      {
-        "tweetId": "2039789742233936354",
-        "handle": "SushiSwap",
-        "excerpt": "Sushi Perps are LIVE Powered by @HyperliquidX Early traders get boosted Sushi point multipliers http",
-        "url": "https://x.com/SushiSwap/status/2039789742233936354",
-        "metric": "905 likes, 140 RTs"
-      },
-      {
-        "tweetId": "2042327721376690438",
-        "handle": "SushiSwap",
-        "excerpt": "Trade perps, earn points. Only on Sushi Early traders still qualify for a multiplier. https://t.co/b",
-        "url": "https://x.com/SushiSwap/status/2042327721376690438",
-        "metric": "62 likes, 9 RTs"
-      }
-    ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
-  },
-  {
-    "id": "cand_mp2ar877_1",
+    "id": "cand_mp3oug0b_25",
     "tier": "backup",
     "rank": 15,
-    "text": "Is your DeFi experience feeling scattered? ⚡️ Fear not! The solution is here with AggTrade — your one-stop shop for swaps and perps!",
-    "format": "hot-take",
-    "theme": "decentralized-finance",
+    "text": "DeFi trading is ALL about agility! 🏃‍♂️ Are you ready to make sharp moves with AggTrade? #AggTrade",
+    "format": "one-liner",
+    "theme": "dynamic-trading",
     "scores": {
       "quality": 0.6,
-      "brandFit": 0.8720754716981133,
-      "expectedEngagement": 0.7,
+      "brandFit": 0.7170566037735849,
+      "expectedEngagement": 0.6,
       "plagiarismRisk": 0,
-      "effort": 0.3757142857142857,
-      "composite": 0.7504474393530998
+      "effort": 0.31678571428571434,
+      "composite": 0.6975855795148248
     },
-    "reasoning": "This taps into the frustration of fragmented DeFi while promoting AggTrade’s comprehensive offerings, fitting the engaging and informative tone.",
+    "reasoning": "Emphasizing agility promotes the benefits of using AggTrade and fits the voice’s energetic style.",
     "sourcePatternIds": [
-      "hook:competitive-comparisons"
+      "topic:trading-updates"
     ],
     "sourceEvidence": [
       {
@@ -503,408 +545,457 @@
         "metric": "168 likes, 21 RTs"
       },
       {
-        "tweetId": "2040827517125251141",
+        "tweetId": "2040514854281212126",
         "handle": "SushiSwap",
-        "excerpt": "Farming is always better on Sushi. Perps are live. Start farming. https://t.co/yWRyUr8b7Z",
-        "url": "https://x.com/SushiSwap/status/2040827517125251141",
-        "metric": "59 likes, 4 RTs"
+        "excerpt": "RT @BSCNews: 🚨DEFI: PERPS TRADING GOES LIVE ON SUSHI Powered by @HyperliquidX $HYPE, perpetual futu",
+        "url": "https://x.com/SushiSwap/status/2040514854281212126",
+        "metric": "86 likes, 16 RTs"
       }
     ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
+    "createdAt": "2026-05-13T06:38:18.251Z"
   },
   {
-    "id": "cand_mp2ar877_25",
+    "id": "cand_mp3oug0b_2",
     "tier": "backup",
     "rank": 16,
-    "text": "Perps are not just the next big thing; they’re essential for your trading strategy! 🔑 Unlock new potential with AggTrade.",
-    "format": "observation",
-    "theme": "trading-strategy",
+    "text": "What’s making waves in DeFi today? 🌊 Dive into AggTrade for insights on the latest trends! #DeFi #AggTrade",
+    "format": "micro-framework",
+    "theme": "trending-topics",
     "scores": {
-      "quality": 0.7,
-      "brandFit": 0.7869182389937107,
-      "expectedEngagement": 0.6,
+      "quality": 0.6,
+      "brandFit": 0.637182389937107,
+      "expectedEngagement": 0.7,
       "plagiarismRisk": 0,
-      "effort": 0.28785714285714287,
-      "composite": 0.7479438454627133
+      "effort": 0.33107142857142857,
+      "composite": 0.696188454627134
     },
-    "reasoning": "This emphasizes the importance of perps while maintaining an engaging and informative tone.",
+    "reasoning": "Encourages curiosity about trends while promoting AggTrade as a go-to for information, resonating well with the audience.",
     "sourcePatternIds": [
-      "format:one-line-observation"
+      "angle:future-focused-mindset"
     ],
     "sourceEvidence": [
       {
-        "tweetId": "2051914540078543137",
+        "tweetId": "2051893560094466058",
         "handle": "Morpho",
-        "excerpt": "RT @PaulFrambot: Spending two weeks in Singapore, Hong Kong, Tokyo and Seoul. One thing I’m apprecia",
-        "url": "https://x.com/Morpho/status/2051914540078543137",
-        "metric": "192 likes, 6 RTs"
+        "excerpt": "RT @PaulFrambot: The Morpho team has been cooking these past 3 months, but our ambitions go far beyo",
+        "url": "https://x.com/Morpho/status/2051893560094466058",
+        "metric": "275 likes, 12 RTs"
       },
       {
-        "tweetId": "2051339603584446687",
+        "tweetId": "2053755636400242730",
         "handle": "Morpho",
-        "excerpt": "RT @MerlinEgalite: \"Lending is a product that never has a demand problem.\" True. What's capping the ",
-        "url": "https://x.com/Morpho/status/2051339603584446687",
-        "metric": "55 likes, 4 RTs"
+        "excerpt": "RT @MerlinEgalite: The ability to create earn &amp; borrow products will become so commoditized that",
+        "url": "https://x.com/Morpho/status/2053755636400242730",
+        "metric": "177 likes, 11 RTs"
       }
     ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
+    "createdAt": "2026-05-13T06:38:18.251Z"
   },
   {
-    "id": "cand_mp2ar877_20",
+    "id": "cand_mp3oug0b_28",
     "tier": "backup",
     "rank": 17,
-    "text": "Is your DeFi toolkit a bit too basic? ✏️ Time to level up with AggTrade! Perks, swaps, and perps — it’s all here.",
-    "format": "question",
-    "theme": "trading-tools",
+    "text": "Got questions about DeFi? 🤔 Dive into AggTrade for insights and clarity! #AggTrade #DeFi",
+    "format": "one-liner",
+    "theme": "user-support",
     "scores": {
-      "quality": 0.7,
-      "brandFit": 0.7642767295597485,
+      "quality": 0.6,
+      "brandFit": 0.6518993710691825,
       "expectedEngagement": 0.6,
       "plagiarismRisk": 0,
-      "effort": 0.3417857142857143,
-      "composite": 0.7368906109613658
+      "effort": 0.29892857142857143,
+      "composite": 0.6830819856244384
     },
-    "reasoning": "This post invites the audience to evaluate their trading tools and promotes AggTrade’s comprehensive offerings.",
+    "reasoning": "This reinforces AggTrade as an accessible knowledge source, positively enhancing user interaction.",
     "sourcePatternIds": [
-      "hook:question-first"
+      "angle:build-in-public-approach"
     ],
     "sourceEvidence": [
       {
-        "tweetId": "2051273330934665455",
-        "handle": "Morpho",
-        "excerpt": "RT @OpenCover: 🏆 A month after launch, 15+ Covered Vaults are live across @Ethereum, @Optimism, @Ba",
-        "url": "https://x.com/Morpho/status/2051273330934665455",
-        "metric": "28 likes, 7 RTs"
+        "tweetId": "2041740411773899250",
+        "handle": "SushiSwap",
+        "excerpt": "RT @alexmccurryo: Building Sushi in Public — Episode 5 out now on YouTube https://t.co/qwVGupfhh6",
+        "url": "https://x.com/SushiSwap/status/2041740411773899250",
+        "metric": "103 likes, 25 RTs"
+      },
+      {
+        "tweetId": "2049945698880074039",
+        "handle": "SushiSwap",
+        "excerpt": "RT @alexmccurryo: Building Sushi in Public — Episode 7 out now on YouTube https://t.co/PUOA9FQpOT",
+        "url": "https://x.com/SushiSwap/status/2049945698880074039",
+        "metric": "97 likes, 16 RTs"
       }
     ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
+    "createdAt": "2026-05-13T06:38:18.251Z"
   },
   {
-    "id": "cand_mp2ar876_0",
+    "id": "cand_mp3oug0b_16",
     "tier": "backup",
     "rank": 18,
-    "text": "What if trading perps felt like wielding a katana? ⚔️ Precision, speed, and finesse! AggTrade brings those qualities to your DeFi experience.",
+    "text": "What would your DeFi dream team look like? 🤔 Let’s design it with AggTrade’s tools! #DeFi",
     "format": "question",
-    "theme": "trading-experience",
+    "theme": "creative-collaboration",
     "scores": {
-      "quality": 0.7,
-      "brandFit": 0.8347169811320755,
+      "quality": 0.6,
+      "brandFit": 0.7064150943396226,
       "expectedEngagement": 0.5,
       "plagiarismRisk": 0,
-      "effort": 0.3917857142857143,
-      "composite": 0.7295006738544475
+      "effort": 0.3007142857142857,
+      "composite": 0.6765323450134771
     },
-    "reasoning": "This post uses playful imagery to engage the audience and aligns with the emphasis on innovation in DeFi, leveraging the question format.",
+    "reasoning": "Encouraging creative thinking engages users in a playful way, fitting the energetic and innovative voice.",
     "sourcePatternIds": [
-      "hook:question-first"
+      "angle:community-encouragement"
     ],
     "sourceEvidence": [
       {
-        "tweetId": "2051273330934665455",
-        "handle": "Morpho",
-        "excerpt": "RT @OpenCover: 🏆 A month after launch, 15+ Covered Vaults are live across @Ethereum, @Optimism, @Ba",
-        "url": "https://x.com/Morpho/status/2051273330934665455",
-        "metric": "28 likes, 7 RTs"
+        "tweetId": "2052537408374136977",
+        "handle": "SushiSwap",
+        "excerpt": "Share your Sushi Perps PnL for a shot at 100,000 points. How to Enter: - quote tweet with your PnL c",
+        "url": "https://x.com/SushiSwap/status/2052537408374136977",
+        "metric": "38 likes, 7 RTs"
+      },
+      {
+        "tweetId": "2040515209631043924",
+        "handle": "SushiSwap",
+        "excerpt": "RT @alexmccurryo: One wallet did $2M volume yesterday on Sushi perps. Someone is point hunting...👀\ud83c",
+        "url": "https://x.com/SushiSwap/status/2040515209631043924",
+        "metric": "62 likes, 6 RTs"
       }
     ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
+    "createdAt": "2026-05-13T06:38:18.251Z"
   },
   {
-    "id": "cand_mp2ar877_7",
+    "id": "cand_mp3oug0b_5",
     "tier": "backup",
     "rank": 19,
-    "text": "Curious how perps can spice up your trading game? 🍾 Discover the potential on AggTrade and join the revolution!",
-    "format": "question",
-    "theme": "trading-potential",
+    "text": "Our katana cuts through complexity! ⚔️ Discover the simplicity of trading with AggTrade! #DeFi #Katana #AggTrade",
+    "format": "hot-take",
+    "theme": "user-experience",
     "scores": {
       "quality": 0.7,
-      "brandFit": 0.7017610062893083,
-      "expectedEngagement": 0.6,
+      "brandFit": 0.6017610062893082,
+      "expectedEngagement": 0.5,
       "plagiarismRisk": 0,
-      "effort": 0.27,
-      "composite": 0.7284402515723271
+      "effort": 0.34,
+      "composite": 0.676440251572327
     },
-    "reasoning": "This compels users to explore new features while maintaining a playful and engaging tone.",
+    "reasoning": "This positions AggTrade’s interface as user-friendly and exciting, catering to the energetic promotional voice.",
     "sourcePatternIds": [
-      "hook:early-adopter-benefits"
+      "angle:build-in-public-honesty"
     ],
     "sourceEvidence": [
       {
-        "tweetId": "2039789742233936354",
-        "handle": "SushiSwap",
-        "excerpt": "Sushi Perps are LIVE Powered by @HyperliquidX Early traders get boosted Sushi point multipliers http",
-        "url": "https://x.com/SushiSwap/status/2039789742233936354",
-        "metric": "905 likes, 140 RTs"
+        "tweetId": "2051893560094466058",
+        "handle": "Morpho",
+        "excerpt": "RT @PaulFrambot: The Morpho team has been cooking these past 3 months, but our ambitions go far beyo",
+        "url": "https://x.com/Morpho/status/2051893560094466058",
+        "metric": "275 likes, 12 RTs"
       },
       {
-        "tweetId": "2042327721376690438",
-        "handle": "SushiSwap",
-        "excerpt": "Trade perps, earn points. Only on Sushi Early traders still qualify for a multiplier. https://t.co/b",
-        "url": "https://x.com/SushiSwap/status/2042327721376690438",
-        "metric": "62 likes, 9 RTs"
+        "tweetId": "2051914540078543137",
+        "handle": "Morpho",
+        "excerpt": "RT @PaulFrambot: Spending two weeks in Singapore, Hong Kong, Tokyo and Seoul. One thing I’m apprecia",
+        "url": "https://x.com/Morpho/status/2051914540078543137",
+        "metric": "192 likes, 6 RTs"
       }
     ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
+    "createdAt": "2026-05-13T06:38:18.251Z"
   },
   {
-    "id": "cand_mp2ar877_28",
+    "id": "cand_mp3oug0b_21",
     "tier": "backup",
     "rank": 20,
-    "text": "Imagine a world where your trading goals are within reach… 🌈 That’s the essence of AggTrade! What’s your next big move?",
-    "format": "question",
-    "theme": "trading-goals",
-    "scores": {
-      "quality": 0.7,
-      "brandFit": 0.7818867924528302,
-      "expectedEngagement": 0.5,
-      "plagiarismRisk": 0,
-      "effort": 0.28428571428571425,
-      "composite": 0.7270431266846362
-    },
-    "reasoning": "This invokes a sense of aspiration and curiosity, enticing users to share their trading aspirations.",
-    "sourcePatternIds": [
-      "hook:question-first"
-    ],
-    "sourceEvidence": [
-      {
-        "tweetId": "2051273330934665455",
-        "handle": "Morpho",
-        "excerpt": "RT @OpenCover: 🏆 A month after launch, 15+ Covered Vaults are live across @Ethereum, @Optimism, @Ba",
-        "url": "https://x.com/Morpho/status/2051273330934665455",
-        "metric": "28 likes, 7 RTs"
-      }
-    ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
-  },
-  {
-    "id": "cand_mp2ar877_18",
-    "tier": "backup",
-    "rank": 21,
-    "text": "How do you maximize your yield in DeFi? 🚀 Explore AggTrade’s features and become a trading pro!",
-    "format": "micro-framework",
-    "theme": "yield-strategy",
-    "scores": {
-      "quality": 0.7,
-      "brandFit": 0.6615094339622641,
-      "expectedEngagement": 0.5,
-      "plagiarismRisk": 0,
-      "effort": 0.24142857142857144,
-      "composite": 0.7012345013477089
-    },
-    "reasoning": "This encourages users to explore features while implying value and expertise, matching the tone.",
-    "sourcePatternIds": [
-      "hook:three-things-list"
-    ],
-    "sourceEvidence": [
-      {
-        "tweetId": "2052373295639429615",
-        "handle": "Morpho",
-        "excerpt": "Morpho Effect: April 2026 🔹 Morpho's fixed-rate protocol has a name: Morpho Midnight 🔹 Morpho is F",
-        "url": "https://x.com/Morpho/status/2052373295639429615",
-        "metric": "42 likes, 4 RTs"
-      }
-    ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
-  },
-  {
-    "id": "cand_mp2ar877_12",
-    "tier": "backup",
-    "rank": 22,
-    "text": "If AggTrade were an animal, it would be a lion — fierce, innovative, and ready to conquer the DeFi jungle! 🦁 What do you think?",
-    "format": "question",
-    "theme": "community-building",
-    "scores": {
-      "quality": 0.6,
-      "brandFit": 0.8020125786163522,
-      "expectedEngagement": 0.5,
-      "plagiarismRisk": 0,
-      "effort": 0.2985714285714286,
-      "composite": 0.7006460017969453
-    },
-    "reasoning": "This engages the audience with fun imagery and seeks community input, fostering interaction.",
-    "sourcePatternIds": [
-      "hook:question-first"
-    ],
-    "sourceEvidence": [
-      {
-        "tweetId": "2051273330934665455",
-        "handle": "Morpho",
-        "excerpt": "RT @OpenCover: 🏆 A month after launch, 15+ Covered Vaults are live across @Ethereum, @Optimism, @Ba",
-        "url": "https://x.com/Morpho/status/2051273330934665455",
-        "metric": "28 likes, 7 RTs"
-      }
-    ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
-  },
-  {
-    "id": "cand_mp2ar877_30",
-    "tier": "backup",
-    "rank": 23,
-    "text": "Rediscover the art of trading with AggTrade! 🎨 A platform where creativity meets intuition. What are your trading tactics?",
-    "format": "question",
-    "theme": "trading-strategy",
-    "scores": {
-      "quality": 0.7,
-      "brandFit": 0.669433962264151,
-      "expectedEngagement": 0.5,
-      "plagiarismRisk": 0,
-      "effort": 0.35964285714285715,
-      "composite": 0.6913942048517521
-    },
-    "reasoning": "This utilizes an inviting question about creativity in trading while encouraging community interaction.",
-    "sourcePatternIds": [
-      "hook:question-first"
-    ],
-    "sourceEvidence": [
-      {
-        "tweetId": "2051273330934665455",
-        "handle": "Morpho",
-        "excerpt": "RT @OpenCover: 🏆 A month after launch, 15+ Covered Vaults are live across @Ethereum, @Optimism, @Ba",
-        "url": "https://x.com/Morpho/status/2051273330934665455",
-        "metric": "28 likes, 7 RTs"
-      }
-    ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
-  },
-  {
-    "id": "cand_mp2ar877_6",
-    "tier": "backup",
-    "rank": 24,
-    "text": "Who says DeFi can’t be fun? 😄 With AggTrade's all-in-one platform, trading is not just about numbers… it's about enjoying the ride!",
-    "format": "one-liner",
-    "theme": "decentralized-finance",
-    "scores": {
-      "quality": 0.6,
-      "brandFit": 0.7520754716981133,
-      "expectedEngagement": 0.5,
-      "plagiarismRisk": 0,
-      "effort": 0.3057142857142857,
-      "composite": 0.6874474393530997
-    },
-    "reasoning": "This statement emphasizes the enjoyment of DeFi while keeping the tone playful and engaging.",
-    "sourcePatternIds": [
-      "format:one-line-observation"
-    ],
-    "sourceEvidence": [
-      {
-        "tweetId": "2051914540078543137",
-        "handle": "Morpho",
-        "excerpt": "RT @PaulFrambot: Spending two weeks in Singapore, Hong Kong, Tokyo and Seoul. One thing I’m apprecia",
-        "url": "https://x.com/Morpho/status/2051914540078543137",
-        "metric": "192 likes, 6 RTs"
-      },
-      {
-        "tweetId": "2051339603584446687",
-        "handle": "Morpho",
-        "excerpt": "RT @MerlinEgalite: \"Lending is a product that never has a demand problem.\" True. What's capping the ",
-        "url": "https://x.com/Morpho/status/2051339603584446687",
-        "metric": "55 likes, 4 RTs"
-      }
-    ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
-  },
-  {
-    "id": "cand_mp2ar877_27",
-    "tier": "backup",
-    "rank": 25,
-    "text": "Are you ready to swap like a pro? 🔄 Join the DeFi revolution with AggTrade and take your trades to the next level!",
-    "format": "micro-framework",
-    "theme": "trading-tools",
-    "scores": {
-      "quality": 0.6,
-      "brandFit": 0.709308176100629,
-      "expectedEngagement": 0.5,
-      "plagiarismRisk": 0,
-      "effort": 0.27535714285714286,
-      "composite": 0.679791329739443
-    },
-    "reasoning": "This promotes user engagement by inviting them to elevate their trading experience in a playful manner.",
-    "sourcePatternIds": [
-      "angle:user-centric-improvements"
-    ],
-    "sourceEvidence": [
-      {
-        "tweetId": "2053928427435037041",
-        "handle": "SushiSwap",
-        "excerpt": "Sushi Perps v2 is live now. Powered by @HyperliquidX Faster. Cleaner. Built around how you actually ",
-        "url": "https://x.com/SushiSwap/status/2053928427435037041",
-        "metric": "168 likes, 21 RTs"
-      }
-    ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
-  },
-  {
-    "id": "cand_mp2ar877_17",
-    "tier": "backup",
-    "rank": 26,
-    "text": "AggTrade is like a DeFi buffet — all your favorite trading options just within reach! 🍽️ Dig in and enjoy the spread.",
-    "format": "one-liner",
-    "theme": "trading-options",
-    "scores": {
-      "quality": 0.6,
-      "brandFit": 0.7768553459119497,
-      "expectedEngagement": 0.4,
-      "plagiarismRisk": 0,
-      "effort": 0.2807142857142857,
-      "composite": 0.6761424079065589
-    },
-    "reasoning": "This culinary analogy makes trading feel accessible and fun, fitting the playful voice effectively.",
-    "sourcePatternIds": [
-      "format:one-line-observation"
-    ],
-    "sourceEvidence": [
-      {
-        "tweetId": "2051914540078543137",
-        "handle": "Morpho",
-        "excerpt": "RT @PaulFrambot: Spending two weeks in Singapore, Hong Kong, Tokyo and Seoul. One thing I’m apprecia",
-        "url": "https://x.com/Morpho/status/2051914540078543137",
-        "metric": "192 likes, 6 RTs"
-      },
-      {
-        "tweetId": "2051339603584446687",
-        "handle": "Morpho",
-        "excerpt": "RT @MerlinEgalite: \"Lending is a product that never has a demand problem.\" True. What's capping the ",
-        "url": "https://x.com/Morpho/status/2051339603584446687",
-        "metric": "55 likes, 4 RTs"
-      }
-    ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
-  },
-  {
-    "id": "cand_mp2ar877_22",
-    "tier": "backup",
-    "rank": 27,
-    "text": "Why choose between efficiency and innovation? 🤔 With AggTrade, you can have both! Trade smarter with our DeFi solutions.",
-    "format": "one-liner",
+    "text": "AggTrade makes complex trades feel like a walk in the park! 🌳 Are you joining the fun? #AggTrade",
+    "format": "observation",
     "theme": "user-experience",
     "scores": {
       "quality": 0.6,
-      "brandFit": 0.7244025157232705,
-      "expectedEngagement": 0.5,
+      "brandFit": 0.7840251572327044,
+      "expectedEngagement": 0.4,
       "plagiarismRisk": 0,
-      "effort": 0.3560714285714286,
-      "composite": 0.6754934860736748
+      "effort": 0.3132142857142857,
+      "composite": 0.6746848607367476
     },
-    "reasoning": "This statement contrasts common issues in trading with the benefits of AggTrade, maintaining an engaging tone.",
+    "reasoning": "This combines enjoyable imagery with a user-friendly approach, matching AggTrade's inviting style.",
     "sourcePatternIds": [
-      "hook:competitive-comparisons"
+      "angle:build-in-public-honesty"
     ],
     "sourceEvidence": [
       {
-        "tweetId": "2053928427435037041",
-        "handle": "SushiSwap",
-        "excerpt": "Sushi Perps v2 is live now. Powered by @HyperliquidX Faster. Cleaner. Built around how you actually ",
-        "url": "https://x.com/SushiSwap/status/2053928427435037041",
-        "metric": "168 likes, 21 RTs"
+        "tweetId": "2051893560094466058",
+        "handle": "Morpho",
+        "excerpt": "RT @PaulFrambot: The Morpho team has been cooking these past 3 months, but our ambitions go far beyo",
+        "url": "https://x.com/Morpho/status/2051893560094466058",
+        "metric": "275 likes, 12 RTs"
       },
       {
-        "tweetId": "2040827517125251141",
-        "handle": "SushiSwap",
-        "excerpt": "Farming is always better on Sushi. Perps are live. Start farming. https://t.co/yWRyUr8b7Z",
-        "url": "https://x.com/SushiSwap/status/2040827517125251141",
-        "metric": "59 likes, 4 RTs"
+        "tweetId": "2051914540078543137",
+        "handle": "Morpho",
+        "excerpt": "RT @PaulFrambot: Spending two weeks in Singapore, Hong Kong, Tokyo and Seoul. One thing I’m apprecia",
+        "url": "https://x.com/Morpho/status/2051914540078543137",
+        "metric": "192 likes, 6 RTs"
       }
     ],
-    "createdAt": "2026-05-12T07:16:07.362Z"
+    "createdAt": "2026-05-13T06:38:18.251Z"
+  },
+  {
+    "id": "cand_mp3oug0b_19",
+    "tier": "backup",
+    "rank": 21,
+    "text": "We’re slicing through the competition! ⚔️ How has AggTrade improved your trading? #DeFi #AggTrade",
+    "format": "micro-framework",
+    "theme": "user-feedback",
+    "scores": {
+      "quality": 0.6,
+      "brandFit": 0.6720251572327045,
+      "expectedEngagement": 0.5,
+      "plagiarismRisk": 0,
+      "effort": 0.3132142857142857,
+      "composite": 0.6666848607367476
+    },
+    "reasoning": "This not only features the brand positively but also invites users to share their experiences, matching the supportive voice.",
+    "sourcePatternIds": [
+      "angle:community-encouragement"
+    ],
+    "sourceEvidence": [
+      {
+        "tweetId": "2052537408374136977",
+        "handle": "SushiSwap",
+        "excerpt": "Share your Sushi Perps PnL for a shot at 100,000 points. How to Enter: - quote tweet with your PnL c",
+        "url": "https://x.com/SushiSwap/status/2052537408374136977",
+        "metric": "38 likes, 7 RTs"
+      },
+      {
+        "tweetId": "2040515209631043924",
+        "handle": "SushiSwap",
+        "excerpt": "RT @alexmccurryo: One wallet did $2M volume yesterday on Sushi perps. Someone is point hunting...👀\ud83c",
+        "url": "https://x.com/SushiSwap/status/2040515209631043924",
+        "metric": "62 likes, 6 RTs"
+      }
+    ],
+    "createdAt": "2026-05-13T06:38:18.251Z"
+  },
+  {
+    "id": "cand_mp3oug0b_6",
+    "tier": "backup",
+    "rank": 22,
+    "text": "What’s the most underrated feature of a DeFi aggregator? 🤔 Let’s brainstorm! #DeFi #AggTrade",
+    "format": "question",
+    "theme": "user-engagement",
+    "scores": {
+      "quality": 0.6,
+      "brandFit": 0.6619622641509435,
+      "expectedEngagement": 0.5,
+      "plagiarismRisk": 0,
+      "effort": 0.30607142857142855,
+      "composite": 0.664883423180593
+    },
+    "reasoning": "This encourages community involvement and discussion, a feature of engaged users, matching the vibrant tone.",
+    "sourcePatternIds": [
+      "angle:community-encouragement"
+    ],
+    "sourceEvidence": [
+      {
+        "tweetId": "2052537408374136977",
+        "handle": "SushiSwap",
+        "excerpt": "Share your Sushi Perps PnL for a shot at 100,000 points. How to Enter: - quote tweet with your PnL c",
+        "url": "https://x.com/SushiSwap/status/2052537408374136977",
+        "metric": "38 likes, 7 RTs"
+      },
+      {
+        "tweetId": "2040515209631043924",
+        "handle": "SushiSwap",
+        "excerpt": "RT @alexmccurryo: One wallet did $2M volume yesterday on Sushi perps. Someone is point hunting...👀\ud83c",
+        "url": "https://x.com/SushiSwap/status/2040515209631043924",
+        "metric": "62 likes, 6 RTs"
+      }
+    ],
+    "createdAt": "2026-05-13T06:38:18.251Z"
+  },
+  {
+    "id": "cand_mp3oug0b_11",
+    "tier": "backup",
+    "rank": 23,
+    "text": "What’s your DeFi trading strategy? 🧠 Share your secrets with us at AggTrade! #AggTrade #DeFi",
+    "format": "micro-framework",
+    "theme": "strategy-sharing",
+    "scores": {
+      "quality": 0.6,
+      "brandFit": 0.6619622641509435,
+      "expectedEngagement": 0.5,
+      "plagiarismRisk": 0,
+      "effort": 0.30607142857142855,
+      "composite": 0.664883423180593
+    },
+    "reasoning": "Encouraging users to exchange strategies maintains community interaction in line with the voice's playful tone.",
+    "sourcePatternIds": [
+      "angle:community-encouragement"
+    ],
+    "sourceEvidence": [
+      {
+        "tweetId": "2052537408374136977",
+        "handle": "SushiSwap",
+        "excerpt": "Share your Sushi Perps PnL for a shot at 100,000 points. How to Enter: - quote tweet with your PnL c",
+        "url": "https://x.com/SushiSwap/status/2052537408374136977",
+        "metric": "38 likes, 7 RTs"
+      },
+      {
+        "tweetId": "2040515209631043924",
+        "handle": "SushiSwap",
+        "excerpt": "RT @alexmccurryo: One wallet did $2M volume yesterday on Sushi perps. Someone is point hunting...👀\ud83c",
+        "url": "https://x.com/SushiSwap/status/2040515209631043924",
+        "metric": "62 likes, 6 RTs"
+      }
+    ],
+    "createdAt": "2026-05-13T06:38:18.251Z"
+  },
+  {
+    "id": "cand_mp3oug0b_24",
+    "tier": "backup",
+    "rank": 24,
+    "text": "What’s your go-to strategy for leveraging AggTrade? 🏆 Share your tips with us! #DeFi",
+    "format": "micro-framework",
+    "theme": "strategy-sharing",
+    "scores": {
+      "quality": 0.5,
+      "brandFit": 0.6938364779874213,
+      "expectedEngagement": 0.5,
+      "plagiarismRisk": 0,
+      "effort": 0.2917857142857143,
+      "composite": 0.6442805480682839
+    },
+    "reasoning": "This opens the door for knowledge sharing among users, adding depth to the conversation while fitting the energetic tone.",
+    "sourcePatternIds": [
+      "angle:community-encouragement"
+    ],
+    "sourceEvidence": [
+      {
+        "tweetId": "2052537408374136977",
+        "handle": "SushiSwap",
+        "excerpt": "Share your Sushi Perps PnL for a shot at 100,000 points. How to Enter: - quote tweet with your PnL c",
+        "url": "https://x.com/SushiSwap/status/2052537408374136977",
+        "metric": "38 likes, 7 RTs"
+      },
+      {
+        "tweetId": "2040515209631043924",
+        "handle": "SushiSwap",
+        "excerpt": "RT @alexmccurryo: One wallet did $2M volume yesterday on Sushi perps. Someone is point hunting...👀\ud83c",
+        "url": "https://x.com/SushiSwap/status/2040515209631043924",
+        "metric": "62 likes, 6 RTs"
+      }
+    ],
+    "createdAt": "2026-05-13T06:38:18.251Z"
+  },
+  {
+    "id": "cand_mp3oug0b_29",
+    "tier": "backup",
+    "rank": 25,
+    "text": "What keeps you excited about DeFi? 🎉 Share your thoughts and rally with AggTrade! #DeFi #AggTrade",
+    "format": "question",
+    "theme": "community-engagement",
+    "scores": {
+      "quality": 0.5,
+      "brandFit": 0.6145408805031447,
+      "expectedEngagement": 0.5,
+      "plagiarismRisk": 0,
+      "effort": 0.315,
+      "composite": 0.6221352201257861
+    },
+    "reasoning": "This invites users to participate in a fun discussion, echoing the lively tone and engaging audience.",
+    "sourcePatternIds": [
+      "angle:community-encouragement"
+    ],
+    "sourceEvidence": [
+      {
+        "tweetId": "2052537408374136977",
+        "handle": "SushiSwap",
+        "excerpt": "Share your Sushi Perps PnL for a shot at 100,000 points. How to Enter: - quote tweet with your PnL c",
+        "url": "https://x.com/SushiSwap/status/2052537408374136977",
+        "metric": "38 likes, 7 RTs"
+      },
+      {
+        "tweetId": "2040515209631043924",
+        "handle": "SushiSwap",
+        "excerpt": "RT @alexmccurryo: One wallet did $2M volume yesterday on Sushi perps. Someone is point hunting...👀\ud83c",
+        "url": "https://x.com/SushiSwap/status/2040515209631043924",
+        "metric": "62 likes, 6 RTs"
+      }
+    ],
+    "createdAt": "2026-05-13T06:38:18.251Z"
+  },
+  {
+    "id": "cand_mp3oug0b_22",
+    "tier": "backup",
+    "rank": 26,
+    "text": "What new trends in DeFi have you spotted? 🔍 Let’s discuss on AggTrade! #DeFi #AggTrade",
+    "format": "question",
+    "theme": "trend-monitoring",
+    "scores": {
+      "quality": 0.5,
+      "brandFit": 0.5868679245283019,
+      "expectedEngagement": 0.5,
+      "plagiarismRisk": 0,
+      "effort": 0.2953571428571429,
+      "composite": 0.6171812668463612
+    },
+    "reasoning": "This keeps community interaction high while focusing on emerging trends, embracing the voice’s curiosity.",
+    "sourcePatternIds": [
+      "angle:community-encouragement"
+    ],
+    "sourceEvidence": [
+      {
+        "tweetId": "2052537408374136977",
+        "handle": "SushiSwap",
+        "excerpt": "Share your Sushi Perps PnL for a shot at 100,000 points. How to Enter: - quote tweet with your PnL c",
+        "url": "https://x.com/SushiSwap/status/2052537408374136977",
+        "metric": "38 likes, 7 RTs"
+      },
+      {
+        "tweetId": "2040515209631043924",
+        "handle": "SushiSwap",
+        "excerpt": "RT @alexmccurryo: One wallet did $2M volume yesterday on Sushi perps. Someone is point hunting...👀\ud83c",
+        "url": "https://x.com/SushiSwap/status/2040515209631043924",
+        "metric": "62 likes, 6 RTs"
+      }
+    ],
+    "createdAt": "2026-05-13T06:38:18.251Z"
+  },
+  {
+    "id": "cand_mp3oug0b_18",
+    "tier": "backup",
+    "rank": 27,
+    "text": "DeFi is a jungle out there! 🐾 How do you choose your path? #AggTrade #DeFi",
+    "format": "question",
+    "theme": "navigating-challenges",
+    "scores": {
+      "quality": 0.5,
+      "brandFit": 0.616679245283019,
+      "expectedEngagement": 0.4,
+      "plagiarismRisk": 0,
+      "effort": 0.2739285714285714,
+      "composite": 0.6067769541778976
+    },
+    "reasoning": "Using a relatable metaphor encourages viewers to share their experiences while resonating with the audience's adventures.",
+    "sourcePatternIds": [
+      "angle:community-encouragement"
+    ],
+    "sourceEvidence": [
+      {
+        "tweetId": "2052537408374136977",
+        "handle": "SushiSwap",
+        "excerpt": "Share your Sushi Perps PnL for a shot at 100,000 points. How to Enter: - quote tweet with your PnL c",
+        "url": "https://x.com/SushiSwap/status/2052537408374136977",
+        "metric": "38 likes, 7 RTs"
+      },
+      {
+        "tweetId": "2040515209631043924",
+        "handle": "SushiSwap",
+        "excerpt": "RT @alexmccurryo: One wallet did $2M volume yesterday on Sushi perps. Someone is point hunting...👀\ud83c",
+        "url": "https://x.com/SushiSwap/status/2040515209631043924",
+        "metric": "62 likes, 6 RTs"
+      }
+    ],
+    "createdAt": "2026-05-13T06:38:18.251Z"
   }
 ]

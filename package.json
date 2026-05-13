@@ -12,6 +12,8 @@
   "dependencies": {
     "@types/node": "^25.6.2",
     "apify-client": "^2.23.2",
+    "chart.js": "^4.5.1",
+    "chartjs-node-canvas": "^5.0.0",
     "dotenv": "^17.4.2",
     "openai": "^4.104.0",
     "tsx": "^4.21.0",
