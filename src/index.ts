@@ -5,6 +5,7 @@ import type { OnlineProvider } from "./types.js";
 import { exec } from "child_process";
 import { promisify } from "util";
 import path from "node:path";
+import fs from "node:fs";
 import { createProgress, getProgress, setProgress } from "./progress.js";
 import { startServer, type ServerHandle } from "./server.js";
 
@@ -26,6 +27,7 @@ interface ParsedArgs {
   csv: boolean;
   model: string;
   noProgress: boolean;
+  contextFile: string | undefined;
 }
 
 function readFlag(args: string[], ...flags: string[]): string | undefined {
@@ -41,6 +43,7 @@ function usageAndExit(): never {
     `Usage:
   Online:  npm start -- --target "@me" --competitors "@a,@b,@c" [--provider twitterapi|apify]
                        [--count 27] [--days 14] [--max-tweets 50] [--demo] [--no-progress]
+                       [--contextFile ./path/to/context.json]
   Offline: npm start -- --target "@me" --competitors "@a,@b" --offline [--dataDir ./data/twitter]
                        [--maxTweetsPerUser 50] [--maxSourceTweets 40] [--maxIdeas 25]
                        [--model gpt-4o-mini] [--force] [--csv]`
@@ -77,6 +80,7 @@ function parseArgs(): ParsedArgs {
   const maxIdeas = Number(readFlag(args, "--maxIdeas") ?? 25);
   const dataDir = readFlag(args, "--dataDir") ?? "./data/twitter";
   const model = readFlag(args, "--model") ?? "gpt-4o-mini";
+  const contextFile = readFlag(args, "--contextFile");
 
   if (!offline && (!Number.isFinite(count) || count < 8)) {
     console.error("Error: --count must be a number ≥ 8 (7 hero + 1 backup minimum).");
@@ -99,7 +103,35 @@ function parseArgs(): ParsedArgs {
   return {
     target, competitors, count, daysBack, maxTweetsPerUser, demo, offline,
     provider, dataDir, maxSourceTweets, maxIdeas, force, csv, model, noProgress,
+    contextFile,
   };
+}
+
+function loadProjectContext(file: string): string[] {
+  const abs = path.resolve(file);
+  let raw: string;
+  try {
+    raw = fs.readFileSync(abs, "utf-8");
+  } catch (e) {
+    console.error(
+      `Error: could not read --contextFile "${abs}": ${e instanceof Error ? e.message : e}`,
+    );
+    process.exit(1);
+  }
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(raw);
+  } catch (e) {
+    console.error(
+      `Error: --contextFile is not valid JSON (${e instanceof Error ? e.message : e}).`,
+    );
+    process.exit(1);
+  }
+  if (!Array.isArray(parsed) || !parsed.every((x) => typeof x === "string")) {
+    console.error(`Error: --contextFile must be a JSON array of strings.`);
+    process.exit(1);
+  }
+  return (parsed as string[]).map((s) => s.trim()).filter(Boolean);
 }
 
 function validateEnv(opts: ParsedArgs) {
@@ -217,6 +249,11 @@ async function main() {
     }
   }
 
+  const projectContext = opts.contextFile ? loadProjectContext(opts.contextFile) : undefined;
+  if (projectContext) {
+    console.log(`Context:     ${projectContext.length} project-context entries loaded`);
+  }
+
   try {
     const result = await runAgent({
       target: opts.target,
@@ -226,6 +263,7 @@ async function main() {
       maxTweetsPerUser: opts.maxTweetsPerUser,
       demo: opts.demo,
       provider: opts.provider,
+      projectContext,
     });
 
     console.log(`\nDone. Artifacts:`);

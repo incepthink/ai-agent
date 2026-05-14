@@ -60,16 +60,25 @@ export async function generateCandidates(
   openai: OpenAI,
   patterns: Pattern[],
   voice: VoiceProfile,
-  rawCount: number
+  rawCount: number,
+  projectContext?: string[],
 ): Promise<RawCandidate[]> {
   if (patterns.length === 0) return [];
+
+  const projectContextBlock =
+    projectContext && projectContext.length > 0
+      ? `PROJECT CONTEXT — background notes about the target's product, positioning, and topics. Use this to understand what @${voice.handle} actually builds and talks about. These are NOT tweets; do not copy their wording.
+${projectContext.map((c, i) => `  ${i + 1}. ${c}`).join("\n")}
+
+`
+      : "";
 
   const prompt = `You generate "filler post" candidates for Twitter/X user @${voice.handle}.
 
 VOICE PROFILE — match this exactly:
 ${voiceSummary(voice)}
 
-PATTERNS mined from competitors (use as STRUCTURAL inspiration only — never reuse wording):
+${projectContextBlock}PATTERNS mined from competitors (use as STRUCTURAL inspiration only — never reuse wording):
 ${patternsSummary(patterns)}
 
 YOUR TASK

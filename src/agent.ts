@@ -67,6 +67,7 @@ export async function runAgent(options: AgentOptions): Promise<RunResult> {
     maxTweetsPerUser = 50,
     demo = false,
     provider,
+    projectContext,
   } = options;
 
   const backupCount = Math.max(0, count - HERO_COUNT);
@@ -165,6 +166,7 @@ export async function runAgent(options: AgentOptions): Promise<RunResult> {
     patterns,
     voice,
     rawCount,
+    projectContext,
   );
   report(`[4/7] LLM returned ${rawCandidates.length} raw candidates`);
   progress?.stageEnd("generate");

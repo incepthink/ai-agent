@@ -1,74 +1,71 @@
 {
-  "handle": "SushiSwap",
-  "sampleSize": 9,
-  "avgTweetLength": 132,
+  "handle": "AggTrade_XYZ",
+  "sampleSize": 5,
+  "avgTweetLength": 159,
   "sentenceLengthP50": 19,
-  "emojiRate": 0.22,
-  "hashtagRate": 0,
+  "emojiRate": 0.8,
+  "hashtagRate": 0.6,
   "punctuationFingerprint": {
     "ellipsis": 0,
-    "emDash": 0,
-    "questionMark": 0,
-    "exclamation": 0
+    "emDash": 0.4,
+    "questionMark": 0.2,
+    "exclamation": 0.6
   },
   "vocabulary": {
     "topNouns": [
-      "sushi",
       "perps",
+      "katana",
+      "defi",
+      "aggtrade",
+      "aggregator",
+      "swaps",
+      "one",
+      "diesel",
       "live",
-      "points",
-      "traders",
       "trade",
-      "hyperliquidx",
-      "start",
-      "may",
-      "pnl",
-      "earn",
-      "fees"
+      "perpetuals",
+      "directly"
     ],
     "topVerbs": [
-      "powered",
-      "farming",
-      "make",
-      "earning",
-      "shipping",
-      "entry",
-      "following",
-      "announced",
-      "trading",
-      "using"
+      "lending",
+      "borrowing",
+      "try",
+      "introducing",
+      "fragmented",
+      "fixes",
+      "use"
     ]
   },
   "hookPatterns": [
-    "GM to everyone...",
-    "Perps are live...",
-    "Farming is always better on Sushi."
+    "Introducing...",
+    "What other animals do Web3 companies use?",
+    "Perps are now LIVE on AggTrade"
   ],
   "taboo": [
-    "never uses hashtags",
-    "no generic motivational language"
+    "avoids generic motivation",
+    "does not engage in off-topic discussions"
   ],
-  "styleNotes": "The voice is direct and informative, with a focus on community engagement and promotions, conveying excitement about new features and benefits.",
+  "styleNotes": "The voice is energetic and promotional, emphasizing utility and innovation within the DeFi space, with a light-hearted touch in community engagement.",
   "exampleTweets": [
     {
-      "id": "2039789742233936354",
-      "text": "Sushi Perps are LIVE\n\nPowered by @HyperliquidX \n\nEarly traders get boosted Sushi point multipliers https://t.co/5TT5iLSNKb"
+      "id": "2050210902591631680",
+      "text": "Perps are now LIVE on AggTrade ⚔️\n\nTrade perpetuals directly on @katana through AggTrade — the DeFi aggregator built for the Katana ecosystem.\n\nSwaps, lending, borrowing, yield, and now perps — all in one place.\n\nTry it now: https://t.co/zUWomSHTNq\n\n#Katana #DeFi #Perps https://t.co/iHKDuqUoGj"
     },
     {
-      "id": "2053928427435037041",
-      "text": "Sushi Perps v2 is live now. Powered by @HyperliquidX  \nFaster. Cleaner. Built around how you actually trade.\n\nMake a trade and start earning points. https://t.co/EB6zuaRUrA"
+      "id": "1887952719966835107",
+      "text": "@1deltaDAO integrates Diesel so @fuel_network traders can swap with the lowest fees and best prices. \n\nLFG! https://t.co/byZdsWttWG"
     },
     {
-      "id": "2041239610290778158",
-      "text": "hyperliquid traders discovering sushi perps point season https://t.co/ULiiep29XA"
+      "id": "2046923037195546993",
+      "text": "Introducing https://t.co/G4xviHRhsF! The All-in-One DeFi Aggregator on @katana \n\nDeFi is fragmented.\n\nSwaps here. Lending there. Perps somewhere else.\n\nAggTrade fixes that. 🧵🧵🧵 https://t.co/rCquSlvyeC"
     },
     {
-      "id": "2052761725577879569",
-      "text": "GM to everyone with a Sushi Perps tab open right now.\n\nPerps v2 is shipping Monday, May 11th https://t.co/RebF62H2Yp"
+      "id": "2049119080314228892",
+      "text": "gKatana"
     },
     {
-      "id": "2042327721376690438",
-      "text": "Trade perps, earn points.\nOnly on Sushi\n\nEarly traders still qualify for a multiplier. https://t.co/biRt72sfu7"
+      "id": "1888810403737813389",
+      "text": "@JupiterExchange has a cat\n@UniswapFND has a unicorn\n@PancakeSwap has a bunny\n\nWhat other animals do Web3 companies use?\n\nWe should have a mascot for Diesel too!"
     }
   ]
 }

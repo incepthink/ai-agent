@@ -129,6 +129,7 @@ export interface AgentOptions {
   maxTweetsPerUser?: number;
   demo?: boolean;
   provider?: OnlineProvider;
+  projectContext?: string[];
 }
 
 // ─────────────────────────────────────────────
