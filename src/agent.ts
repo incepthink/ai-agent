@@ -28,6 +28,7 @@ import {
   generatePostTypeChart,
   generateComparisonChart,
 } from "./tools/chart.js";
+import { getProgress } from "./progress.js";
 import type {
   AgentOptions,
   CompetitorData,
@@ -35,6 +36,11 @@ import type {
   TargetData,
   Tweet,
 } from "./types.js";
+
+function report(msg: string, source: string = "pipeline"): void {
+  console.log(msg);
+  getProgress()?.log(msg, source);
+}
 
 interface TwitterProvider {
   fetchUserTweets: (username: string, maxItems?: number) => Promise<Tweet[]>;
@@ -85,8 +91,10 @@ export async function runAgent(options: AgentOptions): Promise<RunResult> {
 
   const cleanTarget = target.replace(/^@/, "");
   const cleanCompetitors = competitors.map((c) => c.replace(/^@/, ""));
+  const progress = getProgress();
 
-  console.log(
+  progress?.stageStart("fetch", "[1/7] Fetch profiles + tweets");
+  report(
     `\n[1/7] Fetching profiles — target @${cleanTarget} + ${cleanCompetitors.length} competitors...`,
   );
   const [targetProfile, ...competitorProfiles] = await Promise.all([
@@ -94,7 +102,7 @@ export async function runAgent(options: AgentOptions): Promise<RunResult> {
     ...cleanCompetitors.map((h) => twitter.getUserProfile(h)),
   ]);
 
-  console.log(`[1/7] Fetching tweets...`);
+  report(`[1/7] Fetching tweets...`);
   const [targetTweets, ...competitorTweetsList] = await Promise.all([
     twitter.fetchUserTweets(cleanTarget, maxTweetsPerUser),
     ...cleanCompetitors.map((h) =>
@@ -109,23 +117,29 @@ export async function runAgent(options: AgentOptions): Promise<RunResult> {
     }),
   );
 
-  console.log(
+  report(
     `[1/7] Got ${targetTweets.length} target tweets, ${competitorData.reduce((a, c) => a + c.tweets.length, 0)} competitor tweets`,
   );
+  progress?.stageEnd("fetch");
 
-  console.log(`\n[2/7] Inferring voice profile from @${cleanTarget}...`);
+  progress?.stageStart("voice", "[2/7] Voice profile");
+  report(`\n[2/7] Inferring voice profile from @${cleanTarget}...`);
   const voice = await inferVoiceProfile(openai, cleanTarget, targetTweets);
-  console.log(`[2/7] Voice: ${voice.styleNotes || "(no style notes)"}`);
+  report(`[2/7] Voice: ${voice.styleNotes || "(no style notes)"}`);
+  progress?.stageEnd("voice");
 
-  console.log(
+  progress?.stageStart("mining", "[3/7] Pattern mining");
+  report(
     `\n[3/7] Mining patterns from ${competitorData.length} competitor(s)...`,
   );
   const patterns = await minePatterns(openai, competitorData);
-  console.log(`[3/7] Extracted ${patterns.length} unique patterns`);
+  report(`[3/7] Extracted ${patterns.length} unique patterns`);
 
   const insights = buildInsights(cleanTarget, competitorData, patterns);
+  progress?.stageEnd("mining");
 
-  console.log(`\n[3.5/7] Rendering analytics charts...`);
+  progress?.stageStart("charts", "[3.5/7] Analytics charts");
+  report(`\n[3.5/7] Rendering analytics charts...`);
   const chartTasks: Array<Promise<ChartAsset>> = [];
   const pushCharts = (handle: string, tweets: Tweet[]): void => {
     chartTasks.push(
@@ -141,16 +155,19 @@ export async function runAgent(options: AgentOptions): Promise<RunResult> {
     generateComparisonChart(competitorData).then((p) => ({ handle: "_all", kind: "comparison", path: p })),
   );
   const charts = await Promise.all(chartTasks);
-  console.log(`[3.5/7] Rendered ${charts.length} chart PNGs`);
+  report(`[3.5/7] Rendered ${charts.length} chart PNGs`);
+  progress?.stageEnd("charts");
 
-  console.log(`\n[4/7] Generating ${rawCount} raw candidates...`);
+  progress?.stageStart("generate", "[4/7] Generate candidates");
+  report(`\n[4/7] Generating ${rawCount} raw candidates...`);
   const rawCandidates = await generateCandidates(
     openai,
     patterns,
     voice,
     rawCount,
   );
-  console.log(`[4/7] LLM returned ${rawCandidates.length} raw candidates`);
+  report(`[4/7] LLM returned ${rawCandidates.length} raw candidates`);
+  progress?.stageEnd("generate");
 
   const createdAt = new Date().toISOString();
   let candidates = rawCandidates.map((r, i) => rawToCandidate(r, i, createdAt));
@@ -165,7 +182,8 @@ export async function runAgent(options: AgentOptions): Promise<RunResult> {
     }
   }
 
-  console.log(`\n[5/7] Scoring ${candidates.length} candidates...`);
+  progress?.stageStart("score", "[5/7] Score candidates");
+  report(`\n[5/7] Scoring ${candidates.length} candidates...`);
   candidates = await scoreCandidates(
     openai,
     candidates,
@@ -173,15 +191,17 @@ export async function runAgent(options: AgentOptions): Promise<RunResult> {
     patterns,
     allCompetitorTweets,
   );
+  progress?.stageEnd("score");
 
-  console.log(
+  progress?.stageStart("rank", "[6/7] Filter + rank");
+  report(
     `\n[6/7] Filtering (plagiarism < ${PLAGIARISM_THRESHOLD}) and ranking...`,
   );
   const rejected = candidates.filter(
     (c) => c.scores.plagiarismRisk >= PLAGIARISM_THRESHOLD,
   ).length;
   if (rejected > 0)
-    console.log(
+    report(
       `[6/7] Dropped ${rejected} candidates over plagiarism threshold`,
     );
 
@@ -197,17 +217,20 @@ export async function runAgent(options: AgentOptions): Promise<RunResult> {
     c.sourceEvidence = buildEvidence(c.sourcePatternIds, patterns, tweetIndex);
   }
 
-  console.log(
+  report(
     `[6/7] Final library: ${ranked.filter((c) => c.tier === "hero").length} hero + ${ranked.filter((c) => c.tier === "backup").length} backup`,
   );
+  progress?.stageEnd("rank");
 
-  console.log(`\n[7/7] Writing artifacts + dashboard...`);
+  progress?.stageStart("write", "[7/7] Write artifacts + dashboard");
+  report(`\n[7/7] Writing artifacts + dashboard...`);
   const { postsPath, insightsPath, voicePath } = writeArtifacts(
     ranked,
     insights,
     voice,
   );
   const dashboardPath = renderDashboard(ranked, insights, voice, charts);
+  progress?.stageEnd("write");
 
   void targetProfile;
 

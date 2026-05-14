@@ -5,6 +5,8 @@ import type { OnlineProvider } from "./types.js";
 import { exec } from "child_process";
 import { promisify } from "util";
 import path from "node:path";
+import { createProgress, getProgress, setProgress } from "./progress.js";
+import { startServer, type ServerHandle } from "./server.js";
 
 const execAsync = promisify(exec);
 
@@ -23,6 +25,7 @@ interface ParsedArgs {
   force: boolean;
   csv: boolean;
   model: string;
+  noProgress: boolean;
 }
 
 function readFlag(args: string[], ...flags: string[]): string | undefined {
@@ -37,7 +40,7 @@ function usageAndExit(): never {
   console.error(
     `Usage:
   Online:  npm start -- --target "@me" --competitors "@a,@b,@c" [--provider twitterapi|apify]
-                       [--count 27] [--days 14] [--max-tweets 50] [--demo]
+                       [--count 27] [--days 14] [--max-tweets 50] [--demo] [--no-progress]
   Offline: npm start -- --target "@me" --competitors "@a,@b" --offline [--dataDir ./data/twitter]
                        [--maxTweetsPerUser 50] [--maxSourceTweets 40] [--maxIdeas 25]
                        [--model gpt-4o-mini] [--force] [--csv]`
@@ -51,6 +54,7 @@ function parseArgs(): ParsedArgs {
   const offline = args.includes("--offline");
   const force = args.includes("--force");
   const csv = args.includes("--csv");
+  const noProgress = args.includes("--no-progress");
 
   const target = readFlag(args, "--target");
   const rawCompetitors = readFlag(args, "--competitors");
@@ -94,7 +98,7 @@ function parseArgs(): ParsedArgs {
 
   return {
     target, competitors, count, daysBack, maxTweetsPerUser, demo, offline,
-    provider, dataDir, maxSourceTweets, maxIdeas, force, csv, model,
+    provider, dataDir, maxSourceTweets, maxIdeas, force, csv, model, noProgress,
   };
 }
 
@@ -126,19 +130,20 @@ function validateEnv(opts: ParsedArgs) {
   }
 }
 
-async function openInBrowser(filePath: string) {
-  const absolute = path.resolve(filePath);
+async function openInBrowser(target: string) {
+  const isUrl = /^https?:\/\//i.test(target);
+  const arg = isUrl ? target : path.resolve(target);
   const platform = process.platform;
   try {
     if (platform === "win32") {
-      await execAsync(`start "" "${absolute}"`, { shell: "cmd.exe" });
+      await execAsync(`start "" "${arg}"`, { shell: "cmd.exe" });
     } else if (platform === "darwin") {
-      await execAsync(`open "${absolute}"`);
+      await execAsync(`open "${arg}"`);
     } else {
-      await execAsync(`xdg-open "${absolute}"`);
+      await execAsync(`xdg-open "${arg}"`);
     }
   } catch {
-    console.log(`Could not auto-open browser. Open manually: ${absolute}`);
+    console.log(`Could not auto-open browser. Open manually: ${arg}`);
   }
 }
 
@@ -191,6 +196,27 @@ async function main() {
   else console.log(`Mode:        ONLINE (provider=${opts.provider})`);
   console.log("");
 
+  let server: ServerHandle | null = null;
+  if (!opts.noProgress) {
+    const progress = createProgress();
+    setProgress(progress);
+    try {
+      server = await startServer(progress);
+      console.log(`Progress UI: ${server.url}`);
+      await openInBrowser(server.url);
+      process.on("SIGINT", () => {
+        console.log("\nShutting down progress server...");
+        server?.close().finally(() => process.exit(0));
+      });
+    } catch (err) {
+      console.warn(
+        `Could not start progress server (${err instanceof Error ? err.message : err}). Falling back to terminal logs.`,
+      );
+      server = null;
+      setProgress(null);
+    }
+  }
+
   try {
     const result = await runAgent({
       target: opts.target,
@@ -207,12 +233,25 @@ async function main() {
     console.log(`  ${result.insightsPath}`);
     console.log(`  ${result.voicePath}`);
     console.log(`  ${result.dashboardPath}`);
-    console.log("\nOpening dashboard...");
-    await openInBrowser(result.dashboardPath);
+
+    if (server) {
+      const dashboardUrl = `${server.url}/dashboard`;
+      console.log(`\nDashboard: ${dashboardUrl}`);
+      console.log("Server staying alive — press Ctrl+C to exit.");
+      // Trigger client redirect to /dashboard.
+      getProgress()?.done(dashboardUrl);
+    } else {
+      console.log("\nOpening dashboard...");
+      await openInBrowser(result.dashboardPath);
+    }
   } catch (err) {
     console.error("\nAgent failed:", err instanceof Error ? err.message : err);
     if (err instanceof Error && err.stack) console.error(err.stack);
-    process.exit(1);
+    const msg = err instanceof Error ? err.message : String(err);
+    getProgress()?.error(msg);
+    if (!server) process.exit(1);
+    // With a server up, stay alive so the user can read the error in-browser.
+    console.error("Server staying alive — press Ctrl+C to exit.");
   }
 }
 

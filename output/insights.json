@@ -1,79 +1,84 @@
 {
-  "generatedAt": "2026-05-13T06:37:40.270Z",
-  "target": "AggTrade_XYZ",
+  "generatedAt": "2026-05-13T10:58:48.600Z",
+  "target": "SushiSwap",
   "competitors": [
-    "SushiSwap",
+    "AggTrade_XYZ",
     "Morpho"
   ],
   "topHooks": [
     {
-      "signature": "partnership-highlight",
-      "description": "Emphasizing collaborations or partnerships to add credibility and excitement to the offerings.",
-      "avgEngagement": 739,
+      "signature": "contrast-in-different-regions",
+      "description": "Highlighting a difference in perception or experience across various geographic locations.",
+      "avgEngagement": 220,
+      "frequency": 1
+    },
+    {
+      "signature": "exciting-launch",
+      "description": "Start with an announcement about a new feature or product being available for use, emphasizing its novelty and potential impact.",
+      "avgEngagement": 80,
       "frequency": 2
     },
     {
-      "signature": "early-adopter-incentive",
-      "description": "Highlighting benefits or rewards for early adopters to motivate immediate engagement.",
-      "avgEngagement": 723,
-      "frequency": 2
+      "signature": "testimonial-approach",
+      "description": "Using user experiences or testimonials to validate product quality or reliability.",
+      "avgEngagement": 109,
+      "frequency": 1
     },
     {
-      "signature": "breaking-news",
-      "description": "Announce significant developments or partnerships that could impact the industry.",
-      "avgEngagement": 199,
-      "frequency": 3
-    },
-    {
-      "signature": "expert-insight",
-      "description": "Provide insights or quotes from industry experts to validate claims or add authority to posts.",
-      "avgEngagement": 140,
-      "frequency": 2
+      "signature": "partnership-announcement",
+      "description": "Announce new integrations or partnerships that enhance product offerings, often including a call to action to explore new functionalities.",
+      "avgEngagement": 7,
+      "frequency": 1
     }
   ],
   "topFormats": [
     {
-      "signature": "success-tease",
-      "description": "Teasing a successful outcome or event to build anticipation without delving into specific details.",
-      "avgEngagement": 92,
+      "signature": "visual-metadata-presentation",
+      "description": "Use visual elements or metadata (like emojis or graphics) to enhance engagement and convey messages effectively.",
+      "avgEngagement": 80,
       "frequency": 2
     },
     {
-      "signature": "how-to-guide",
-      "description": "Offer straightforward instructions or quick tips on using the service to enhance user experience.",
-      "avgEngagement": 78,
-      "frequency": 2
+      "signature": "call-to-action",
+      "description": "Prompting users to engage with a product or feature through straightforward instructions.",
+      "avgEngagement": 77,
+      "frequency": 1
     },
     {
-      "signature": "user-generated-content-prompt",
-      "description": "Encouraging users to participate by showcasing their experiences or content related to the product.",
-      "avgEngagement": 70,
-      "frequency": 2
-    },
-    {
-      "signature": "list-of-4",
-      "description": "Present a structured list of achievements or upcoming plans that highlights various aspects of the service or product.",
+      "signature": "three-things-list",
+      "description": "Presenting three related insights or achievements in a compact format.",
       "avgEngagement": 55,
+      "frequency": 1
+    },
+    {
+      "signature": "problem-solution",
+      "description": "Present a problem or challenge in the industry and introduce a solution or product that addresses it.",
+      "avgEngagement": 2,
       "frequency": 1
     }
   ],
   "hotTopics": [
     {
-      "topic": "trading-updates",
+      "topic": "decentralized-finance-insights",
       "mentions": 2,
-      "avgEngagement": 182
+      "avgEngagement": 156
     },
     {
-      "topic": "onchain-yield",
+      "topic": "decentralized-finance",
+      "mentions": 3,
+      "avgEngagement": 55
+    },
+    {
+      "topic": "product-launch-announcements",
       "mentions": 2,
-      "avgEngagement": 50
+      "avgEngagement": 63
     }
   ],
   "postingCadence": [
     {
-      "handle": "SushiSwap",
-      "postsPerWeek": 3.6,
-      "medianHourUTC": 19
+      "handle": "AggTrade_XYZ",
+      "postsPerWeek": 0.1,
+      "medianHourUTC": 13
     },
     {
       "handle": "Morpho",
@@ -83,206 +88,157 @@
   ],
   "patterns": [
     {
-      "id": "hook:partnership-highlight",
-      "kind": "hook",
-      "signature": "partnership-highlight",
-      "description": "Emphasizing collaborations or partnerships to add credibility and excitement to the offerings.",
-      "sourceTweetIds": [
-        "2039789742233936354",
-        "2040514854281212126"
-      ],
-      "competitorHandles": [
-        "SushiSwap"
-      ],
-      "avgEngagement": 739,
-      "frequency": 2
-    },
-    {
-      "id": "hook:early-adopter-incentive",
-      "kind": "hook",
-      "signature": "early-adopter-incentive",
-      "description": "Highlighting benefits or rewards for early adopters to motivate immediate engagement.",
-      "sourceTweetIds": [
-        "2039789742233936354",
-        "2042327721376690438"
-      ],
-      "competitorHandles": [
-        "SushiSwap"
-      ],
-      "avgEngagement": 723,
-      "frequency": 2
-    },
-    {
       "id": "angle:build-in-public-honesty",
       "kind": "angle",
       "signature": "build-in-public-honesty",
-      "description": "Share authentic progress updates, including challenges and insights from ongoing projects.",
+      "description": "Emphasizing transparency about ongoing projects and future aspirations.",
       "sourceTweetIds": [
-        "2051893560094466058",
+        "2051893560094466058"
+      ],
+      "competitorHandles": [
+        "Morpho"
+      ],
+      "avgEngagement": 314,
+      "frequency": 1
+    },
+    {
+      "id": "topic:decentralized-finance-insights",
+      "kind": "topic",
+      "signature": "decentralized-finance-insights",
+      "description": "Discussing relevant challenges or innovations within the decentralized finance sector.",
+      "sourceTweetIds": [
+        "2051684319781929409",
+        "2053755636400242730"
+      ],
+      "competitorHandles": [
+        "Morpho"
+      ],
+      "avgEngagement": 156,
+      "frequency": 2
+    },
+    {
+      "id": "hook:contrast-in-different-regions",
+      "kind": "hook",
+      "signature": "contrast-in-different-regions",
+      "description": "Highlighting a difference in perception or experience across various geographic locations.",
+      "sourceTweetIds": [
         "2051914540078543137"
       ],
       "competitorHandles": [
         "Morpho"
       ],
-      "avgEngagement": 267,
-      "frequency": 2
+      "avgEngagement": 220,
+      "frequency": 1
     },
     {
-      "id": "angle:future-focused-mindset",
-      "kind": "angle",
-      "signature": "future-focused-mindset",
-      "description": "Express ambitions and long-term visions to build excitement about the brand's direction.",
-      "sourceTweetIds": [
-        "2051893560094466058",
-        "2053755636400242730"
-      ],
-      "competitorHandles": [
-        "Morpho"
-      ],
-      "avgEngagement": 264,
-      "frequency": 2
-    },
-    {
-      "id": "hook:breaking-news",
+      "id": "hook:exciting-launch",
       "kind": "hook",
-      "signature": "breaking-news",
-      "description": "Announce significant developments or partnerships that could impact the industry.",
+      "signature": "exciting-launch",
+      "description": "Start with an announcement about a new feature or product being available for use, emphasizing its novelty and potential impact.",
       "sourceTweetIds": [
-        "2050153294606254456",
-        "2051684319781929409",
-        "2051285873816420407"
+        "2050210902591631680",
+        "2046923037195546993"
       ],
       "competitorHandles": [
-        "Morpho"
+        "AggTrade_XYZ"
       ],
-      "avgEngagement": 199,
+      "avgEngagement": 80,
+      "frequency": 2
+    },
+    {
+      "id": "format:visual-metadata-presentation",
+      "kind": "format",
+      "signature": "visual-metadata-presentation",
+      "description": "Use visual elements or metadata (like emojis or graphics) to enhance engagement and convey messages effectively.",
+      "sourceTweetIds": [
+        "2050210902591631680",
+        "2046923037195546993"
+      ],
+      "competitorHandles": [
+        "AggTrade_XYZ"
+      ],
+      "avgEngagement": 80,
+      "frequency": 2
+    },
+    {
+      "id": "topic:decentralized-finance",
+      "kind": "topic",
+      "signature": "decentralized-finance",
+      "description": "Focus on themes related to decentralized finance, such as aggregation, trading, or integrating various DeFi services.",
+      "sourceTweetIds": [
+        "2050210902591631680",
+        "1887952719966835107",
+        "2046923037195546993"
+      ],
+      "competitorHandles": [
+        "AggTrade_XYZ"
+      ],
+      "avgEngagement": 55,
       "frequency": 3
     },
     {
-      "id": "topic:trading-updates",
-      "kind": "topic",
-      "signature": "trading-updates",
-      "description": "Regular updates regarding trading services and features to keep the audience informed.",
-      "sourceTweetIds": [
-        "2053928427435037041",
-        "2040514854281212126"
-      ],
-      "competitorHandles": [
-        "SushiSwap"
-      ],
-      "avgEngagement": 182,
-      "frequency": 2
-    },
-    {
-      "id": "angle:build-in-public-approach",
-      "kind": "angle",
-      "signature": "build-in-public-approach",
-      "description": "Sharing ongoing progress and development stories to foster transparency and community engagement.",
-      "sourceTweetIds": [
-        "2041740411773899250",
-        "2049945698880074039"
-      ],
-      "competitorHandles": [
-        "SushiSwap"
-      ],
-      "avgEngagement": 162,
-      "frequency": 2
-    },
-    {
-      "id": "hook:expert-insight",
+      "id": "hook:testimonial-approach",
       "kind": "hook",
-      "signature": "expert-insight",
-      "description": "Provide insights or quotes from industry experts to validate claims or add authority to posts.",
+      "signature": "testimonial-approach",
+      "description": "Using user experiences or testimonials to validate product quality or reliability.",
       "sourceTweetIds": [
-        "2051339603584446687",
-        "2053755636400242730"
+        "2053769890796896362"
       ],
       "competitorHandles": [
         "Morpho"
       ],
-      "avgEngagement": 140,
-      "frequency": 2
+      "avgEngagement": 109,
+      "frequency": 1
     },
     {
-      "id": "format:success-tease",
-      "kind": "format",
-      "signature": "success-tease",
-      "description": "Teasing a successful outcome or event to build anticipation without delving into specific details.",
-      "sourceTweetIds": [
-        "2052761725577879569",
-        "2049899992437944428"
-      ],
-      "competitorHandles": [
-        "SushiSwap"
-      ],
-      "avgEngagement": 92,
-      "frequency": 2
-    },
-    {
-      "id": "format:how-to-guide",
-      "kind": "format",
-      "signature": "how-to-guide",
-      "description": "Offer straightforward instructions or quick tips on using the service to enhance user experience.",
-      "sourceTweetIds": [
-        "2051292658128031873",
-        "2050650262264480171"
-      ],
-      "competitorHandles": [
-        "Morpho"
-      ],
-      "avgEngagement": 78,
-      "frequency": 2
-    },
-    {
-      "id": "angle:community-encouragement",
-      "kind": "angle",
-      "signature": "community-encouragement",
-      "description": "Encouraging community interaction and sharing insights for collective benefits.",
-      "sourceTweetIds": [
-        "2052537408374136977",
-        "2040515209631043924"
-      ],
-      "competitorHandles": [
-        "SushiSwap"
-      ],
-      "avgEngagement": 75,
-      "frequency": 2
-    },
-    {
-      "id": "format:user-generated-content-prompt",
-      "kind": "format",
-      "signature": "user-generated-content-prompt",
-      "description": "Encouraging users to participate by showcasing their experiences or content related to the product.",
-      "sourceTweetIds": [
-        "2052537408374136977",
-        "2041181201789022388"
-      ],
-      "competitorHandles": [
-        "SushiSwap"
-      ],
-      "avgEngagement": 70,
-      "frequency": 2
-    },
-    {
-      "id": "topic:onchain-yield",
+      "id": "topic:product-launch-announcements",
       "kind": "topic",
-      "signature": "onchain-yield",
-      "description": "Discuss advancements and the use of on-chain yield strategies within decentralized finance.",
+      "signature": "product-launch-announcements",
+      "description": "Announcing new product features or launches to generate excitement and engagement.",
       "sourceTweetIds": [
-        "2053345746787750361",
+        "2050650262264480171",
         "2051285873816420407"
       ],
       "competitorHandles": [
         "Morpho"
       ],
-      "avgEngagement": 50,
+      "avgEngagement": 63,
       "frequency": 2
     },
     {
-      "id": "format:list-of-4",
+      "id": "angle:data-driven-insights",
+      "kind": "angle",
+      "signature": "data-driven-insights",
+      "description": "Using analytics or data points to support claims about platform growth or performance.",
+      "sourceTweetIds": [
+        "2053345746787750361",
+        "2052373295639429615"
+      ],
+      "competitorHandles": [
+        "Morpho"
+      ],
+      "avgEngagement": 54,
+      "frequency": 2
+    },
+    {
+      "id": "format:call-to-action",
       "kind": "format",
-      "signature": "list-of-4",
-      "description": "Present a structured list of achievements or upcoming plans that highlights various aspects of the service or product.",
+      "signature": "call-to-action",
+      "description": "Prompting users to engage with a product or feature through straightforward instructions.",
+      "sourceTweetIds": [
+        "2051292658128031873"
+      ],
+      "competitorHandles": [
+        "Morpho"
+      ],
+      "avgEngagement": 77,
+      "frequency": 1
+    },
+    {
+      "id": "format:three-things-list",
+      "kind": "format",
+      "signature": "three-things-list",
+      "description": "Presenting three related insights or achievements in a compact format.",
       "sourceTweetIds": [
         "2052373295639429615"
       ],
@@ -290,6 +246,48 @@
         "Morpho"
       ],
       "avgEngagement": 55,
+      "frequency": 1
+    },
+    {
+      "id": "hook:partnership-announcement",
+      "kind": "hook",
+      "signature": "partnership-announcement",
+      "description": "Announce new integrations or partnerships that enhance product offerings, often including a call to action to explore new functionalities.",
+      "sourceTweetIds": [
+        "1887952719966835107"
+      ],
+      "competitorHandles": [
+        "AggTrade_XYZ"
+      ],
+      "avgEngagement": 7,
+      "frequency": 1
+    },
+    {
+      "id": "format:problem-solution",
+      "kind": "format",
+      "signature": "problem-solution",
+      "description": "Present a problem or challenge in the industry and introduce a solution or product that addresses it.",
+      "sourceTweetIds": [
+        "2046923037195546993"
+      ],
+      "competitorHandles": [
+        "AggTrade_XYZ"
+      ],
+      "avgEngagement": 2,
+      "frequency": 1
+    },
+    {
+      "id": "angle:community-engagement",
+      "kind": "angle",
+      "signature": "community-engagement",
+      "description": "Encourage followers to participate in discussions or contribute ideas related to branding or mascots.",
+      "sourceTweetIds": [
+        "1888810403737813389"
+      ],
+      "competitorHandles": [
+        "AggTrade_XYZ"
+      ],
+      "avgEngagement": 0,
       "frequency": 1
     }
   ]

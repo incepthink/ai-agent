@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Tweet, UserProfile } from "../types.js";
+import { getProgress } from "../progress.js";
 
 const BASE_URL = "https://api.twitterapi.io";
 const CACHE_DIR = "./cache";
@@ -59,7 +60,9 @@ async function twitterApiGet(
       if (res.status === 429) {
         const retryAfter = Number(res.headers.get("Retry-After") ?? 5);
         const wait = (retryAfter || 5) * 1_000;
-        console.warn(`[twitterapi] 429 on ${endpoint} — waiting ${wait / 1000}s (attempt ${attempt + 1}/${MAX_RETRIES})`);
+        const msg = `429 on ${endpoint} — waiting ${wait / 1000}s (attempt ${attempt + 1}/${MAX_RETRIES})`;
+        console.warn(`[twitterapi] ${msg}`);
+        getProgress()?.log(msg, "twitterapi", "warn");
         await new Promise((r) => setTimeout(r, wait));
         continue;
       }
@@ -136,6 +139,7 @@ export async function fetchUserTweets(
   const cached = readCache<Tweet[]>(`${cleanHandle}_twitterapi_tweets`);
   if (cached) {
     console.log(`[cache] Using cached tweets for @${cleanHandle}`);
+    getProgress()?.log(`Using cached tweets for @${cleanHandle}`, "cache");
     return cached;
   }
 
@@ -162,6 +166,10 @@ export async function fetchUserTweets(
     const pageData = (json.data as Record<string, unknown>) ?? {};
     const tweets = (pageData.tweets as Array<Record<string, unknown>>) ?? [];
     collected.push(...tweets);
+    getProgress()?.log(
+      `@${cleanHandle} page ${pages}: ${tweets.length} tweets (total ${collected.length})`,
+      "twitterapi",
+    );
 
     const hasNext = Boolean(pageData.has_next_page);
     const next = String(pageData.next_cursor ?? "");
@@ -173,6 +181,7 @@ export async function fetchUserTweets(
 
   if (collected.length === 0) {
     console.warn(`[twitterapi] no tweets for @${cleanHandle}`);
+    getProgress()?.log(`no tweets for @${cleanHandle}`, "twitterapi", "warn");
     writeCache(`${cleanHandle}_twitterapi_tweets`, []);
     return [];
   }
@@ -191,6 +200,7 @@ export async function getUserProfile(username: string): Promise<UserProfile> {
   const cached = readCache<UserProfile>(`${cleanHandle}_twitterapi_profile`);
   if (cached) {
     console.log(`[cache] Using cached profile for @${cleanHandle}`);
+    getProgress()?.log(`Using cached profile for @${cleanHandle}`, "cache");
     return cached;
   }
 

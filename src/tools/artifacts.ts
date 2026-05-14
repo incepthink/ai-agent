@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Insights, PostCandidate, VoiceProfile } from "../types.js";
+import { getProgress } from "../progress.js";
 
 const OUTPUT_DIR = "./output";
 
@@ -23,9 +24,16 @@ export function writeArtifacts(
   fs.writeFileSync(insightsPath, JSON.stringify(insights, null, 2));
   fs.writeFileSync(voicePath, JSON.stringify(voice, null, 2));
 
-  console.log(`[artifacts] Wrote ${candidates.length} candidates → ${postsPath}`);
-  console.log(`[artifacts] Wrote insights → ${insightsPath}`);
-  console.log(`[artifacts] Wrote voice profile → ${voicePath}`);
+  const p = getProgress();
+  const m1 = `Wrote ${candidates.length} candidates → ${postsPath}`;
+  const m2 = `Wrote insights → ${insightsPath}`;
+  const m3 = `Wrote voice profile → ${voicePath}`;
+  console.log(`[artifacts] ${m1}`);
+  console.log(`[artifacts] ${m2}`);
+  console.log(`[artifacts] ${m3}`);
+  p?.log(m1, "artifacts");
+  p?.log(m2, "artifacts");
+  p?.log(m3, "artifacts");
 
   return { postsPath, insightsPath, voicePath };
 }
