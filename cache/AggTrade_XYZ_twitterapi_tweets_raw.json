@@ -15,9 +15,9 @@
           "source": "Twitter for iPhone",
           "retweetCount": 2,
           "replyCount": 2,
-          "likeCount": 151,
+          "likeCount": 150,
           "quoteCount": 1,
-          "viewCount": 10380,
+          "viewCount": 10424,
           "createdAt": "Fri May 01 13:49:04 +0000 2026",
           "lang": "en",
           "bookmarkCount": 0,
@@ -42,7 +42,7 @@
             "verifiedType": null,
             "profilePicture": "https://pbs.twimg.com/profile_images/2046536545025597440/d_4OX4tI_normal.jpg",
             "coverPicture": "https://pbs.twimg.com/profile_banners/1830244696188489728/1776767311",
-            "description": "",
+            "description": "The Unified Trading Experience on @katana",
             "location": "Global",
             "followers": 525,
             "following": 141,
@@ -51,14 +51,24 @@
             "canMediaTag": true,
             "createdAt": "Sun Sep 01 14:02:06 +0000 2024",
             "entities": {
-              "description": {
-                "urls": []
-              },
-              "url": {}
+              "description": {},
+              "url": {
+                "urls": [
+                  {
+                    "display_url": "aggtrade.xyz",
+                    "expanded_url": "https://aggtrade.xyz/",
+                    "indices": [
+                      0,
+                      23
+                    ],
+                    "url": "https://t.co/lyxXPWUfJZ"
+                  }
+                ]
+              }
             },
             "fastFollowersCount": 0,
             "favouritesCount": 299,
-            "hasCustomTimelines": true,
+            "hasCustomTimelines": false,
             "isTranslator": false,
             "mediaCount": 7,
             "statusesCount": 99,
@@ -68,37 +78,7 @@
             "pinnedTweetIds": [
               "2050210902591631680"
             ],
-            "profile_bio": {
-              "description": "The Unified Trading Experience on @katana",
-              "entities": {
-                "description": {
-                  "user_mentions": [
-                    {
-                      "id_str": "",
-                      "indices": [
-                        34,
-                        41
-                      ],
-                      "name": "",
-                      "screen_name": "katana"
-                    }
-                  ]
-                },
-                "url": {
-                  "urls": [
-                    {
-                      "display_url": "aggtrade.xyz",
-                      "expanded_url": "https://aggtrade.xyz/",
-                      "indices": [
-                        0,
-                        23
-                      ],
-                      "url": "https://t.co/lyxXPWUfJZ"
-                    }
-                  ]
-                }
-              }
-            },
+            "profile_bio": {},
             "isAutomated": false,
             "automatedBy": null
           },
@@ -108,8 +88,8 @@
                 "allow_download_status": {
                   "allow_download": true
                 },
-                "display_url": "pic.twitter.com/iHKDuqUoGj",
-                "expanded_url": "https://twitter.com/AggTrade_XYZ/status/2050210902591631680/photo/1",
+                "display_url": "pic.x.com/iHKDuqUoGj",
+                "expanded_url": "https://x.com/AggTrade_XYZ/status/2050210902591631680/photo/1",
                 "ext_media_availability": {
                   "status": "Available"
                 },
@@ -117,7 +97,13 @@
                   "large": {
                     "faces": []
                   },
+                  "medium": {
+                    "faces": []
+                  },
                   "orig": {
+                    "faces": []
+                  },
+                  "small": {
                     "faces": []
                   }
                 },
@@ -128,10 +114,7 @@
                 ],
                 "media_key": "3_2050210403251310592",
                 "media_results": {
-                  "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARxzz3/QmtAACgACHHPP9BObcUAAAA==",
                   "result": {
-                    "__typename": "ApiMedia",
-                    "id": "QXBpTWVkaWE6DAABCgABHHPPf9Ca0AAKAAIcc8/0E5txQAAA",
                     "media_key": "3_2050210403251310592"
                   }
                 },
@@ -175,7 +158,23 @@
                 "sizes": {
                   "large": {
                     "h": 1059,
+                    "resize": "fit",
                     "w": 2048
+                  },
+                  "medium": {
+                    "h": 621,
+                    "resize": "fit",
+                    "w": 1200
+                  },
+                  "small": {
+                    "h": 352,
+                    "resize": "fit",
+                    "w": 680
+                  },
+                  "thumb": {
+                    "h": 150,
+                    "resize": "crop",
+                    "w": 150
                   }
                 },
                 "type": "photo",
@@ -209,6 +208,104 @@
                 "text": "Perps"
               }
             ],
+            "media": [
+              {
+                "allow_download_status": {
+                  "allow_download": true
+                },
+                "display_url": "pic.x.com/iHKDuqUoGj",
+                "expanded_url": "https://x.com/AggTrade_XYZ/status/2050210902591631680/photo/1",
+                "ext_media_availability": {
+                  "status": "Available"
+                },
+                "features": {
+                  "large": {
+                    "faces": []
+                  },
+                  "medium": {
+                    "faces": []
+                  },
+                  "orig": {
+                    "faces": []
+                  },
+                  "small": {
+                    "faces": []
+                  }
+                },
+                "id_str": "2050210403251310592",
+                "indices": [
+                  271,
+                  294
+                ],
+                "media_key": "3_2050210403251310592",
+                "media_results": {
+                  "result": {
+                    "media_key": "3_2050210403251310592"
+                  }
+                },
+                "media_url_https": "https://pbs.twimg.com/media/HHPPf9Ca0AAJQRc.jpg",
+                "original_info": {
+                  "focus_rects": [
+                    {
+                      "h": 1742,
+                      "w": 3111,
+                      "x": 129,
+                      "y": 0
+                    },
+                    {
+                      "h": 1742,
+                      "w": 1742,
+                      "x": 813,
+                      "y": 0
+                    },
+                    {
+                      "h": 1742,
+                      "w": 1528,
+                      "x": 920,
+                      "y": 0
+                    },
+                    {
+                      "h": 1742,
+                      "w": 871,
+                      "x": 1249,
+                      "y": 0
+                    },
+                    {
+                      "h": 1742,
+                      "w": 3368,
+                      "x": 0,
+                      "y": 0
+                    }
+                  ],
+                  "height": 1742,
+                  "width": 3368
+                },
+                "sizes": {
+                  "large": {
+                    "h": 1059,
+                    "resize": "fit",
+                    "w": 2048
+                  },
+                  "medium": {
+                    "h": 621,
+                    "resize": "fit",
+                    "w": 1200
+                  },
+                  "small": {
+                    "h": 352,
+                    "resize": "fit",
+                    "w": 680
+                  },
+                  "thumb": {
+                    "h": 150,
+                    "resize": "crop",
+                    "w": 150
+                  }
+                },
+                "type": "photo",
+                "url": "https://t.co/iHKDuqUoGj"
+              }
+            ],
             "symbols": [],
             "timestamps": [],
             "urls": [
@@ -236,8 +333,6 @@
           },
           "quoted_tweet": null,
           "retweeted_tweet": null,
-          "isLimitedReply": false,
-          "communityInfo": null,
           "article": null
         },
         {
@@ -251,7 +346,7 @@
           "replyCount": 0,
           "likeCount": 0,
           "quoteCount": 0,
-          "viewCount": 30,
+          "viewCount": 34,
           "createdAt": "Tue Apr 28 13:30:34 +0000 2026",
           "lang": "in",
           "bookmarkCount": 0,
@@ -276,7 +371,7 @@
             "verifiedType": null,
             "profilePicture": "https://pbs.twimg.com/profile_images/2046536545025597440/d_4OX4tI_normal.jpg",
             "coverPicture": "https://pbs.twimg.com/profile_banners/1830244696188489728/1776767311",
-            "description": "",
+            "description": "The Unified Trading Experience on @katana",
             "location": "Global",
             "followers": 525,
             "following": 141,
@@ -285,14 +380,24 @@
             "canMediaTag": true,
             "createdAt": "Sun Sep 01 14:02:06 +0000 2024",
             "entities": {
-              "description": {
-                "urls": []
-              },
-              "url": {}
+              "description": {},
+              "url": {
+                "urls": [
+                  {
+                    "display_url": "aggtrade.xyz",
+                    "expanded_url": "https://aggtrade.xyz/",
+                    "indices": [
+                      0,
+                      23
+                    ],
+                    "url": "https://t.co/lyxXPWUfJZ"
+                  }
+                ]
+              }
             },
             "fastFollowersCount": 0,
             "favouritesCount": 299,
-            "hasCustomTimelines": true,
+            "hasCustomTimelines": false,
             "isTranslator": false,
             "mediaCount": 7,
             "statusesCount": 99,
@@ -302,37 +407,7 @@
             "pinnedTweetIds": [
               "2050210902591631680"
             ],
-            "profile_bio": {
-              "description": "The Unified Trading Experience on @katana",
-              "entities": {
-                "description": {
-                  "user_mentions": [
-                    {
-                      "id_str": "",
-                      "indices": [
-                        34,
-                        41
-                      ],
-                      "name": "",
-                      "screen_name": "katana"
-                    }
-                  ]
-                },
-                "url": {
-                  "urls": [
-                    {
-                      "display_url": "aggtrade.xyz",
-                      "expanded_url": "https://aggtrade.xyz/",
-                      "indices": [
-                        0,
-                        23
-                      ],
-                      "url": "https://t.co/lyxXPWUfJZ"
-                    }
-                  ]
-                }
-              }
-            },
+            "profile_bio": {},
             "isAutomated": false,
             "automatedBy": null
           },
@@ -348,8 +423,6 @@
           },
           "quoted_tweet": null,
           "retweeted_tweet": null,
-          "isLimitedReply": false,
-          "communityInfo": null,
           "article": null
         },
         {
@@ -363,7 +436,7 @@
           "replyCount": 1,
           "likeCount": 1,
           "quoteCount": 1,
-          "viewCount": 144,
+          "viewCount": 152,
           "createdAt": "Wed Apr 22 12:04:16 +0000 2026",
           "lang": "en",
           "bookmarkCount": 0,
@@ -388,7 +461,7 @@
             "verifiedType": null,
             "profilePicture": "https://pbs.twimg.com/profile_images/2046536545025597440/d_4OX4tI_normal.jpg",
             "coverPicture": "https://pbs.twimg.com/profile_banners/1830244696188489728/1776767311",
-            "description": "",
+            "description": "The Unified Trading Experience on @katana",
             "location": "Global",
             "followers": 525,
             "following": 141,
@@ -397,14 +470,24 @@
             "canMediaTag": true,
             "createdAt": "Sun Sep 01 14:02:06 +0000 2024",
             "entities": {
-              "description": {
-                "urls": []
-              },
-              "url": {}
+              "description": {},
+              "url": {
+                "urls": [
+                  {
+                    "display_url": "aggtrade.xyz",
+                    "expanded_url": "https://aggtrade.xyz/",
+                    "indices": [
+                      0,
+                      23
+                    ],
+                    "url": "https://t.co/lyxXPWUfJZ"
+                  }
+                ]
+              }
             },
             "fastFollowersCount": 0,
             "favouritesCount": 299,
-            "hasCustomTimelines": true,
+            "hasCustomTimelines": false,
             "isTranslator": false,
             "mediaCount": 7,
             "statusesCount": 99,
@@ -414,37 +497,7 @@
             "pinnedTweetIds": [
               "2050210902591631680"
             ],
-            "profile_bio": {
-              "description": "The Unified Trading Experience on @katana",
-              "entities": {
-                "description": {
-                  "user_mentions": [
-                    {
-                      "id_str": "",
-                      "indices": [
-                        34,
-                        41
-                      ],
-                      "name": "",
-                      "screen_name": "katana"
-                    }
-                  ]
-                },
-                "url": {
-                  "urls": [
-                    {
-                      "display_url": "aggtrade.xyz",
-                      "expanded_url": "https://aggtrade.xyz/",
-                      "indices": [
-                        0,
-                        23
-                      ],
-                      "url": "https://t.co/lyxXPWUfJZ"
-                    }
-                  ]
-                }
-              }
-            },
+            "profile_bio": {},
             "isAutomated": false,
             "automatedBy": null
           },
@@ -454,8 +507,8 @@
                 "allow_download_status": {
                   "allow_download": true
                 },
-                "display_url": "pic.twitter.com/rCquSlvyeC",
-                "expanded_url": "https://twitter.com/AggTrade_XYZ/status/2046923037195546993/photo/1",
+                "display_url": "pic.x.com/rCquSlvyeC",
+                "expanded_url": "https://x.com/AggTrade_XYZ/status/2046923037195546993/photo/1",
                 "ext_media_availability": {
                   "status": "Available"
                 },
@@ -463,7 +516,13 @@
                   "large": {
                     "faces": []
                   },
+                  "medium": {
+                    "faces": []
+                  },
                   "orig": {
+                    "faces": []
+                  },
+                  "small": {
                     "faces": []
                   }
                 },
@@ -474,10 +533,7 @@
                 ],
                 "media_key": "3_2046921914644561920",
                 "media_results": {
-                  "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARxoIKLlWgAACgACHGghqEKasXEAAA==",
                   "result": {
-                    "__typename": "ApiMedia",
-                    "id": "QXBpTWVkaWE6DAABCgABHGggouVaAAAKAAIcaCGoQpqxcQAA",
                     "media_key": "3_2046921914644561920"
                   }
                 },
@@ -521,7 +577,23 @@
                 "sizes": {
                   "large": {
                     "h": 1026,
+                    "resize": "fit",
                     "w": 2048
+                  },
+                  "medium": {
+                    "h": 601,
+                    "resize": "fit",
+                    "w": 1200
+                  },
+                  "small": {
+                    "h": 341,
+                    "resize": "fit",
+                    "w": 680
+                  },
+                  "thumb": {
+                    "h": 150,
+                    "resize": "crop",
+                    "w": 150
                   }
                 },
                 "type": "photo",
@@ -533,6 +605,104 @@
           "place": {},
           "entities": {
             "hashtags": [],
+            "media": [
+              {
+                "allow_download_status": {
+                  "allow_download": true
+                },
+                "display_url": "pic.x.com/rCquSlvyeC",
+                "expanded_url": "https://x.com/AggTrade_XYZ/status/2046923037195546993/photo/1",
+                "ext_media_availability": {
+                  "status": "Available"
+                },
+                "features": {
+                  "large": {
+                    "faces": []
+                  },
+                  "medium": {
+                    "faces": []
+                  },
+                  "orig": {
+                    "faces": []
+                  },
+                  "small": {
+                    "faces": []
+                  }
+                },
+                "id_str": "2046921914644561920",
+                "indices": [
+                  177,
+                  200
+                ],
+                "media_key": "3_2046921914644561920",
+                "media_results": {
+                  "result": {
+                    "media_key": "3_2046921914644561920"
+                  }
+                },
+                "media_url_https": "https://pbs.twimg.com/media/HGggouVaAAAClv0.jpg",
+                "original_info": {
+                  "focus_rects": [
+                    {
+                      "h": 1058,
+                      "w": 1889,
+                      "x": 112,
+                      "y": 0
+                    },
+                    {
+                      "h": 1058,
+                      "w": 1058,
+                      "x": 527,
+                      "y": 0
+                    },
+                    {
+                      "h": 1058,
+                      "w": 928,
+                      "x": 592,
+                      "y": 0
+                    },
+                    {
+                      "h": 1058,
+                      "w": 529,
+                      "x": 792,
+                      "y": 0
+                    },
+                    {
+                      "h": 1058,
+                      "w": 2112,
+                      "x": 0,
+                      "y": 0
+                    }
+                  ],
+                  "height": 1058,
+                  "width": 2112
+                },
+                "sizes": {
+                  "large": {
+                    "h": 1026,
+                    "resize": "fit",
+                    "w": 2048
+                  },
+                  "medium": {
+                    "h": 601,
+                    "resize": "fit",
+                    "w": 1200
+                  },
+                  "small": {
+                    "h": 341,
+                    "resize": "fit",
+                    "w": 680
+                  },
+                  "thumb": {
+                    "h": 150,
+                    "resize": "crop",
+                    "w": 150
+                  }
+                },
+                "type": "photo",
+                "url": "https://t.co/rCquSlvyeC"
+              }
+            ],
             "symbols": [],
             "timestamps": [],
             "urls": [
@@ -560,8 +730,6 @@
           },
           "quoted_tweet": null,
           "retweeted_tweet": null,
-          "isLimitedReply": false,
-          "communityInfo": null,
           "article": null
         },
         {
@@ -586,8 +754,8 @@
             0,
             161
           ],
-          "inReplyToUserId": "1446489618208067586",
-          "inReplyToUsername": "JupiterExchange",
+          "inReplyToUserId": null,
+          "inReplyToUsername": null,
           "author": {
             "type": "user",
             "userName": "AggTrade_XYZ",
@@ -600,7 +768,7 @@
             "verifiedType": null,
             "profilePicture": "https://pbs.twimg.com/profile_images/2046536545025597440/d_4OX4tI_normal.jpg",
             "coverPicture": "https://pbs.twimg.com/profile_banners/1830244696188489728/1776767311",
-            "description": "",
+            "description": "The Unified Trading Experience on @katana",
             "location": "Global",
             "followers": 525,
             "following": 141,
@@ -609,14 +777,24 @@
             "canMediaTag": true,
             "createdAt": "Sun Sep 01 14:02:06 +0000 2024",
             "entities": {
-              "description": {
-                "urls": []
-              },
-              "url": {}
+              "description": {},
+              "url": {
+                "urls": [
+                  {
+                    "display_url": "aggtrade.xyz",
+                    "expanded_url": "https://aggtrade.xyz/",
+                    "indices": [
+                      0,
+                      23
+                    ],
+                    "url": "https://t.co/lyxXPWUfJZ"
+                  }
+                ]
+              }
             },
             "fastFollowersCount": 0,
             "favouritesCount": 299,
-            "hasCustomTimelines": true,
+            "hasCustomTimelines": false,
             "isTranslator": false,
             "mediaCount": 7,
             "statusesCount": 99,
@@ -626,37 +804,7 @@
             "pinnedTweetIds": [
               "2050210902591631680"
             ],
-            "profile_bio": {
-              "description": "The Unified Trading Experience on @katana",
-              "entities": {
-                "description": {
-                  "user_mentions": [
-                    {
-                      "id_str": "",
-                      "indices": [
-                        34,
-                        41
-                      ],
-                      "name": "",
-                      "screen_name": "katana"
-                    }
-                  ]
-                },
-                "url": {
-                  "urls": [
-                    {
-                      "display_url": "aggtrade.xyz",
-                      "expanded_url": "https://aggtrade.xyz/",
-                      "indices": [
-                        0,
-                        23
-                      ],
-                      "url": "https://t.co/lyxXPWUfJZ"
-                    }
-                  ]
-                }
-              }
-            },
+            "profile_bio": {},
             "isAutomated": false,
             "automatedBy": null
           },
@@ -700,8 +848,6 @@
           },
           "quoted_tweet": null,
           "retweeted_tweet": null,
-          "isLimitedReply": false,
-          "communityInfo": null,
           "article": null
         },
         {
@@ -726,8 +872,8 @@
             0,
             107
           ],
-          "inReplyToUserId": "1507772794561564677",
-          "inReplyToUsername": "1deltaDAO",
+          "inReplyToUserId": null,
+          "inReplyToUsername": null,
           "author": {
             "type": "user",
             "userName": "AggTrade_XYZ",
@@ -740,7 +886,7 @@
             "verifiedType": null,
             "profilePicture": "https://pbs.twimg.com/profile_images/2046536545025597440/d_4OX4tI_normal.jpg",
             "coverPicture": "https://pbs.twimg.com/profile_banners/1830244696188489728/1776767311",
-            "description": "",
+            "description": "The Unified Trading Experience on @katana",
             "location": "Global",
             "followers": 525,
             "following": 141,
@@ -749,14 +895,24 @@
             "canMediaTag": true,
             "createdAt": "Sun Sep 01 14:02:06 +0000 2024",
             "entities": {
-              "description": {
-                "urls": []
-              },
-              "url": {}
+              "description": {},
+              "url": {
+                "urls": [
+                  {
+                    "display_url": "aggtrade.xyz",
+                    "expanded_url": "https://aggtrade.xyz/",
+                    "indices": [
+                      0,
+                      23
+                    ],
+                    "url": "https://t.co/lyxXPWUfJZ"
+                  }
+                ]
+              }
             },
             "fastFollowersCount": 0,
             "favouritesCount": 299,
-            "hasCustomTimelines": true,
+            "hasCustomTimelines": false,
             "isTranslator": false,
             "mediaCount": 7,
             "statusesCount": 99,
@@ -766,37 +922,7 @@
             "pinnedTweetIds": [
               "2050210902591631680"
             ],
-            "profile_bio": {
-              "description": "The Unified Trading Experience on @katana",
-              "entities": {
-                "description": {
-                  "user_mentions": [
-                    {
-                      "id_str": "",
-                      "indices": [
-                        34,
-                        41
-                      ],
-                      "name": "",
-                      "screen_name": "katana"
-                    }
-                  ]
-                },
-                "url": {
-                  "urls": [
-                    {
-                      "display_url": "aggtrade.xyz",
-                      "expanded_url": "https://aggtrade.xyz/",
-                      "indices": [
-                        0,
-                        23
-                      ],
-                      "url": "https://t.co/lyxXPWUfJZ"
-                    }
-                  ]
-                }
-              }
-            },
+            "profile_bio": {},
             "isAutomated": false,
             "automatedBy": null
           },
@@ -806,8 +932,8 @@
                 "allow_download_status": {
                   "allow_download": true
                 },
-                "display_url": "pic.twitter.com/byZdsWttWG",
-                "expanded_url": "https://twitter.com/DieselDex_Fuel/status/1887952719966835107/photo/1",
+                "display_url": "pic.x.com/byZdsWttWG",
+                "expanded_url": "https://x.com/DieselDex_Fuel/status/1887952719966835107/photo/1",
                 "ext_media_availability": {
                   "status": "Available"
                 },
@@ -815,7 +941,13 @@
                   "large": {
                     "faces": []
                   },
+                  "medium": {
+                    "faces": []
+                  },
                   "orig": {
+                    "faces": []
+                  },
+                  "small": {
                     "faces": []
                   }
                 },
@@ -826,10 +958,7 @@
                 ],
                 "media_key": "3_1887952457172758528",
                 "media_results": {
-                  "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARozWsHKm7AACgACGjNa/vpbEaMAAA==",
                   "result": {
-                    "__typename": "ApiMedia",
-                    "id": "QXBpTWVkaWE6DAABCgABGjNawcqbsAAKAAIaM1r++lsRowAA",
                     "media_key": "3_1887952457172758528"
                   }
                 },
@@ -873,7 +1002,23 @@
                 "sizes": {
                   "large": {
                     "h": 1080,
+                    "resize": "fit",
                     "w": 1920
+                  },
+                  "medium": {
+                    "h": 675,
+                    "resize": "fit",
+                    "w": 1200
+                  },
+                  "small": {
+                    "h": 383,
+                    "resize": "fit",
+                    "w": 680
+                  },
+                  "thumb": {
+                    "h": 150,
+                    "resize": "crop",
+                    "w": 150
                   }
                 },
                 "type": "photo",
@@ -885,6 +1030,104 @@
           "place": {},
           "entities": {
             "hashtags": [],
+            "media": [
+              {
+                "allow_download_status": {
+                  "allow_download": true
+                },
+                "display_url": "pic.x.com/byZdsWttWG",
+                "expanded_url": "https://x.com/DieselDex_Fuel/status/1887952719966835107/photo/1",
+                "ext_media_availability": {
+                  "status": "Available"
+                },
+                "features": {
+                  "large": {
+                    "faces": []
+                  },
+                  "medium": {
+                    "faces": []
+                  },
+                  "orig": {
+                    "faces": []
+                  },
+                  "small": {
+                    "faces": []
+                  }
+                },
+                "id_str": "1887952457172758528",
+                "indices": [
+                  108,
+                  131
+                ],
+                "media_key": "3_1887952457172758528",
+                "media_results": {
+                  "result": {
+                    "media_key": "3_1887952457172758528"
+                  }
+                },
+                "media_url_https": "https://pbs.twimg.com/media/GjNawcqbsAAuRqM.jpg",
+                "original_info": {
+                  "focus_rects": [
+                    {
+                      "h": 1075,
+                      "w": 1920,
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "h": 1080,
+                      "w": 1080,
+                      "x": 372,
+                      "y": 0
+                    },
+                    {
+                      "h": 1080,
+                      "w": 947,
+                      "x": 439,
+                      "y": 0
+                    },
+                    {
+                      "h": 1080,
+                      "w": 540,
+                      "x": 642,
+                      "y": 0
+                    },
+                    {
+                      "h": 1080,
+                      "w": 1920,
+                      "x": 0,
+                      "y": 0
+                    }
+                  ],
+                  "height": 1080,
+                  "width": 1920
+                },
+                "sizes": {
+                  "large": {
+                    "h": 1080,
+                    "resize": "fit",
+                    "w": 1920
+                  },
+                  "medium": {
+                    "h": 675,
+                    "resize": "fit",
+                    "w": 1200
+                  },
+                  "small": {
+                    "h": 383,
+                    "resize": "fit",
+                    "w": 680
+                  },
+                  "thumb": {
+                    "h": 150,
+                    "resize": "crop",
+                    "w": 150
+                  }
+                },
+                "type": "photo",
+                "url": "https://t.co/byZdsWttWG"
+              }
+            ],
             "symbols": [],
             "timestamps": [],
             "urls": [],
@@ -945,7 +1188,7 @@
               "verifiedType": null,
               "profilePicture": "https://pbs.twimg.com/profile_images/1783793201859461120/m4LZiBo0_normal.png",
               "coverPicture": "https://pbs.twimg.com/profile_banners/1507772794561564677/1767923033",
-              "description": "",
+              "description": "The onchain lending API.\n\nBacked by Aave, Compound, Mantle, Polygon, and more.",
               "location": "",
               "followers": 5358,
               "following": 967,
@@ -954,42 +1197,34 @@
               "canMediaTag": true,
               "createdAt": "Sat Mar 26 17:34:02 +0000 2022",
               "entities": {
-                "description": {
-                  "urls": []
-                },
-                "url": {}
+                "description": {},
+                "url": {
+                  "urls": [
+                    {
+                      "display_url": "1delta.io",
+                      "expanded_url": "https://1delta.io/",
+                      "indices": [
+                        0,
+                        23
+                      ],
+                      "url": "https://t.co/jSOiDaiPZO"
+                    }
+                  ]
+                }
               },
               "fastFollowersCount": 0,
               "favouritesCount": 3525,
-              "hasCustomTimelines": true,
+              "hasCustomTimelines": false,
               "isTranslator": false,
               "mediaCount": 577,
-              "statusesCount": 2775,
+              "statusesCount": 2776,
               "withheldInCountries": [],
               "affiliatesHighlightedLabel": {},
               "possiblySensitive": false,
               "pinnedTweetIds": [
                 "1962521153194648020"
               ],
-              "profile_bio": {
-                "description": "The onchain lending API.\n\nBacked by Aave, Compound, Mantle, Polygon, and more.",
-                "entities": {
-                  "description": {},
-                  "url": {
-                    "urls": [
-                      {
-                        "display_url": "1delta.io",
-                        "expanded_url": "https://1delta.io/",
-                        "indices": [
-                          0,
-                          23
-                        ],
-                        "url": "https://t.co/jSOiDaiPZO"
-                      }
-                    ]
-                  }
-                }
-              },
+              "profile_bio": {},
               "isAutomated": false,
               "automatedBy": null
             },
@@ -999,8 +1234,8 @@
                   "allow_download_status": {
                     "allow_download": true
                   },
-                  "display_url": "pic.twitter.com/9JdRMS9G5g",
-                  "expanded_url": "https://twitter.com/1deltaDAO/status/1887950279427113043/photo/1",
+                  "display_url": "pic.x.com/9JdRMS9G5g",
+                  "expanded_url": "https://x.com/1deltaDAO/status/1887950279427113043/photo/1",
                   "ext_media_availability": {
                     "status": "Available"
                   },
@@ -1008,7 +1243,13 @@
                     "large": {
                       "faces": []
                     },
+                    "medium": {
+                      "faces": []
+                    },
                     "orig": {
+                      "faces": []
+                    },
+                    "small": {
                       "faces": []
                     }
                   },
@@ -1019,10 +1260,7 @@
                   ],
                   "media_key": "3_1887950246673616896",
                   "media_results": {
-                    "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARozWL8el5AACgACGjNYxr7aQFMAAA==",
                     "result": {
-                      "__typename": "ApiMedia",
-                      "id": "QXBpTWVkaWE6DAABCgABGjNYvx6XkAAKAAIaM1jGvtpAUwAA",
                       "media_key": "3_1887950246673616896"
                     }
                   },
@@ -1066,7 +1304,23 @@
                   "sizes": {
                     "large": {
                       "h": 1152,
+                      "resize": "fit",
                       "w": 2048
+                    },
+                    "medium": {
+                      "h": 675,
+                      "resize": "fit",
+                      "w": 1200
+                    },
+                    "small": {
+                      "h": 383,
+                      "resize": "fit",
+                      "w": 680
+                    },
+                    "thumb": {
+                      "h": 150,
+                      "resize": "crop",
+                      "w": 150
                     }
                   },
                   "type": "photo",
@@ -1113,18 +1367,14 @@
             },
             "quoted_tweet": null,
             "retweeted_tweet": null,
-            "isLimitedReply": false,
-            "communityInfo": null,
             "article": null
           },
           "retweeted_tweet": null,
-          "isLimitedReply": false,
-          "communityInfo": null,
           "article": null
         }
       ]
     },
     "has_next_page": true,
-    "next_cursor": "DAADDAABCgABHHPP9BObcUAKAAIaM1r--lsRowAIAAIAAAACCAADAAAAAAgABAAAAAAKAAUcgZ8rVMAnEAoABhyBnytUv9jwAAA"
+    "next_cursor": "DAADDAABCgABHHPP9BObcUAKAAIaM1r--lsRowAIAAIAAAACCAADAAAAAAgABAAAAAAKAAUciplimwAnEAoABhyKmWKa_9jwAAA"
   }
 ]

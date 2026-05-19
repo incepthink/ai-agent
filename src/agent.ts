@@ -29,6 +29,8 @@ import {
   generateComparisonChart,
 } from "./tools/chart.js";
 import { getProgress } from "./progress.js";
+import { randomUUID } from "node:crypto";
+import { openDb, saveCandidates } from "./db.js";
 import type {
   AgentOptions,
   CompetitorData,
@@ -69,6 +71,9 @@ export async function runAgent(options: AgentOptions): Promise<RunResult> {
     provider,
     projectContext,
   } = options;
+
+  openDb();
+  const runId = randomUUID();
 
   const backupCount = Math.max(0, count - HERO_COUNT);
   const rawCount = Math.ceil((HERO_COUNT + backupCount) * RAW_OVERSAMPLE_RATIO);
@@ -222,6 +227,7 @@ export async function runAgent(options: AgentOptions): Promise<RunResult> {
   report(
     `[6/7] Final library: ${ranked.filter((c) => c.tier === "hero").length} hero + ${ranked.filter((c) => c.tier === "backup").length} backup`,
   );
+  saveCandidates(runId, cleanTarget, ranked);
   progress?.stageEnd("rank");
 
   progress?.stageStart("write", "[7/7] Write artifacts + dashboard");

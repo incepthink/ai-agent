@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import type { Tweet, UserProfile } from "../types.js";
 import { getProgress } from "../progress.js";
+import { saveTweets } from "../db.js";
 
 const BASE_URL = "https://api.twitterapi.io";
 const CACHE_DIR = "./cache";
@@ -132,15 +133,22 @@ function getOrFetchUserId(cleanHandle: string): string {
 
 export async function fetchUserTweets(
   username: string,
-  maxItems: number = 30
+  maxItems: number = 30,
+  forceRefresh: boolean = false
 ): Promise<Tweet[]> {
   const cleanHandle = username.replace(/^@/, "");
 
-  const cached = readCache<Tweet[]>(`${cleanHandle}_twitterapi_tweets`);
-  if (cached) {
-    console.log(`[cache] Using cached tweets for @${cleanHandle}`);
-    getProgress()?.log(`Using cached tweets for @${cleanHandle}`, "cache");
-    return cached;
+  if (!forceRefresh) {
+    const cached = readCache<Tweet[]>(`${cleanHandle}_twitterapi_tweets`);
+    if (cached) {
+      console.log(`[cache] Using cached tweets for @${cleanHandle}`);
+      getProgress()?.log(`Using cached tweets for @${cleanHandle}`, "cache");
+      return cached;
+    }
+  } else {
+    const cacheFile = path.join(CACHE_DIR, `${cleanHandle}_twitterapi_tweets.json`);
+    if (fs.existsSync(cacheFile)) fs.unlinkSync(cacheFile);
+    console.log(`[cache] Force-refreshing tweets for @${cleanHandle}`);
   }
 
   const userId = getOrFetchUserId(cleanHandle);
@@ -191,6 +199,7 @@ export async function fetchUserTweets(
     .map((raw) => normalizeTweet(raw, cleanHandle));
 
   writeCache(`${cleanHandle}_twitterapi_tweets`, tweets);
+  saveTweets(cleanHandle, tweets);
   return tweets;
 }
 

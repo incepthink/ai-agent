@@ -37,15 +37,16 @@
     ]
   },
   "hookPatterns": [
-    "Introducing...",
+    "Introducing",
     "What other animals do Web3 companies use?",
     "Perps are now LIVE on AggTrade"
   ],
   "taboo": [
-    "avoids generic motivation",
-    "does not engage in off-topic discussions"
+    "never engages in personal storytelling",
+    "doesn't use many hashtags",
+    "avoids complex jargon"
   ],
-  "styleNotes": "The voice is energetic and promotional, emphasizing utility and innovation within the DeFi space, with a light-hearted touch in community engagement.",
+  "styleNotes": "The tone is informative and promotional, with a focus on DeFi features and community engagement. Energy is enthusiastic, encouraging users to explore new offerings.",
   "exampleTweets": [
     {
       "id": "2050210902591631680",
