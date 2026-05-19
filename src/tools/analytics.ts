@@ -10,7 +10,25 @@ import { fetchUserTweets, getUserProfile } from "./twitter-twitterapi.js";
 
 // ── tool definitions ──────────────────────────────────────────────────────────
 
+let _competitorHandles: string[] = [];
+
 const TOOLS: OpenAI.Chat.Completions.ChatCompletionTool[] = [
+  {
+    type: "function",
+    function: {
+      name: "fetch_competitors_timing",
+      description:
+        "Fetch recent tweets for ALL competitor accounts and return a breakdown of average engagement by UTC hour-of-day. " +
+        "Use when the user asks about optimal posting time, when competitors post, or timing/cadence patterns.",
+      parameters: {
+        type: "object",
+        properties: {
+          count: { type: "number", description: "Tweets to fetch per competitor (default 50)" },
+        },
+        required: [],
+      },
+    },
+  },
   {
     type: "function",
     function: {
@@ -105,6 +123,41 @@ function serializeTweets(tweets: Tweet[]): string {
 async function executeTool(name: string, args: Record<string, unknown>): Promise<string> {
   const handle = String(args.handle ?? "");
 
+  if (name === "fetch_competitors_timing") {
+    if (_competitorHandles.length === 0) return "No competitor handles configured.";
+    const count = Number(args.count ?? 50);
+
+    const results = await Promise.all(
+      _competitorHandles.map(async (ch) => {
+        try {
+          await getUserProfile(ch);
+        } catch { /* already cached */ }
+        const tweets = await fetchUserTweets(ch, count, false);
+        return { handle: ch, tweets };
+      })
+    );
+
+    const lines: string[] = [];
+    for (const { handle: ch, tweets } of results) {
+      const byHour: Record<number, { total: number; count: number }> = {};
+      for (const t of tweets) {
+        const hour = new Date(t.createdAt).getUTCHours();
+        if (!byHour[hour]) byHour[hour] = { total: 0, count: 0 };
+        byHour[hour].total += (t.likeCount ?? 0) + (t.retweetCount ?? 0) + (t.replyCount ?? 0);
+        byHour[hour].count++;
+      }
+      const sorted = Object.entries(byHour)
+        .map(([h, v]) => ({ hour: Number(h), avg: v.total / v.count, count: v.count }))
+        .sort((a, b) => b.avg - a.avg);
+      lines.push(`\n@${ch} (${tweets.length} tweets analyzed):`);
+      lines.push("UTC Hour | Avg Engagement | Tweet Count");
+      for (const row of sorted.slice(0, 6)) {
+        lines.push(`  ${String(row.hour).padStart(2, "0")}:00   |   ${row.avg.toFixed(1).padStart(6)}       |   ${row.count}`);
+      }
+    }
+    return lines.join("\n");
+  }
+
   if (name === "fetch_latest_tweets") {
     const count = Number(args.count ?? 20);
     // Ensure profile cache exists so fetchUserTweets can resolve the userId
@@ -155,24 +208,32 @@ async function executeTool(name: string, args: Record<string, unknown>): Promise
 
 export async function runAnalytics(
   handle: string,
+  competitorHandles: string[],
   question: string,
   openai: OpenAI
 ): Promise<string> {
+  _competitorHandles = competitorHandles;
+
+  const competitorCtx = competitorHandles.length
+    ? `Competitors to analyze: ${competitorHandles.join(", ")}. ` +
+      `When asked about timing, competitors, or patterns across accounts, call fetch_competitors_timing. `
+    : "";
+
   const messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
     {
       role: "system",
       content:
         `You are a Twitter analytics assistant for the account ${handle}. ` +
+        competitorCtx +
         `Use the provided tools to fetch the data needed to answer the user's question, ` +
-        `then give a clear, concise answer. ` +
-        `Only call a tool if you actually need data — if the question can be answered without data, answer directly. ` +
-        `When citing metrics, be specific with numbers.`,
+        `then give a clear, concise answer backed by numbers. ` +
+        `Only call a tool if you actually need data — if the question can be answered without data, answer directly.`,
     },
     { role: "user", content: question },
   ];
 
-  // allow up to 3 tool-call rounds
-  for (let round = 0; round < 3; round++) {
+  // allow up to 5 tool-call rounds (multi-competitor fetches need more rounds)
+  for (let round = 0; round < 5; round++) {
     const response = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       tools: TOOLS,

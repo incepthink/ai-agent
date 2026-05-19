@@ -128,7 +128,7 @@ bot.command("analyze", async (ctx) => {
   await ctx.reply("Analyzing...");
 
   try {
-    const answer = await runAnalytics(config.targetHandle, question, openai);
+    const answer = await runAnalytics(config.targetHandle, config.competitorHandles, question, openai);
     await ctx.reply(answer);
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
@@ -283,7 +283,7 @@ bot.on("message:text", async (ctx) => {
   await ctx.reply("Analyzing...");
 
   try {
-    const answer = await runAnalytics(config.targetHandle, text, openai);
+    const answer = await runAnalytics(config.targetHandle, config.competitorHandles, text, openai);
     await ctx.reply(answer);
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
